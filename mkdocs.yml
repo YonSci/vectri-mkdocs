@@ -1,0 +1,47 @@
+site_name: Climate-Driven Malaria Modeling with VECTRI
+site_description: One-week training workshop (Dec 15–19, 2025)
+site_url: https://<your-site-name>.netlify.app
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - toc.follow
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+
+plugins:
+  - search
+  - awesome-pages
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - footnotes
+  - attr_list
+  - md_in_html
+  - tables
+  - def_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji
+
+nav:
+  - Home: index.md
+  - Schedule: schedule.md
+  - Setup: setup.md
+  - Prerequisites: prerequisites.md
+  - Lessons: lessons.md
+  - Collaboration: collaboration.md
+  - Assessments: assessments.md
+  - Resources: resources.md
