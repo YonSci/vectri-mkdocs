@@ -1,47 +1,182 @@
 site_name: Climate-Driven Malaria Modeling with VECTRI
-site_description: One-week training workshop (Dec 15–19, 2025)
-site_url: https://<your-site-name>.netlify.app
+site_description: One-week intensive training workshop on climate-driven malaria modeling using VECTRI (Dec 15–19, 2025) for East African practitioners
+site_author: Yonas Mersha
+site_url: https://vectri-workshop-2025.netlify.app
+
+# Repository
+repo_name: vectri-workshop-2025
+repo_url: https://github.com/your-org/vectri-workshop-2025
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: Copyright &copy; 2025 VECTRI Workshop Team
 
 theme:
   name: material
   language: en
+  
+  # Favicon and logo (add these files to docs/assets/img/)
+  # favicon: assets/img/favicon.png
+  # logo: assets/img/logo.png
+  
   features:
+    # Navigation
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
-    - content.code.copy
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    
+    # Table of contents
     - toc.follow
+    - toc.integrate
+    
+    # Search
+    - search.suggest
+    - search.highlight
+    - search.share
+    
+    # Content
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    
   palette:
-    - scheme: default
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: indigo
-      accent: indigo
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  font:
+    text: Roboto
+    code: Roboto Mono
+  
+  icon:
+    repo: fontawesome/brands/github
+    
+# Custom CSS
+extra_css:
+  - assets/css/custom.css
 
+# Plugins
 plugins:
-  - search
+  - search:
+      lang: en
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - awesome-pages
   - minify:
       minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
   - git-revision-date-localized:
       enable_creation_date: true
+      type: timeago
+      fallback_to_build_date: true
 
+# Markdown extensions
 markdown_extensions:
+  # Python Markdown
+  - abbr
   - admonition
-  - toc:
-      permalink: true
-  - footnotes
   - attr_list
+  - def_list
+  - footnotes
   - md_in_html
   - tables
-  - def_list
+  - toc:
+      permalink: true
+      permalink_title: Anchor link to this section
+      toc_depth: 3
+  
+  # PyMdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
   - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.emoji
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
 
+# Extra
+extra:
+  generator: false  # Hide "Made with Material for MkDocs" footer
+  
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-org/vectri-workshop-2025
+      name: Workshop Repository
+    - icon: fontawesome/brands/slack
+      link: https://vectri-workshop-2025.slack.com
+      name: Workshop Slack
+    - icon: fontawesome/solid/envelope
+      link: mailto:workshop-support@example.org
+      name: Email Support
+  
+  analytics:
+    # Add Google Analytics here if needed
+    # provider: google
+    # property: G-XXXXXXXXXX
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve by opening an issue.
+
+# Navigation
 nav:
   - Home: index.md
-  - Schedule: schedule.md
-  - Setup: setup.md
   - Prerequisites: prerequisites.md
+  - Setup: setup.md
+  - Schedule: schedule.md
   - Lessons: lessons.md
-  - Collaboration: collaboration.md
   - Assessments: assessments.md
+  - Collaboration: collaboration.md
   - Resources: resources.md
