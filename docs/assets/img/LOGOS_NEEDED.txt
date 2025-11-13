@@ -1,0 +1,34 @@
+PARTNER LOGOS NEEDED
+====================
+
+Please add the following logo files to this directory (docs/assets/img/):
+
+Required Files:
+---------------
+1. logo-emi.png  - Ethiopian Meteorological Institute
+2. logo-aau.png  - Addis Ababa University  
+3. logo-smhi.png - Swedish Meteorological and Hydrological Institute
+
+Specifications:
+--------------
+- Format: PNG (transparent background preferred)
+- Size: At least 300px height for clarity
+- Aspect Ratio: Will be preserved automatically
+- Display Height: 80px (auto-width)
+
+Links (already configured):
+---------------------------
+- EMI  → https://emi.aau.edu.et/
+- AAU  → https://www.aau.edu.et/
+- SMHI → https://www.smhi.se/
+
+Features:
+---------
+✓ Hover effect (lift and scale)
+✓ Works in light and dark modes
+✓ Mobile responsive
+✓ Clickable to organization websites
+
+Note: Until you add the actual logo files, the footer will show the partner
+section but images will be broken. This is expected and normal.
+

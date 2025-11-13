@@ -14,6 +14,7 @@ copyright: Copyright &copy; 2025 VECTRI Workshop Team
 theme:
   name: material
   language: en
+  custom_dir: docs/overrides
   
   # Favicon and logo (add these files to docs/assets/img/)
   # favicon: assets/img/favicon.png

@@ -16,7 +16,7 @@
 .hero-banner {
   background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
   color: white;
-  padding: 3rem 2rem;
+  padding: 1.5rem 2rem;
   border-radius: 8px;
   margin-bottom: 2rem;
   text-align: center;
@@ -26,11 +26,35 @@
   font-size: 2.5rem;
   margin-bottom: 1rem;
   font-weight: 700;
+  animation: fadeInUp 1.2s ease-out;
 }
 
 .hero-banner p {
   font-size: 1.2rem;
   opacity: 0.95;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Fade in animation for hero title */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in animation for hero subtitle and date */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.95;
+  }
 }
 
 /* Workshop date badge */
@@ -42,6 +66,19 @@
   border-radius: 20px;
   font-weight: 600;
   margin: 1rem 0;
+  animation: fadeInScale 1.8s ease-out;
+}
+
+/* Scale and fade animation for date badge */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Enhanced admonition boxes */
@@ -183,6 +220,156 @@
   background: var(--workshop-dark);
 }
 
+/* Partner Logos Section */
+.partner-logos {
+  background: #f5f5f5;
+  padding: 2.5rem 0;
+  border-top: 3px solid var(--workshop-primary);
+}
+
+[data-md-color-scheme="slate"] .partner-logos {
+  background: #1e1e1e;
+  border-top-color: var(--workshop-light);
+}
+
+.partner-logos__container {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.partner-logos__title h3 {
+  color: var(--workshop-primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+[data-md-color-scheme="slate"] .partner-logos__title h3 {
+  color: var(--workshop-light);
+}
+
+.partner-logos__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.partner-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.partner-logo:hover {
+  transform: translateY(-5px);
+  background: rgba(63, 81, 181, 0.05);
+}
+
+[data-md-color-scheme="slate"] .partner-logo:hover {
+  background: rgba(197, 202, 233, 0.1);
+}
+
+.partner-logo img {
+  height: 120px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+  filter: grayscale(0%);
+  transition: all 0.3s ease;
+}
+
+.partner-logo:hover img {
+  filter: grayscale(0%) brightness(1.1);
+  transform: scale(1.05);
+}
+
+[data-md-color-scheme="slate"] .partner-logo img {
+  filter: brightness(0.9);
+}
+
+[data-md-color-scheme="slate"] .partner-logo:hover img {
+  filter: brightness(1.1);
+}
+
+.partner-logo span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+[data-md-color-scheme="slate"] .partner-logo span {
+  color: #e0e0e0;
+}
+
+/* Facilitators Grid */
+.facilitators-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.facilitator-card {
+  background: white;
+  border: 2px solid var(--workshop-light);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.facilitator-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(63, 81, 181, 0.2);
+  border-color: var(--workshop-primary);
+}
+
+.facilitator-card h3 {
+  color: var(--workshop-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.facilitator-card .affiliation {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Dark mode for facilitator cards */
+[data-md-color-scheme="slate"] .facilitator-card {
+  background: #263238;
+  border-color: var(--workshop-dark);
+}
+
+[data-md-color-scheme="slate"] .facilitator-card:hover {
+  border-color: var(--workshop-light);
+}
+
+[data-md-color-scheme="slate"] .facilitator-card h3 {
+  color: var(--workshop-light);
+}
+
+[data-md-color-scheme="slate"] .facilitator-card .affiliation {
+  color: #b0b0b0;
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
   .hero-banner h1 {
@@ -195,6 +382,14 @@
   
   .md-typeset table {
     font-size: 0.8rem;
+  }
+  
+  .facilitators-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .partner-logos__items {
+    gap: 2rem;
   }
 }
 
