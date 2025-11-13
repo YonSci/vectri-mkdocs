@@ -222,11 +222,35 @@ To receive an official certificate:
 
 ---
 
-## 📝 Daily Quizzes (Formative, Not Graded)
+## 📝 Self-Assessment Quizzes
 
-### Purpose
+### Interactive Learning Quizzes
 
-Quick knowledge checks — **not graded**, used for learning reinforcement only.
+Test your understanding with our **interactive quizzes** covering key workshop topics:
+
+!!! info "Available Quizzes"
+    - 🎯 [**Xarray Interactive Quiz**](quizzes/xarray-interactive.md) - Take the quiz with instant scoring and feedback!
+    - 📄 [Xarray Static Quiz](quizzes/xarray-basics.md) - Detailed explanations and code examples
+    - More quizzes coming soon for NumPy, Pandas, NetCDF, Linux, Git, and VECTRI!
+
+!!! tip "Quiz Features"
+    - ✅ **Instant Scoring** - Get your results immediately after submission
+    - 📊 **Performance Analytics** - See your score, percentage, and grade
+    - 🔄 **Retake Option** - Try as many times as you want to improve
+    - 💡 **Detailed Feedback** - Learn from each question with explanations
+
+**Format:**
+- 10 questions per topic
+- Multiple choice with detailed explanations
+- Code examples included
+- Self-paced learning
+- **Not graded** - for practice only
+
+---
+
+### Daily Knowledge Checks (Formative, Not Graded)
+
+Quick knowledge checks at end of each day — **not graded**, used for learning reinforcement only.
 
 **Format:**
 - 5 questions, multiple choice
@@ -235,13 +259,13 @@ Quick knowledge checks — **not graded**, used for learning reinforcement only.
 - Optional review in morning
 
 **Topics:**
-- Day 1: Climate-malaria pathways, data formats
-- Day 2: VECTRI parameters, model structure
+- Day 1: Climate-malaria pathways, data formats, Linux basics
+- Day 2: VECTRI parameters, model structure, Xarray operations
 - Day 3: Validation metrics, calibration methods
-- Day 4: Forecast interpretation, uncertainty
-- Day 5: Communication, stakeholder engagement
+- Day 4: Forecast interpretation, uncertainty quantification
+- Day 5: Communication, stakeholder engagement, early warning systems
 
-**Access:** [Menti.com/workshop-quizzes](https://menti.com) (code shared daily)
+**Access:** Interactive quizzes on this site + [Menti.com/workshop-quizzes](https://menti.com) (code shared daily)
 
 ---
 
