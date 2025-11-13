@@ -1,7 +1,14 @@
+<div class="hero-banner" markdown>
+
 # Climate-Driven Malaria Modeling with VECTRI
 
-**Dates:** Monday–Friday, **15–19 December 2025**  
-**Time:** 09:00–17:00 (UTC+03:00, Africa/Addis_Ababa)  
+**One-Week Intensive Training Workshop**
+
+<span class="workshop-date">📅 December 15–19, 2025</span>
+
+</div>
+
+**Time:** 09:00–17:00 daily (UTC+03:00, Africa/Addis_Ababa)  
 **Format:** Lectures + hands-on labs (≈60% practical)  
 **Audience:** NMHSs, Ministries of Health, research institutes, universities (East Africa focus)  
 **Lead trainer:** Yonas Mersha

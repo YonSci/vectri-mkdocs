@@ -220,7 +220,8 @@ cd ..
 sudo mkdir -p /opt/apps/modulefiles/lib/{zlib,szip,jasper,hdf5,netcdf-c,netcdf-fortran}
 ```
 
-### Example: `/opt/apps/modulefiles/lib/hdf5/1.12.2.lua`
+Example: `/opt/apps/modulefiles/lib/hdf5/1.12.2.lua`
+
 ```lua
 help([[HDF5 1.12.2 (serial build)]])
 whatis("Name: hdf5")
