@@ -109,3 +109,47 @@ By the end of this training, participants will be able to:
 
 ---
 
+## Interactive Learning with Binder
+
+Experience hands-on learning with our interactive Jupyter notebooks! No installation required - just click and start coding.
+
+<div class="binder-section">
+  <div class="binder-content">
+    <a href="https://mybinder.org/v2/gh/your-org/vectri-workshop-2025/main" target="_blank" rel="noopener" class="binder-button">
+      <img src="https://mybinder.org/badge_logo.svg" alt="Launch Binder" />
+      <span>Launch Interactive Environment</span>
+    </a>
+    <p class="binder-description">
+      Includes all lessons, sample climate data, and pre-configured Python environment.
+    </p>
+  </div>
+  
+  <div class="binder-info">
+    <h4>💡 What is Binder?</h4>
+    <p>
+      A free service that turns our GitHub repository into a live, interactive Jupyter environment. 
+      Perfect for following along with lessons or experimenting with code!
+    </p>
+  </div>
+</div>
+
+---
+
+## 💬 Real-Time Collaboration
+
+Join our dedicated real-time collaborative space for Q&A, notes, and discussions during training sessions:
+
+<div class="collaboration-section">
+    <!-- https://mensuel.framapad.org/p/sd4kzsefdk-ahvu
+    https://etherpad.wikimedia.org/p/zUfnxQWMHmdzQZYnDI8I -->
+   <!-- https://rustpad.io/#UsvH7I -->
+  <a href="https://etherpad.wikimedia.org/p/zUfnxQWMHmdzQZYnDI8I" target="_blank" rel="noopener" class="collab-button">
+    <span class="collab-icon">🚀</span>
+    <span class="collab-text">Join Training Pad</span>
+  </a>
+</div>
+
+For more collaboration options, visit our [full collaboration guide](collaboration.md).
+
+---
+

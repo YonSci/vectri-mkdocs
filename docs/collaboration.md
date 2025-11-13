@@ -302,13 +302,10 @@ Building a regional community of practice:
 
 | Name | Role | Email |
 |------|------|-------|
-| **Yonas Mersha** | Lead Trainer | [yonas@example.org](mailto:yonas@example.org) |
-| **TBD** | Co-Trainer | [trainer2@example.org](mailto:trainer2@example.org) |
-| **TBD** | Technical Support | [support@example.org](mailto:support@example.org) |
+| **Yonas Mersha** | | [yonas.mersha14@gmail.com](mailto:yonas.mersha14@gmail.com) |
 
-### Emergency Contact
 
-**During workshop hours:** +XXX-XXX-XXXX (WhatsApp available)
+
 
 ---
 

@@ -370,6 +370,185 @@
   color: #b0b0b0;
 }
 
+/* Binder Section */
+.binder-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+  border-radius: 12px;
+  border: 2px solid var(--workshop-light);
+}
+
+[data-md-color-scheme="slate"] .binder-section {
+  background: linear-gradient(135deg, #1a1f24 0%, #252a30 100%);
+  border-color: var(--workshop-dark);
+}
+
+.binder-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.binder-button {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem 2rem;
+  background: white;
+  border: 3px solid var(--workshop-primary);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.binder-button:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(63, 81, 181, 0.3);
+  border-color: var(--workshop-dark);
+}
+
+[data-md-color-scheme="slate"] .binder-button {
+  background: #263238;
+  border-color: var(--workshop-light);
+}
+
+.binder-button img {
+  height: 30px;
+  width: auto;
+}
+
+.binder-button span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--workshop-primary);
+}
+
+[data-md-color-scheme="slate"] .binder-button span {
+  color: var(--workshop-light);
+}
+
+.binder-description {
+  font-size: 0.95rem;
+  color: #555;
+  max-width: 350px;
+  margin: 0;
+}
+
+[data-md-color-scheme="slate"] .binder-description {
+  color: #b0b0b0;
+}
+
+.binder-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
+  border-left: 3px solid var(--workshop-primary);
+}
+
+[data-md-color-scheme="slate"] .binder-info {
+  border-left-color: var(--workshop-light);
+}
+
+.binder-info h4 {
+  color: var(--workshop-primary);
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+[data-md-color-scheme="slate"] .binder-info h4 {
+  color: var(--workshop-light);
+}
+
+.binder-info p {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+[data-md-color-scheme="slate"] .binder-info p {
+  color: #b0b0b0;
+}
+
+/* Real-Time Collaboration Section */
+.collaboration-section {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 12px;
+  border: 2px solid #4caf50;
+}
+
+[data-md-color-scheme="slate"] .collaboration-section {
+  background: linear-gradient(135deg, #1b2e1f 0%, #263029 100%);
+  border-color: #66bb6a;
+}
+
+.collab-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 3rem;
+  background: #4caf50;
+  color: white !important;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  border: 3px solid transparent;
+}
+
+.collab-button:hover {
+  background: #45a049;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+  border-color: #ffffff;
+}
+
+[data-md-color-scheme="slate"] .collab-button {
+  background: #66bb6a;
+  color: #000 !important;
+}
+
+[data-md-color-scheme="slate"] .collab-button:hover {
+  background: #81c784;
+  border-color: #c8e6c9;
+}
+
+.collab-icon {
+  font-size: 1.5rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.collab-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
   .hero-banner h1 {
@@ -390,6 +569,35 @@
   
   .partner-logos__items {
     gap: 2rem;
+  }
+  
+  .binder-section {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+  
+  .binder-info {
+    padding-left: 0;
+    padding-top: 1.5rem;
+    border-left: none;
+    border-top: 3px solid var(--workshop-primary);
+  }
+  
+  [data-md-color-scheme="slate"] .binder-info {
+    border-top-color: var(--workshop-light);
+  }
+  
+  .collab-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .collab-icon {
+    font-size: 1.2rem;
+  }
+  
+  .collab-text {
+    font-size: 1rem;
   }
 }
 
