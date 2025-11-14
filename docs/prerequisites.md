@@ -7,40 +7,19 @@
 
 ### 1. Hardware & Operating System
 
-**Minimum specifications:**
-- **OS:** Ubuntu 22.04 LTS (recommended) or Ubuntu 20.04 LTS
-- **RAM:** 8 GB minimum, 16 GB recommended
-- **Storage:** 50 GB free disk space
-- **Processor:** Multi-core CPU (4+ cores recommended)
-- **Internet:** Stable connection for data downloads (CHIRPS, ERA5-Land)
+**Minimum specifications:**  
+- **OS:** Ubuntu 22.04 LTS (recommended) or Ubuntu 20.04 LTS  
+- **RAM:** 8 GB minimum, 16 GB recommended  
+- **Storage:** 50 GB free disk space  
+- **Processor:** Multi-core CPU (4+ cores recommended)  
+- **Internet:** Stable connection for data downloads (CHIRPS, ERA5-Land)  
 
 !!! warning "Windows/macOS Users"
     VECTRI runs natively on Linux. If you use Windows or macOS, please set up:
     
-    - **Windows:** WSL2 (Windows Subsystem for Linux) with Ubuntu 22.04
-    - **macOS:** Docker container or virtual machine with Ubuntu 22.04
+    - **Windows:** WSL2 (Windows Subsystem for Linux) with Ubuntu 22.04  
+    - **macOS:** Docker container or virtual machine with Ubuntu 22.04  
 
-### 2. Software Dependencies
-
-You'll need these installed before the workshop:
-
-#### Core Development Tools
-```bash
-sudo apt update
-sudo apt install -y build-essential gfortran gcc g++ git wget curl
-```
-
-#### Python Environment
-- **Python:** 3.9 or higher
-- **Conda/Miniconda:** [Download here](https://docs.conda.io/en/latest/miniconda.html)
-
-#### Required Libraries (covered in Setup)
-- NetCDF C/Fortran
-- HDF5
-- ZLIB, SZIP, JasPer
-- Lmod (module system)
-
----
 
 ## Knowledge Prerequisites
 
