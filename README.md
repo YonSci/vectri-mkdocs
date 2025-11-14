@@ -55,68 +55,6 @@ By the end of this training, participants will be able to:
 - Git
 - Text editor or IDE
 
-### Installation
-
-1. **Clone the repository:**
-
-```bash
-git clone https://github.com/YonSci/vectri-mkdocs.git
-cd vectri-mkdocs
-```
-
-2. **Create a virtual environment:**
-
-```bash
-# Windows
-python -m venv vec-env
-vec-env\Scripts\activate
-
-# Linux/Mac
-python3 -m venv vec-env
-source vec-env/bin/activate
-```
-
-3. **Install dependencies:**
-
-```bash
-pip install -r requirements.txt
-```
-
-4. **Run the development server:**
-
-```bash
-mkdocs serve
-```
-
-5. **Open your browser:**
-
-Navigate to `http://127.0.0.1:8000`
-
-## 📦 Building for Production
-
-To build the static site:
-
-```bash
-mkdocs build
-```
-
-The built site will be in the `site/` directory.
-
-## 🌐 Deployment
-
-### Deploy to Netlify
-
-1. Push your repository to GitHub
-2. Log in to [Netlify](https://www.netlify.com/)
-3. Click "New site from Git"
-4. Select your repository
-5. Set build command: `mkdocs build`
-6. Set publish directory: `site`
-7. Click "Deploy site"
-
-### Continuous Deployment
-
-Every push to the `main` branch will automatically trigger a new deployment on Netlify.
 
 ## 📖 Documentation Structure
 
@@ -178,16 +116,7 @@ vectri-mkdocs/
 - **🎨 Modern UI** - Beautiful, responsive design with dark mode
 - **📱 Mobile-Friendly** - Works seamlessly on all devices
 
-## 🤝 Contributing
 
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/your-feature`)
-3. Make your changes
-4. Commit your changes (`git commit -m 'Add some feature'`)
-5. Push to the branch (`git push origin feature/your-feature`)
-6. Open a Pull Request
 
 ### Development Guidelines
 
@@ -229,7 +158,7 @@ If you find this project helpful, please consider giving it a star ⭐!
 ---
 
 <div align="center">
-  <p>Built with ❤️ for climate-informed malaria control in East Africa</p>
-  <p>© 2025 VECTRI Workshop. All rights reserved.</p>
+  <p>Built with ❤️ for climate-informed malaria control in Ethiopia</p>
+  <p>© 2025 VECTRI Workshop AAU-EMI-SMHI. All rights reserved.</p>
 </div>
 
