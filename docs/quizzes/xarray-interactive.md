@@ -637,5 +637,4 @@ Test your Xarray knowledge with this interactive quiz! Select your answers and g
 - [Xarray Documentation](https://docs.xarray.dev/)
 - [Xarray Tutorial](https://tutorial.xarray.dev/)
 - Workshop Lab Exercises (Day 2 & 3)
-- [Static Quiz Version](xarray-basics.md) with detailed explanations
 

@@ -306,25 +306,77 @@ source ~/.bashrc
 
 ```bash
 cd ~
-git clone https://github.com/ICTP/vectri.git
+git clone https://gitlab.com/tompkins/vectri.git  
 cd vectri
-
-# Example compile with NetCDF and HDF5 support
-make clean
-make NETCDF_HOME=/opt/apps/libs/netcdf/4.9.0 HDF5_HOME=/opt/apps/libs/hdf5/1.12.2
+ls 
 ```
 
-### Run a sample simulation
+### Set environment variables (one-time; add to your shell startup)
 
 ```bash
-# Navigate to example data directory
-cd ~/vectri
-./vectri -c data/example_sys5.nc -d data/example_data.nc
+export VECTRI="$HOME/vectri"
+export NETCDF_LIB="$(nf-config --flibs)"
+export NETCDF_INCLUDE="$(nf-config --fflags)"
+export FC="$(nf-config --fc)"   # usually gfortran
 
-# Or run via module environment (recommended)
-module load netcdf-fortran/4.6.0
+# sanity:
+echo $VECTRI
+nc-config --version && nf-config --version
+```
+
+
+### Persist across logins
+
+Append to ~/.bashrc (or ~/.bash_profile on some systems):
+
+```bash
+export VECTRI="$HOME/vectri"
+export NETCDF_LIB="$(nf-config --flibs)"
+export NETCDF_INCLUDE="$(nf-config --fflags)"
+export FC="$(nf-config --fc)"
+
+
+Reload:
+source ~/.bashrc
+```
+
+
+### Create a separate workspace and run the simulation  
+
+
+Why separate? Running inside the repo pollutes the git tree and makes future git pull painful. VECTRI’s run wrapper will also try to guard against this.
+
+```bash
+cd ~
+
+mkdir -p ~/vectri-run/vectri-demo
+# go to your run workspace
+cd vectri-run/vectri-demo
+
+# To get list of command line options
+$VECTRI/vectri
+
+# Example Simulation
 $VECTRI/vectri -c $VECTRI/data/example_sys5.nc -d $VECTRI/data/example_data.nc
 ```
+
+
+If the model compiles successfully there should then be a number of messages about the options chosen.
+
+You should see:
+
+  - a compile phase (make: Entering directory '/…/input') that produces vectri.exe 
+
+  - then runtime logs (vector/disease, climate variable aliases, etc.) 
+  
+  - The output will show the simulation progress and completion status.
+
+  [simulation progress and completion status](assets\img\vectri-test-run.png)
+
+  - If your simulation has ended correctly 🎉 and if you type ls, you should find the output file vectri.nc has appeared.
+  
+  [vectri output file ](assets\img\vectri-test-dir.png)
+
 
 ---
 
