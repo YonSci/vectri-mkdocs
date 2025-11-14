@@ -371,11 +371,11 @@ You should see:
   
   - The output will show the simulation progress and completion status.
 
-  [simulation progress and completion status](assets\img\vectri-test-run.png)
+  ![simulation progress and completion status](assets/img/vectri-test-run.png)
 
   - If your simulation has ended correctly 🎉 and if you type ls, you should find the output file vectri.nc has appeared.
   
-  [vectri output file ](assets\img\vectri-test-dir.png)
+  ![vectri output file](assets/img/vectri-test-dir.png)
 
 
 ---
