@@ -1,8 +1,5 @@
 # Prerequisites
 
-!!! tip "Before the Workshop"
-    Please ensure you have the following prerequisites completed **before Day 1**. This will help us maximize hands-on learning time!
-
 ## Technical Requirements
 
 ### 1. Hardware & Operating System
