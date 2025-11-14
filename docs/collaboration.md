@@ -98,27 +98,27 @@ Jump into the live collaboration space above and start engaging with your fellow
 
 We are committed to providing a **welcoming, inclusive, and harassment-free** experience for everyone.
 
-**Core principles:**
-- **Respect:** Value diverse perspectives and experiences
-- **Inclusivity:** Welcome participants of all backgrounds
-- **Collaboration:** Support each other's learning
-- **Professionalism:** Maintain constructive dialogue
+**Core principles:**  
+- **Respect:** Value diverse perspectives and experiences  
+- **Inclusivity:** Welcome participants of all backgrounds  
+- **Collaboration:** Support each other's learning  
+- **Professionalism:** Maintain constructive dialogue  
 
 ### Expected Behavior
 
-✅ **Do:**
-- Use welcoming and inclusive language
-- Be respectful of differing viewpoints
-- Give and gracefully accept constructive feedback
-- Focus on what's best for the community
-- Show empathy towards others
+✅ **Do:**  
+- Use welcoming and inclusive language  
+- Be respectful of differing viewpoints  
+- Give and gracefully accept constructive feedback  
+- Focus on what's best for the community  
+- Show empathy towards others  
 
-❌ **Don't:**
-- Use sexualized language or imagery
-- Make derogatory comments or personal attacks
-- Engage in trolling or inflammatory behavior
-- Publish others' private information without permission
-- Conduct yourself unprofessionally
+❌ **Don't:**  
+- Use sexualized language or imagery  
+- Make derogatory comments or personal attacks  
+- Engage in trolling or inflammatory behavior  
+- Publish others' private information without permission  
+- Conduct yourself unprofessionally  
 
 ---
 

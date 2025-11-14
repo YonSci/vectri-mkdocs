@@ -163,7 +163,7 @@
 ## Contact & Support
 
 **Questions before the workshop?**  
-Email: [workshop-support@example.org](mailto:workshop-support@example.org)
+Email: [yonas.mersha14@gmail.com](mailto:yonas.mersha14@gmail.com)
 
 **Technical setup issues?**  
 Check the [Setup](setup.md) and [Prerequisites](prerequisites.md) pages
