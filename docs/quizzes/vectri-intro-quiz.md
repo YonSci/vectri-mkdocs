@@ -37,188 +37,84 @@ Test your understanding of VECTRI with this interactive quiz! Select your answer
       <div class="feedback" id="feedback-q1"></div>
     </div>
 
+
     <!-- Question 2 -->
     <div class="quiz-question">
-      <h3>Question 2: In the original project context, what key scientific question motivated the creation of VECTRI?</h3>
+      <h3>Question 2: What was a major limitation of the Liverpool Malaria Model (LMM) noted by Adrian?</h3>
       <div class="quiz-options">
-        <label><input type="radio" name="q2" value="wrong1"> How climate change affects dengue only</label>
-        <label><input type="radio" name="q2" value="correct"> Differences between urban, peri-urban and rural transmission of malaria</label>
-        <label><input type="radio" name="q2" value="wrong2"> How to optimize Fortran compilers for disease models</label>
-        <label><input type="radio" name="q2" value="wrong3"> How bednets change mosquito genetics</label>
+        <label><input type="radio" name="q2" value="wrong1"> It could not run on Linux</label>
+        <label><input type="radio" name="q2" value="correct"> It assumed 100 people per grid box and did not explicitly use population density datasets</label>
+        <label><input type="radio" name="q2" value="wrong2"> It required too much disk space</label>
+        <label><input type="radio" name="q2" value="wrong3"> It did not include any climate variables</label>
       </div>
       <div class="feedback" id="feedback-q2"></div>
     </div>
 
+
+
     <!-- Question 3 -->
     <div class="quiz-question">
-      <h3>Question 3: What was a major limitation of the Liverpool Malaria Model (LMM) noted by Adrian?</h3>
+      <h3>Question 2: Which of the following best describes what VECTRI *is*?</h3>
       <div class="quiz-options">
-        <label><input type="radio" name="q3" value="wrong1"> It could not run on Linux</label>
-        <label><input type="radio" name="q3" value="correct"> It assumed 100 people per grid box and did not explicitly use population density datasets</label>
-        <label><input type="radio" name="q3" value="wrong2"> It required too much disk space</label>
-        <label><input type="radio" name="q3" value="wrong3"> It did not include any climate variables</label>
+        <label><input type="radio" name="q3" value="wrong1"> A point-and-click GUI tool with no need for programming</label>
+        <label><input type="radio" name="q3" value="correct"> A gridded, climate-driven model of mosquito life cycles with parameterizations for various Anopheles and Aedes species</label>
+        <label><input type="radio" name="q3" value="wrong2"> A pure human health-care delivery simulation with no mosquitoes</label>
+        <label><input type="radio" name="q3" value="wrong3"> A general economic model for health financing</label>
       </div>
       <div class="feedback" id="feedback-q3"></div>
     </div>
 
     <!-- Question 4 -->
     <div class="quiz-question">
-      <h3>Question 4: What key aspect of LMM prevented Adrian from easily modifying or extending it?</h3>
+      <h3>Question 6: At present, which disease is explicitly represented in VECTRI when modelling Anopheles mosquitoes?</h3>
       <div class="quiz-options">
-        <label><input type="radio" name="q4" value="wrong1"> The code was only written in Python</label>
-        <label><input type="radio" name="q4" value="wrong2"> It required a supercomputer to run</label>
-        <label><input type="radio" name="q4" value="correct"> Only an executable was provided, not the source code</label>
-        <label><input type="radio" name="q4" value="wrong3"> It had no parameter settings at all</label>
+        <label><input type="radio" name="q4" value="wrong1"> Dengue</label>
+        <label><input type="radio" name="q4" value="correct"> Malaria</label>
+        <label><input type="radio" name="q4" value="wrong2"> Cholera</label>
+        <label><input type="radio" name="q4" value="wrong3"> Zika</label>
       </div>
       <div class="feedback" id="feedback-q4"></div>
     </div>
 
+
+
     <!-- Question 5 -->
     <div class="quiz-question">
-      <h3>Question 5: Which of the following best describes what VECTRI *is*?</h3>
+      <h3>Question 5: Which programming language and environment are most directly associated with running VECTRI?</h3>
       <div class="quiz-options">
-        <label><input type="radio" name="q5" value="wrong1"> A point-and-click GUI tool with no need for programming</label>
-        <label><input type="radio" name="q5" value="correct"> A gridded, climate-driven model of mosquito life cycles with parameterizations for various Anopheles and Aedes species</label>
-        <label><input type="radio" name="q5" value="wrong2"> A pure human health-care delivery simulation with no mosquitoes</label>
-        <label><input type="radio" name="q5" value="wrong3"> A general economic model for health financing</label>
+        <label><input type="radio" name="q5" value="wrong1"> Java and Windows only</label>
+        <label><input type="radio" name="q5" value="wrong2"> R and macOS only</label>
+        <label><input type="radio" name="q5" value="correct"> Fortran, with familiarity with Linux being helpful</label>
+        <label><input type="radio" name="q5" value="wrong3"> JavaScript in a web browser</label>
       </div>
       <div class="feedback" id="feedback-q5"></div>
     </div>
 
+
+
     <!-- Question 6 -->
     <div class="quiz-question">
-      <h3>Question 6: At present, which disease is explicitly represented in VECTRI when modelling Anopheles mosquitoes?</h3>
+      <h3>Question 6: Which characteristics make VECTRI a *community model*? <strong>(Select all that apply)</strong></h3>
       <div class="quiz-options">
-        <label><input type="radio" name="q6" value="wrong1"> Dengue</label>
-        <label><input type="radio" name="q6" value="correct"> Malaria</label>
-        <label><input type="radio" name="q6" value="wrong2"> Cholera</label>
-        <label><input type="radio" name="q6" value="wrong3"> Zika</label>
+        <label><input type="checkbox" name="q6" value="correct1"> The source code is visible and can be inspected</label>
+        <label><input type="checkbox" name="q6" value="correct2"> Users can change the source code</label>
+        <label><input type="checkbox" name="q6" value="correct3"> Users can pass the model to their friends/colleagues</label>
+        <label><input type="checkbox" name="q6" value="wrong1"> It is strictly proprietary and closed</label>
+        <label><input type="checkbox" name="q6" value="correct4"> Users are encouraged to contribute improvements back to a shared version</label>
       </div>
       <div class="feedback" id="feedback-q6"></div>
     </div>
 
     <!-- Question 7 -->
     <div class="quiz-question">
-      <h3>Question 7: Why does VECTRI use first-order accurate numerical solvers?</h3>
+      <h3>Question 7: Which of the following best describe practical requirements or skills that are helpful for using VECTRI? <strong>(Select all that apply)</strong></h3>
       <div class="quiz-options">
-        <label><input type="radio" name="q7" value="wrong1"> They are the only solvers available in Fortran</label>
-        <label><input type="radio" name="q7" value="wrong2"> They guarantee exact solutions for all parameters</label>
-        <label><input type="radio" name="q7" value="correct"> They are fast, and uncertainties in parameters and processes are considered larger than numerical errors</label>
-        <label><input type="radio" name="q7" value="wrong3"> They allow the model to ignore climate data</label>
+        <label><input type="checkbox" name="q7" value="correct1"> Some familiarity with Linux</label>
+        <label><input type="checkbox" name="q7" value="correct2"> Ability to work with Fortran-based code</label>
+        <label><input type="checkbox" name="q7" value="wrong1"> Expectation of a full graphical user interface for all tasks</label>
+        <label><input type="checkbox" name="q7" value="correct3"> Willingness to work without a polished "point and click" experience</label>
       </div>
       <div class="feedback" id="feedback-q7"></div>
-    </div>
-
-    <!-- Question 8 -->
-    <div class="quiz-question">
-      <h3>Question 8: Which of the following best describes the support status of VECTRI from the developers?</h3>
-      <div class="quiz-options">
-        <label><input type="radio" name="q8" value="wrong1"> Fully supported with guaranteed quick responses</label>
-        <label><input type="radio" name="q8" value="wrong2"> Supported 24/7 by a large helpdesk</label>
-        <label><input type="radio" name="q8" value="correct"> Provided "as-is", with only limited, non-guaranteed help from a small research group</label>
-        <label><input type="radio" name="q8" value="wrong3"> Supported only if users pay for a license</label>
-      </div>
-      <div class="feedback" id="feedback-q8"></div>
-    </div>
-
-    <!-- Question 9 -->
-    <div class="quiz-question">
-      <h3>Question 9: Which statement best describes the current operational readiness of VECTRI?</h3>
-      <div class="quiz-options">
-        <label><input type="radio" name="q9" value="wrong1"> It is fully validated for operational decision-making without calibration</label>
-        <label><input type="radio" name="q9" value="correct"> It should be used primarily as a research tool and carefully tested and calibrated before any operational use</label>
-        <label><input type="radio" name="q9" value="wrong2"> It cannot be used for research at all</label>
-        <label><input type="radio" name="q9" value="wrong3"> It already includes all real-world interventions and treatments</label>
-      </div>
-      <div class="feedback" id="feedback-q9"></div>
-    </div>
-
-    <!-- Question 10 -->
-    <div class="quiz-question">
-      <h3>Question 10: Which programming language and environment are most directly associated with running VECTRI?</h3>
-      <div class="quiz-options">
-        <label><input type="radio" name="q10" value="wrong1"> Java and Windows only</label>
-        <label><input type="radio" name="q10" value="wrong2"> R and macOS only</label>
-        <label><input type="radio" name="q10" value="correct"> Fortran, with familiarity with Linux being helpful</label>
-        <label><input type="radio" name="q10" value="wrong3"> JavaScript in a web browser</label>
-      </div>
-      <div class="feedback" id="feedback-q10"></div>
-    </div>
-
-    <!-- Question 11 - Multiple Select -->
-    <div class="quiz-question">
-      <h3>Question 11: What problem(s) with the LMM motivated Adrian to create VECTRI? <strong>(Select all that apply)</strong></h3>
-      <div class="quiz-options">
-        <label><input type="checkbox" name="q11" value="correct1"> Lack of explicit human population density representation</label>
-        <label><input type="checkbox" name="q11" value="correct2"> Source code not being openly available</label>
-        <label><input type="checkbox" name="q11" value="wrong1"> Inability to change parameter settings at all</label>
-        <label><input type="checkbox" name="q11" value="correct3"> Difficulty in adding new functionality or checking the correctness of calculations</label>
-      </div>
-      <div class="feedback" id="feedback-q11"></div>
-    </div>
-
-    <!-- Question 12 - Multiple Select -->
-    <div class="quiz-question">
-      <h3>Question 12: Which characteristics make VECTRI a *community model*? <strong>(Select all that apply)</strong></h3>
-      <div class="quiz-options">
-        <label><input type="checkbox" name="q12" value="correct1"> The source code is visible and can be inspected</label>
-        <label><input type="checkbox" name="q12" value="correct2"> Users can change the source code</label>
-        <label><input type="checkbox" name="q12" value="correct3"> Users can pass the model to their friends/colleagues</label>
-        <label><input type="checkbox" name="q12" value="wrong1"> It is strictly proprietary and closed</label>
-        <label><input type="checkbox" name="q12" value="correct4"> Users are encouraged to contribute improvements back to a shared version</label>
-      </div>
-      <div class="feedback" id="feedback-q12"></div>
-    </div>
-
-    <!-- Question 13 - Multiple Select -->
-    <div class="quiz-question">
-      <h3>Question 13: According to the description, which of the following are true about what VECTRI *is*? <strong>(Select all that apply)</strong></h3>
-      <div class="quiz-options">
-        <label><input type="checkbox" name="q13" value="correct1"> A gridded model focused on climate impacts on mosquito life cycles</label>
-        <label><input type="checkbox" name="q13" value="correct2"> Able to run on regional, national, or continental scales</label>
-        <label><input type="checkbox" name="q13" value="correct3"> Limited (currently) to modelling one vector at a time</label>
-        <label><input type="checkbox" name="q13" value="correct4"> Able to run at resolutions down to about 1 km</label>
-        <label><input type="checkbox" name="q13" value="wrong1"> A model that already includes multiple diseases beyond malaria</label>
-      </div>
-      <div class="feedback" id="feedback-q13"></div>
-    </div>
-
-    <!-- Question 14 - Multiple Select -->
-    <div class="quiz-question">
-      <h3>Question 14: Which characteristics describe what VECTRI *is not*? <strong>(Select all that apply)</strong></h3>
-      <div class="quiz-options">
-        <label><input type="checkbox" name="q14" value="correct1"> A fully supported, ready-to-use operational tool with guaranteed assistance</label>
-        <label><input type="checkbox" name="q14" value="correct2"> A simple "point and click to run" model</label>
-        <label><input type="checkbox" name="q14" value="correct3"> A model that developers accept responsibility for in operational planning environments without conditions</label>
-        <label><input type="checkbox" name="q14" value="correct4"> A tool that should be deployed operationally without prior testing and calibration</label>
-        <label><input type="checkbox" name="q14" value="wrong1"> A model provided "as-is" by a small research group</label>
-      </div>
-      <div class="feedback" id="feedback-q14"></div>
-    </div>
-
-    <!-- Question 15 - Multiple Select -->
-    <div class="quiz-question">
-      <h3>Question 15: Which limitations or cautions are explicitly mentioned about using VECTRI outputs? <strong>(Select all that apply)</strong></h3>
-      <div class="quiz-options">
-        <label><input type="checkbox" name="q15" value="correct1"> Predicted clinical case counts will likely be higher than observed</label>
-        <label><input type="checkbox" name="q15" value="correct2"> The model neglects interventions, treatment, and other factors that reduce observed case counts</label>
-        <label><input type="checkbox" name="q15" value="correct3"> Bednet and SIT (Sterile Insect Technique) interventions in the model are not well tested</label>
-        <label><input type="checkbox" name="q15" value="wrong1"> The developers guarantee responsibility for how the model is used operationally</label>
-        <label><input type="checkbox" name="q15" value="correct4"> The model should be well tested and calibrated before any operational use</label>
-      </div>
-      <div class="feedback" id="feedback-q15"></div>
-    </div>
-
-    <!-- Question 16 - Multiple Select -->
-    <div class="quiz-question">
-      <h3>Question 16: Which of the following best describe practical requirements or skills that are helpful for using VECTRI? <strong>(Select all that apply)</strong></h3>
-      <div class="quiz-options">
-        <label><input type="checkbox" name="q16" value="correct1"> Some familiarity with Linux</label>
-        <label><input type="checkbox" name="q16" value="correct2"> Ability to work with Fortran-based code</label>
-        <label><input type="checkbox" name="q16" value="wrong1"> Expectation of a full graphical user interface for all tasks</label>
-        <label><input type="checkbox" name="q16" value="correct3"> Willingness to work without a polished "point and click" experience</label>
-      </div>
-      <div class="feedback" id="feedback-q16"></div>
     </div>
 
     <div class="quiz-actions">
@@ -269,63 +165,31 @@ Test your understanding of VECTRI with this interactive quiz! Select your answer
       correct: 'correct',
       feedback: '✅ Correct! VECTRI was created to fix key limitations in LMM: no explicit population density & no open source code for modification.'
     },
+  
     q2: {
-      correct: 'correct',
-      feedback: '✅ Correct! The project task was to study urban vs peri-urban vs rural malaria transmission.'
-    },
-    q3: {
       correct: 'correct',
       feedback: '✅ Correct! LMM assumed 100 people per grid box and did not explicitly use population density, making dilution effects unclear.'
     },
-    q4: {
-      correct: 'correct',
-      feedback: '✅ Correct! Only the executable was available, so Adrian couldn\'t inspect or modify the source code.'
-    },
-    q5: {
+  
+    q3: {
       correct: 'correct',
       feedback: '✅ Correct! The text clearly describes VECTRI as a gridded, climate-driven mosquito life-cycle model.'
     },
-    q6: {
+    q3: {
       correct: 'correct',
       feedback: '✅ Correct! Currently, only malaria is represented when modelling Anopheles.'
     },
-    q7: {
-      correct: 'correct',
-      feedback: '✅ Correct! The philosophy: use fast first-order solvers because parameter/process uncertainty is larger than numerical error.'
-    },
-    q8: {
-      correct: 'correct',
-      feedback: '✅ Correct! The model is provided "as-is" by a very small research group; support is not guaranteed.'
-    },
-    q9: {
-      correct: 'correct',
-      feedback: '✅ Correct! The text stresses VECTRI is a research tool and must be tested & calibrated before operational use.'
-    },
-    q10: {
+
+    q5: {
       correct: 'correct',
       feedback: '✅ Correct! VECTRI is Fortran-based, and some Linux familiarity is helpful (though not strictly essential).'
-    },
-    q11: {
-      correct: ['correct1', 'correct2', 'correct3'],
-      feedback: '✅ Correct! LMM did not use explicit population density, only an executable was distributed (no source code), and without code access, adding functionality or verifying calculations was difficult.'
-    },
-    q12: {
+
+    q6: {
       correct: ['correct1', 'correct2', 'correct3', 'correct4'],
       feedback: '✅ Correct! The source is open; users can inspect and modify it, share the model, and contribute improvements back.'
     },
-    q13: {
-      correct: ['correct1', 'correct2', 'correct3', 'correct4'],
-      feedback: '✅ Correct! VECTRI focuses on climate impacts on mosquito life cycles, runs on regional to continental scales, models one vector at a time, and can run down to 1 km resolution.'
-    },
-    q14: {
-      correct: ['correct1', 'correct2', 'correct3', 'correct4'],
-      feedback: '✅ Correct! VECTRI is NOT a fully supported operational tool, NOT point-and-click, developers do NOT accept responsibility for operational use, and it should NOT be deployed without testing.'
-    },
-    q15: {
-      correct: ['correct1', 'correct2', 'correct3', 'correct4'],
-      feedback: '✅ Correct! Predicted cases are higher than observed because interventions/treatment are neglected, bednet/SIT interventions are not well tested, and calibration/testing are required before operational use.'
-    },
-    q16: {
+  
+    q7: {
       correct: ['correct1', 'correct2', 'correct3'],
       feedback: '✅ Correct! Linux familiarity is helpful, the model is Fortran-based, and it is NOT a "point and click" model.'
     }
@@ -708,8 +572,6 @@ Test your understanding of VECTRI with this interactive quiz! Select your answer
   }
 }
 </style>
-
-</div>
 
 ---
 
