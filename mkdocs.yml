@@ -177,9 +177,12 @@ nav:
   - Prerequisites: prerequisites.md
   - Setup: setup.md
   - Schedule: schedule.md
-  - Lessons: lessons.md
+  - Lessons:
+      - Overview: lessons.md
+      - VECTRI Introduction: day1/01-vectri-intro.md
   - Assessments:
       - Overview: assessments.md
+      - VECTRI Introduction Quiz: quizzes/vectri-intro-quiz.md
       - Xarray Quiz: quizzes/xarray-interactive.md
   - Collaboration: collaboration.md
   - Resources: resources.md
