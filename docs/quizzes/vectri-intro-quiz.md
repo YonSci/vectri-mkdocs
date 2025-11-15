@@ -54,7 +54,7 @@ Test your understanding of VECTRI with this interactive quiz! Select your answer
 
     <!-- Question 3 -->
     <div class="quiz-question">
-      <h3>Question 2: Which of the following best describes what VECTRI *is*?</h3>
+      <h3>Question 3: Which of the following best describes what VECTRI *is*?</h3>
       <div class="quiz-options">
         <label><input type="radio" name="q3" value="wrong1"> A point-and-click GUI tool with no need for programming</label>
         <label><input type="radio" name="q3" value="correct"> A gridded, climate-driven model of mosquito life cycles with parameterizations for various Anopheles and Aedes species</label>
@@ -66,7 +66,7 @@ Test your understanding of VECTRI with this interactive quiz! Select your answer
 
     <!-- Question 4 -->
     <div class="quiz-question">
-      <h3>Question 6: At present, which disease is explicitly represented in VECTRI when modelling Anopheles mosquitoes?</h3>
+      <h3>Question 4: At present, which disease is explicitly represented in VECTRI when modelling Anopheles mosquitoes?</h3>
       <div class="quiz-options">
         <label><input type="radio" name="q4" value="wrong1"> Dengue</label>
         <label><input type="radio" name="q4" value="correct"> Malaria</label>
@@ -129,7 +129,7 @@ Test your understanding of VECTRI with this interactive quiz! Select your answer
     <h2>📊 Quiz Results</h2>
     <div class="results-grid">
       <div class="result-card">
-        <div class="result-value" id="score-value">0/16</div>
+        <div class="result-value" id="score-value">0/7</div>
         <div class="result-label">Your Score</div>
       </div>
       <div class="result-card">
@@ -175,7 +175,8 @@ Test your understanding of VECTRI with this interactive quiz! Select your answer
       correct: 'correct',
       feedback: '✅ Correct! The text clearly describes VECTRI as a gridded, climate-driven mosquito life-cycle model.'
     },
-    q3: {
+    
+    q4: {
       correct: 'correct',
       feedback: '✅ Correct! Currently, only malaria is represented when modelling Anopheles.'
     },
@@ -183,6 +184,7 @@ Test your understanding of VECTRI with this interactive quiz! Select your answer
     q5: {
       correct: 'correct',
       feedback: '✅ Correct! VECTRI is Fortran-based, and some Linux familiarity is helpful (though not strictly essential).'
+    },
 
     q6: {
       correct: ['correct1', 'correct2', 'correct3', 'correct4'],
@@ -198,15 +200,15 @@ Test your understanding of VECTRI with this interactive quiz! Select your answer
   // Submit quiz
   submitBtn.addEventListener('click', function() {
     let score = 0;
-    let totalQuestions = 16;
+    let totalQuestions = 7;
     
     // Check each question
     for (let i = 1; i <= totalQuestions; i++) {
       const qName = 'q' + i;
       const feedback = document.getElementById('feedback-' + qName);
       
-      if (i >= 11) {
-        // Multiple select questions (Q11-Q16)
+      if (i >= 6) {
+        // Multiple select questions (Q6-Q7)
         const selected = Array.from(document.querySelectorAll('input[name="' + qName + '"]:checked'))
           .map(input => input.value);
         const correct = answers[qName].correct;
