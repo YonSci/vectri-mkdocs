@@ -4,7 +4,7 @@
 
 **One-Week Training Workshop**
 
-<span class="workshop-date">📅 December 15–19, 2025</span>
+<span class="workshop-date">📅 December 8–12, 2025</span>
 
 </div>
 
@@ -20,12 +20,12 @@ It will cover both foundational concepts and hands-on practical applications usi
 
 | | |
 |---|---|
-| **Dates** | Monday–Friday, December 15–19, 2025 |
+| **Dates** | Monday–Friday, December 8–12, 2025 |
 | **Time** | 09:00–17:00 daily (UTC+03:00, Addis Ababa) |
 | **Duration** | 5 Days |
 | **Format** | In-person (mix of lectures, practical exercises, and discussions) |
 | **Participants** | Up to 15 participants |
-| **Venue** | Addis Ababa, Ethiopia |
+| **Venue** | Elilly Hotel,Addis Ababa, Ethiopia |
 
 ---
 
@@ -33,8 +33,6 @@ It will cover both foundational concepts and hands-on practical applications usi
 
 - **EMI hydrology and meteorology team**
 - **Masters and PhD students from AAU**
-- Public health professionals
-- Researchers and practitioners interested in applying climate-driven modeling techniques to malaria prediction and control
 
 ---
 
@@ -78,35 +76,35 @@ By the end of this training, participants will be able to:
 ### Key Datasets
 
 - **Climate:** 
- - Rainfall 
-  - Historical: CHIRPS, ARC2, TAMSAT
-  - Near-real-timeL CHIRPS-GEFS, NCEP-GFS, ECMWF HRES
-  - Sub-seasonal: ECMWF S2S
-  - Seasonal: ECMWF SEAS5, NCEP CFSv2, NMME
-  - Long-term projections: CMIP6, ISIMIP3b, CHC-CMIP6, Regional products (e.g. CORDEX, CHC-CMIP6)
+  - Rainfall" 
+      - Historical: CHIRPS, ARC2, TAMSAT
+      - Near-real-timeL CHIRPS-GEFS, NCEP-GFS, ECMWF HRES
+      - Sub-seasonal: ECMWF S2S
+      - Seasonal: ECMWF SEAS5, NCEP CFSv2, NMME
+      - Long-term projections: CMIP6, ISIMIP3b, CHC-CMIP6, Regional products (e.g. CORDEX, CHC-CMIP6)
 
- - Temperature
-   - Historical: ERA5/ERA5-Land
-   - Near-real-time: NCEP-GFS, ECMWF HRES
-   - Sub-seasonal: ECMWF S2S
-   - Seasonal: ECMWF SEAS5, NCEP CFSv2, NMME
-   - Long-term projections: ISIMIP3b (CMIP6-based)	
+  - Temperature:
+      - Historical: ERA5/ERA5-Land
+      - Near-real-time: NCEP-GFS, ECMWF HRES
+      - Sub-seasonal: ECMWF S2S
+      - Seasonal: ECMWF SEAS5, NCEP CFSv2, NMME
+      - Long-term projections: ISIMIP3b (CMIP6-based)	
 
-**Population data**: 
-  - AFRIPOP, GRUMP, WorldPop/HRSL
+- **Population data:** 
+    - AFRIPOP
+    - GRUMP
+    - WorldPop/HRSL
   
 - **Geographic:** 
-  - Administrative boundaries (shapefiles) GADM/FAO GAUL
-  - Land cover data
-  - Soil Type Map
+    - Administrative boundaries (shapefiles) GADM/FAO GAUL
+    - Land cover data
+    - Soil Type Map
 
-- **Malaria:** EPHI confirmed case data by district
+- **Malaria:** EPHI confirmed case data
 
 --- 
 
 ## Facilitators
-
- 
 
 
 <div class="facilitators-grid">
@@ -134,8 +132,27 @@ By the end of this training, participants will be able to:
     <h3>Dr. Natei Ermias</h3>
     <p class="affiliation">Addis Ababa University (AAU)</p>
   </div>
-  
 
+  <div class="facilitator-card">
+    <h3>Hailu Fentaw</h3>
+    <p class="affiliation">Addis Ababa University (AAU)</p>
+  </div>
+
+  <div class="facilitator-card">
+    <h3>Hailu Fentaw</h3>
+    <p class="affiliation">Addis Ababa University (AAU)</p>
+  </div>
+
+  <div class="facilitator-card">
+    <h3>Fitsum Bekele</h3>
+    <p class="affiliation">Addis Ababa University (AAU)</p>
+  </div>
+  
+  <div class="facilitator-card">
+    <h3>Samson Warkaye</h3>
+    <p class="affiliation">Addis Ababa University (AAU)</p>
+  </div>
+  
 </div>
 
 ---
@@ -184,3 +201,20 @@ For more collaboration options, visit our [full collaboration guide](collaborati
 
 ---
 
+## Participants List 
+
+| No. | Name              | Department/Desk | Email                       |
+|-----|-------------------|-----------------|-----------------------------|
+| 1   | Tarekgn Abera     | ISOMS           | tatarish59@gmail.com        |
+| 2   | Desalegn Tarekgn  | Health Met      | desalegntarekegn@gmail.com  |
+| 3   | Ayalew Tassew     | HealthMet       | ayalewtasew8@gmail.com      |
+| 4   | Tamirat Yohannes  | Hydromet        | yohannestamirat81@gmail.com |
+| 5   | Alemu Gamini      | Hydro met       | alemugamini@gmail.com       |
+| 6   | Kidus Belay       | Agromet         | kibe_302001@yahoo.com       |
+| 7   | Yimer Assefa      | Agromet         | yimera649@gmail.com         |
+| 8   | Gebremariam Adane | Healthmet       | gebremariamadane@gmail.com  |
+| 9   | Sintayhu Tewabe   | Agomet          | santazewdu18@gmail.com      |
+| 10  | Chaka Natai       | Halthmet        | chakanatae832@gmail.com     |
+| 11  | Rahele Yirdaw     | MFEW            | rahelyirdaw21@gmail.com     |
+
+---
