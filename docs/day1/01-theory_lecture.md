@@ -862,7 +862,7 @@ Mathematical models are essential for understanding malaria transmission dynamic
 
 !!! success "What is VECTRI?"
     
-    **VECTRI** = **VEC**tor-borne disease **T**ransmission **R**isk **I**ndex
+    **VECTRI** = VECtor-borne disease community model of ICTP, TRIeste
     
     A **dynamical, climate-driven** model that simulates:
     
@@ -986,8 +986,6 @@ Now that you understand the theory, you're ready to explore VECTRI in action!
     - [VECTRI GitLab Repository](https://gitlab.com/tompkins/vectri) - Model code and documentation
     - [WHO Malaria Reports](https://www.who.int/teams/global-malaria-programme/reports) - Global malaria data and trends
     - [Malaria Atlas Project](https://malariaatlas.org/) - Global maps and data
-    - [VECTRI Tutorial Series](https://vectri-workshop-2025.netlify.app/) - This workshop!
-
 ---
 
 <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; color: white;">

@@ -1,4 +1,4 @@
-# Workshop Summary: Assessment of Climate Driven Variations in Malaria Transmission in Amhara Region Using the VECTRI Model
+# Assessment of Climate Driven Variations in Malaria Transmission in Amhara Region Using the VECTRI Model
 
 **Researcher:** Hailu Fentaw  
 **Institution:** Addis Ababa University  

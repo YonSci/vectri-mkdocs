@@ -8,34 +8,41 @@
 ---
 
 ## Day 1 — Foundations and Setup
-**Monday, December 15, 2025**
+**Monday, December 8, 2025**
 
 ### Morning Session (9:00 AM - 12:30 PM)
 
 | Time | Topic | Type |
 |------|-------|------|
 | 09:00–09:30 | **Welcome and Workshop Overview** | Plenary |
-|  | • Introduction and participant introductions<br>• Training objectives and expected outcomes<br>• Overview of the week's schedule | |
-| 09:30–11:00 | **Malaria-Climate Link and Ethiopian Context** | Lecture |
-|  | • Malaria transmission cycle: vector biology (Anopheles mosquitoes) and parasite development (Plasmodium)<br>• Climate drivers: temperature, rainfall, and humidity effects on transmission<br>• Ethiopia's seasons: Belg (February-May) and Kiremt (June-September)<br>• Expected biological lags: rainfall → mosquito breeding → EIR → clinical cases (1-2 months)<br>• Spatial heterogeneity: highlands vs. lowlands in Amhara region<br>• Current malaria burden and control strategies in Ethiopia | |
-| 11:00–11:15 | ☕ **Coffee Break** | |
-| 11:15–12:30 | **VECTRI Model Overview** | Lecture |
-|  | • Model structure and components<br>• Larval hydrology and breeding site dynamics<br>• Gonotrophic cycle (mosquito feeding and reproduction)<br>• Sporogonic cycle (parasite development in mosquito)<br>• Core inputs: climate data, population, environmental factors<br>• Core outputs: EIR, HBR, malaria cases<br>• Intervention modeling capabilities (ITNs, IRS)<br>• Model assumptions and limitations | |
+|  | • Welcoming remarks and Introduction<br>• Training objectives and expected outcomes<br>• Overview of the week's schedule and resources | |
+| 09:30–10:30 | **Malaria-Climate Link** | Lecture |
+|  | • Climate-sensitive transmission system<br>• Vector life cycle components<br>• Parasite development and EIP<br>• Host and environmental factors<br>• Modeling approaches | |
+| 10:30–10:45 | ☕ **Coffee Break** | |
+| 10:45–11:15 | **Use Case: Amhara Region Study** | Lecture |
+|  | • Regional climate characteristics (Belg and Kiremt seasons)<br>• Case study overview (2013-2019)<br>• Climate anomalies and impacts (El Niño, La Niña)<br>• Spatial patterns and hotspots<br>• Policy implications for early warning | |
+| 11:15–12:00 | **VECTRI Overview** | Lecture |
+|  | • Model history and development<br>• What VECTRI is and is not<br>• Model structure and capabilities<br>• Inputs, outputs, and applications | |
+| 12:00–12:30 | **VECTRI Model Components** | Lecture |
+|  | • Larval cycle and breeding site hydrology<br>• Larval mortality (crowding, flushing)<br>• Gonotrophic cycle<br>• Sporogonic cycle<br>• Vector survival<br>• Indoor temperatures and host community | |
 
 ### Afternoon Session (2:00 PM - 5:00 PM)
 
 | Time | Topic | Type |
 |------|-------|------|
-| 14:00–15:30 | **Data Landscape for Malaria Modeling** | Lecture |
-|  | • ERA5/ERA5-Land reanalysis data: 2-m temperature, precipitation<br>• CHIRPS precipitation data: high-resolution (0.05°) rainfall estimates<br>• Typical ERA5 vs. CHIRPS differences in complex terrain<br>• EPHI malaria surveillance data structure<br>• Population and environmental data sources | |
-| 15:30–15:45 | ☕ **Coffee Break** | |
-| 15:45–17:00 | **Lab 1: Linux Basics and VECTRI Installation** | Hands-on |
-|  | • Basic Linux commands (navigation, file operations, permissions)<br>• Introduction to shell scripting<br>• Version control with Git and GitHub basics<br>• Downloading VECTRI source code<br>• Configuring build environment (compilers, libraries)<br>• Compiling VECTRI from source<br>• Running test simulation<br>• Troubleshooting common installation issues | |
+| 14:00–15:00 | **VECTRI Core Equations** | Hands-on |
+|  | • Parameter definitions and physical meanings<br>• Larval development equations<br>• Survival probabilities and crowding effects<br>• Gonotrophic and sporogonic cycle rates<br>• Adult survival (Martens II model)<br>• Pond dynamics and hydrology<br>• Host-vector interactions<br>• Transmission metrics (EIR, HBR) | |
+| 15:00–15:15 | ☕ **Coffee Break** | |
+| 15:15–16:15 | **VECTRI Installation** | Hands-on |
+|  | • Installing dependencies (Lua, Lmod, modules)<br>• Setting up compilers (GCC/gfortran)<br>• Installing NetCDF libraries<br>• Cloning VECTRI from GitLab<br>• Compiling VECTRI from source<br>• Testing installation<br>• Troubleshooting common issues | |
+| 16:15–17:00 | **Basic Linux Commands** | Hands-on |
+|  | • Navigation and file operations<br>• Viewing and searching files<br>• Permissions and environment variables<br>• Text editing basics<br>• Process management<br>• Shell scripting introduction | |
+
 
 ---
 
 ## Day 2 — Climate Data Preparation for VECTRI
-**Tuesday, December 16, 2025**
+**Tuesday, December 9, 2025**
 
 ### Morning Session (9:00 AM - 12:30 PM)
 
@@ -60,7 +67,7 @@
 ---
 
 ## Day 3 — Environmental Factors and VECTRI Data File
-**Wednesday, December 17, 2025**
+**Wednesday, December 10, 2025**
 
 ### Morning Session (9:00 AM - 12:30 PM)
 
@@ -85,7 +92,7 @@
 ---
 
 ## Day 4 — Running and Evaluating VECTRI - Amhara Case Study
-**Thursday, December 18, 2025**
+**Thursday, December 11, 2025**
 
 ### Morning Session (9:00 AM - 12:30 PM)
 
@@ -112,7 +119,7 @@
 ---
 
 ## Day 5 — Toward Operations - Early Warning Prototype
-**Friday, December 19, 2025**
+**Friday, December 12, 2025**
 
 ### Morning Session (9:00 AM - 12:30 PM)
 
