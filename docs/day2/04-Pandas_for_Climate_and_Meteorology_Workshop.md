@@ -850,3 +850,7 @@ date
    - Export monthly climatology to CSV.
 
 ## 📝 Test Your Knowledge
+
+Ready to test your Pandas skills for climate data analysis? Take the interactive quiz to assess your understanding of Series, DataFrames, data manipulation, and aggregations.
+
+[Take the Pandas Quiz →](../quizzes/pandas-quiz.md){ .md-button .md-button--primary }

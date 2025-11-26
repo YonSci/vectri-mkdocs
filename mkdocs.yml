@@ -184,10 +184,13 @@ nav:
   - Setup: setup.md
   - Schedule: schedule.md
   - Lessons:
-      - Overview: lessons.md
+      # - Overview: lessons.md
       - VECTRI Introduction: day1/01-vectri-intro.md
-      - Basic Linux Commands: day1/02-basic-linux-commands.md
-      - Vectri Model Components: day1/03-vectri_model_components_larvae_to_hydrology.md
+      - Use Case: day1/02-use-case.md
+      - Setup: day1/03-setup.md
+      - Basic Linux Commands: day1/04-basic-linux-commands.md
+      - Vectri Model Components: day1/05-vectri_model_components_larvae_to_hydrology.md
+      - Vectri Model Components Equations: day1/06-vectri_single_location_explicit_equations_physical_plots.md
       - Python Setup: day2/01-Python_Setup_for_Climate_and_Meteorology_Workshop.md
       - Python Basics: day2/02-Python_Basics_for_Climate_and_Meteorology_Workshop.md
       - Numpy: day2/03-Numpy_for_Climate_and_Meteorology_Workshop.md
@@ -202,6 +205,8 @@ nav:
       - VECTRI Model Components Quiz: quizzes/vectri-model-components-quiz.md
       - Basic Linux Commands Quiz: quizzes/linux-commands-quiz.md
       - Python Basics Quiz: quizzes/python-basics-quiz.md
+      - NumPy Quiz: quizzes/numpy-quiz.md
+      - Pandas Quiz: quizzes/pandas-quiz.md
       - Xarray Quiz: quizzes/xarray-interactive.md
   - Collaboration: collaboration.md
   - Resources: resources.md
