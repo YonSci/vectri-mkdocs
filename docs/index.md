@@ -139,11 +139,6 @@ By the end of this training, participants will be able to:
   </div>
 
   <div class="facilitator-card">
-    <h3>Hailu Fentaw</h3>
-    <p class="affiliation">Addis Ababa University (AAU)</p>
-  </div>
-
-  <div class="facilitator-card">
     <h3>Fitsum Bekele</h3>
     <p class="affiliation">Addis Ababa University (AAU)</p>
   </div>
