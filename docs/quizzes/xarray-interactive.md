@@ -379,7 +379,7 @@ Test your Xarray knowledge with this interactive quiz! Select your answers and g
 
 .guideline-card strong {
   display: block;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   margin-bottom: 0.5rem;
 }
 

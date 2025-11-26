@@ -76,6 +76,12 @@ theme:
 extra_css:
   - assets/css/custom.css
 
+# JavaScript for MathJax (LaTeX rendering)
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
 # Plugins
 plugins:
   - search:
@@ -180,9 +186,22 @@ nav:
   - Lessons:
       - Overview: lessons.md
       - VECTRI Introduction: day1/01-vectri-intro.md
+      - Basic Linux Commands: day1/02-basic-linux-commands.md
+      - Vectri Model Components: day1/03-vectri_model_components_larvae_to_hydrology.md
+      - Python Setup: day2/01-Python_Setup_for_Climate_and_Meteorology_Workshop.md
+      - Python Basics: day2/02-Python_Basics_for_Climate_and_Meteorology_Workshop.md
+      - Numpy: day2/03-Numpy_for_Climate_and_Meteorology_Workshop.md
+      - Pandas: day2/04-Pandas_for_Climate_and_Meteorology_Workshop.md
+      - Matplotlib: day2/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md
+      - Xarray: day2/06-Xarray_for_Climate_and_Meteorology_Workshop.md
+      - Cartopy: day2/07-Geopandas_for_Climate_and_Meteorology_Workshop.md
+      - Geopandas: day2/08-Cartopy_for_Climate_and_Meteorology_Workshop.md
   - Assessments:
       - Overview: assessments.md
       - VECTRI Introduction Quiz: quizzes/vectri-intro-quiz.md
+      - VECTRI Model Components Quiz: quizzes/vectri-model-components-quiz.md
+      - Basic Linux Commands Quiz: quizzes/linux-commands-quiz.md
+      - Python Basics Quiz: quizzes/python-basics-quiz.md
       - Xarray Quiz: quizzes/xarray-interactive.md
   - Collaboration: collaboration.md
   - Resources: resources.md

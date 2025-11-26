@@ -76,16 +76,50 @@ By the end of this training, participants will be able to:
 - NetCDF utilities (nco, cdo)
 
 ### Key Datasets
-- **Climate:** ERA5/ERA5-Land (temperature, precipitation), CHIRPS (rainfall) for Amhara region (2013-2019)
-- **Malaria:** EPHI confirmed case data by district (2013-2019)
-- **Environmental:** WorldPop population density, land cover data
-- **Geographic:** Amhara administrative boundaries (shapefiles)
 
----
+- **Climate:** 
+ - Rainfall 
+  - Historical: CHIRPS, ARC2, TAMSAT
+  - Near-real-timeL CHIRPS-GEFS, NCEP-GFS, ECMWF HRES
+  - Sub-seasonal: ECMWF S2S
+  - Seasonal: ECMWF SEAS5, NCEP CFSv2, NMME
+  - Long-term projections: CMIP6, ISIMIP3b, CHC-CMIP6, Regional products (e.g. CORDEX, CHC-CMIP6)
+
+ - Temperature
+   - Historical: ERA5/ERA5-Land
+   - Near-real-time: NCEP-GFS, ECMWF HRES
+   - Sub-seasonal: ECMWF S2S
+   - Seasonal: ECMWF SEAS5, NCEP CFSv2, NMME
+   - Long-term projections: ISIMIP3b (CMIP6-based)	
+
+**Population data**: 
+  - AFRIPOP, GRUMP, WorldPop/HRSL
+  
+- **Geographic:** 
+  - Administrative boundaries (shapefiles) GADM/FAO GAUL
+  - Land cover data
+  - Soil Type Map
+
+- **Malaria:** EPHI confirmed case data by district
+
+--- 
 
 ## Facilitators
 
+ 
+
+
 <div class="facilitators-grid">
+  <div class="facilitator-card">
+    <h3>Dr. Addisu Gezahegn</h3>
+    <p class="affiliation">NSF Science and Technology Center, Columbia University</p>
+  </div>
+
+  <div class="facilitator-card">
+    <h3>Dr. Bode Gbobaniyi</h3>
+    <p class="affiliation">Swedish Meteorological and Hydrological Institute (SMHI)</p>
+  </div>
+
   <div class="facilitator-card">
     <h3>Yonas Mersha</h3>
     <p class="affiliation">International Livestock Research Institute (ILRI)</p>
@@ -101,10 +135,7 @@ By the end of this training, participants will be able to:
     <p class="affiliation">Addis Ababa University (AAU)</p>
   </div>
   
-  <div class="facilitator-card">
-    <h3>Dr. Bode Gbobaniyi</h3>
-    <p class="affiliation">Swedish Meteorological and Hydrological Institute (SMHI)</p>
-  </div>
+
 </div>
 
 ---
@@ -115,7 +146,7 @@ Experience hands-on learning with our interactive Jupyter notebooks! No installa
 
 <div class="binder-section">
   <div class="binder-content">
-    <a href="https://mybinder.org/v2/gh/your-org/vectri-workshop-2025/main" target="_blank" rel="noopener" class="binder-button">
+    <a href="https://mybinder.org/v2/gh/YonSci/vectri-mkdocs/main" target="_blank" rel="noopener" class="binder-button">
       <img src="https://mybinder.org/badge_logo.svg" alt="Launch Binder" />
       <span>Launch Interactive Environment</span>
     </a>
