@@ -1,23 +1,37 @@
 # VECTRI Core Equations – Single Location
 
-This document computes key VECTRI quantities for a **single grid cell** using
-**explicit parameters and formulas**, without classes or helper functions.
+This document computes key VECTRI quantities for a **single grid cell** using **explicit parameters and formulas**, without classes or helper functions. You will learn to implement VECTRI equations from scratch and visualize the physical processes.
 
-We include:
+---
 
-- Explicit parameter definitions with comments  
-- Core equations written directly in code  
-- A simple daily time series (180 days) for one location  
-- Plots grouped by **physical meaning**, each with a short interpretation  
+## 📋 Outline
 
-Main components covered:
+This tutorial covers:
 
-- Water and air temperature, indoor and effective temperature  
-- Temporary pond hydrology (water balance and pond fraction)  
-- Larval development, crowding survival, flushing, and total survival  
-- Gonotrophic and sporogonic development rates and periods (EIP)  
-- Adult vector survival and approximate lifespan  
-- Human biting rate, daily EIR, and vector → host infection probability  
+* [1. Imports](#1-imports) - Required Python libraries
+* [2. Parameter Definitions](#2-parameter-definitions) - All VECTRI parameters explained
+    * [2.1 Larval Development](#21-larval-development)
+    * [2.2 Larval Survival, Crowding, and Flushing](#22-larval-survival-crowding-and-flushing)
+    * [2.3 Gonotrophic Cycle](#23-gonotrophic-cycle-egg-development)
+    * [2.4 Sporogonic Cycle](#24-sporogonic-parasite-cycle)
+    * [2.5 Adult Vector Survival](#25-adult-vector-survival-martens-ii-and-lifespan)
+    * [2.6 Indoor Temperature](#26-indoor-temperature-and-effective-mosquito-temperature)
+    * [2.7 Host-Vector System](#27-host-vector-system--transmission)
+    * [2.8 Pond Hydrology](#28-simple-pond-hydrology-temporary-ponds)
+* [3. Climate Time Series](#3-climate-time-series-single-location) - Creating synthetic climate data
+* [4. Location-Specific Constants](#4-location-specific-constants) - Fixed parameters
+* [5. Core Equations Day-by-Day](#5-core-equations-applied-day-by-day) - Implementing the model
+* [6. Results DataFrame](#6-pack-results-into-a-dataframe) - Organizing outputs
+* [7. Basic Summaries](#7-basic-summaries) - Statistical analysis
+* [8. Visualization and Interpretation](#8-plot-templates-and-physical-interpretation) - Physical understanding
+    * [8.1 Temperature Dynamics](#81-daily-temperatures-air-indoor-effective-water)
+    * [8.2 Hydrology and Breeding Habitat](#82-rainfall-water-balance-and-pond-fraction-breeding-habitat)
+    * [8.3 Larval Survival](#83-larval-survival-components-crowding-flushing-and-total-survival)
+    * [8.4 Development Times](#84-development-times-larval-period-gonotrophic-period-and-eip)
+    * [8.5 Vector Survival](#85-adult-vector-survival-and-approximate-lifespan)
+    * [8.6 Transmission Metrics](#86-transmission-metrics-human-biting-rate-daily-eir-and-vector--host-infection-probability)
+* [9. Exercises](#9-exercises) - Practice problems
+* [10. Test Your Knowledge](#10-test-your-knowledge) - Interactive quiz
 
 ---
 
@@ -669,4 +683,272 @@ plt.title("Human Biting Rate, Daily EIR, and Vector → Host Infection Probabili
 plt.tight_layout()
 plt.show()
 ```
+
+---
+
+## 9. Exercises
+
+Practice implementing VECTRI equations with these exercises.
+
+### Exercise 1: Temperature Sensitivity Analysis
+
+**Objective**: Explore how temperature affects larval development.
+
+**Task**:
+1. Calculate the larval development rate (R_L) for water temperatures ranging from 10°C to 40°C (use 1°C intervals)
+2. Plot R_L vs temperature
+3. Calculate the corresponding larval period (1/R_L) for each temperature
+4. Identify the optimal temperature range for fastest development
+
+**Starter Code**:
+
+```python
+# Temperature range
+temps = np.arange(10, 41, 1)
+R_L_values = []
+
+for T in temps:
+    if T <= T_L_min or T >= T_L_max:
+        R_L_values.append(0.0)
+    else:
+        R_L_values.append((T - T_L_min) / K_L)
+
+# Plot your results here
+```
+
+**Questions**:
+- At what temperature is larval development fastest?
+- What happens at 16°C and 37°C? Why?
+- How many days does it take for larvae to develop at 25°C? At 30°C?
+
+---
+
+### Exercise 2: Rainfall and Pond Dynamics
+
+**Objective**: Understand how rainfall patterns affect breeding habitat availability.
+
+**Task**:
+1. Create three rainfall scenarios:
+   - **Scenario A**: Constant daily rainfall (5 mm/day for 30 days)
+   - **Scenario B**: Heavy episodic rain (20 mm every 5 days, 0 mm otherwise)
+   - **Scenario C**: Dry spell (0 mm/day for 30 days)
+2. For each scenario, calculate pond fraction (w) over time starting from w0 = 0.02
+3. Plot all three scenarios on the same graph
+4. Compare maximum pond coverage reached in each scenario
+
+**Starter Code**:
+
+```python
+# Parameters
+n_days = 30
+w_prev = 0.02
+
+# Scenario A: Constant rain
+rain_A = np.full(n_days, 5.0)
+
+# Scenario B: Episodic rain
+rain_B = np.zeros(n_days)
+rain_B[::5] = 20.0  # Every 5th day
+
+# Scenario C: Dry
+rain_C = np.zeros(n_days)
+
+# Calculate pond fraction for each scenario
+# Your code here
+```
+
+**Questions**:
+- Which scenario produces the highest pond coverage?
+- How long does it take for ponds to disappear in Scenario C?
+- What is the equilibrium pond fraction in Scenario A?
+
+---
+
+### Exercise 3: Adult Survival and Lifespan Across Temperatures
+
+**Objective**: Explore the temperature-dependent survival of adult mosquitoes.
+
+**Task**:
+1. Calculate daily survival probability (P_V_surv) for effective temperatures from 10°C to 35°C
+2. Calculate expected lifespan for each temperature
+3. Plot both P_V_surv and lifespan vs temperature
+4. Identify the optimal temperature for mosquito survival
+
+**Starter Code**:
+
+```python
+Teff_range = np.arange(10, 36, 1)
+P_V_surv_vals = []
+lifespan_vals = []
+
+for Teff in Teff_range:
+    den = K_mar2_0 + K_mar2_1 * Teff + K_mar2_2 * (Teff**2)
+    if den <= 0.0:
+        PV = 0.0
+    else:
+        PV = math.exp(-1.0 / den)
+    
+    # Calculate lifespan
+    # Your code here
+```
+
+**Questions**:
+- At what temperature do mosquitoes live longest?
+- Compare lifespan at 20°C vs 30°C
+- Why does the relationship show a peak (bell-shaped curve)?
+
+---
+
+### Exercise 4: EIP vs Mosquito Lifespan
+
+**Objective**: Determine when parasites can complete development before mosquitoes die.
+
+**Task**:
+1. For temperatures 18°C to 32°C (2°C intervals):
+   - Calculate EIP (sporogonic period)
+   - Calculate mosquito lifespan
+2. Create a table showing both values at each temperature
+3. Identify the "transmission threshold" - lowest temperature where EIP < lifespan
+
+**Starter Code**:
+
+```python
+temps = np.arange(18, 33, 2)
+results = []
+
+for T in temps:
+    # Calculate EIP
+    if T <= T_sporo_min:
+        EIP = np.inf
+    else:
+        R_sporo = (T - T_sporo_min) / K_sporo
+        EIP = 1.0 / R_sporo
+    
+    # Calculate lifespan
+    den = K_mar2_0 + K_mar2_1 * T + K_mar2_2 * (T**2)
+    if den <= 0.0:
+        lifespan = 0.0
+    else:
+        PV = math.exp(-1.0 / den)
+        lifespan = 1.0 / (1.0 - PV) if PV < 0.999 else np.inf
+    
+    results.append({"Temp": T, "EIP": EIP, "Lifespan": lifespan})
+
+df = pd.DataFrame(results)
+print(df)
+```
+
+**Questions**:
+- At what temperature does EIP first become less than lifespan?
+- Why is this important for malaria transmission?
+- What happens at temperatures below 16°C?
+
+---
+
+### Exercise 5: Sensitivity to Human Population Density
+
+**Objective**: Explore how human population affects biting rates and transmission.
+
+**Task**:
+1. For human populations H = [10, 50, 100, 200, 500, 1000]:
+   - Keep V_biting = 50, CSPR = 0.10
+   - Calculate mean human biting rate (hbr)
+   - Calculate daily EIR
+   - Calculate P_v2h
+2. Plot hbr vs H
+3. Explain the curve shape (hint: zoophily parameter tau_zoo)
+
+**Starter Code**:
+
+```python
+H_values = [10, 50, 100, 200, 500, 1000]
+hbr_values = []
+
+for H in H_values:
+    phi = 1.0 - math.exp(-H / tau_zoo)
+    hbr = phi * V_biting / H
+    hbr_values.append(hbr)
+
+# Plot and analyze
+```
+
+**Questions**:
+- Does biting rate per person increase or decrease with population?
+- Why does the curve flatten at high H values?
+- What is the biological meaning of tau_zoo?
+
+---
+
+### Exercise 6: Combined Effects - Temperature and Rainfall
+
+**Objective**: Understand how temperature and rainfall interact to affect transmission potential.
+
+**Task**:
+1. Create a 2×2 scenario matrix:
+   - Hot (30°C) + Wet (10 mm/day)
+   - Hot (30°C) + Dry (2 mm/day)
+   - Cool (20°C) + Wet (10 mm/day)
+   - Cool (20°C) + Dry (2 mm/day)
+2. For each scenario, calculate over 60 days:
+   - Mean pond fraction
+   - Mean larval development rate
+   - Mean EIP
+   - Mean vector lifespan
+3. Rank scenarios by "transmission favorability"
+
+**Questions**:
+- Which scenario is most favorable for malaria transmission?
+- Can you have high transmission with low rainfall? Why or why not?
+- How does temperature compensate for or exacerbate low rainfall?
+
+---
+
+### Challenge Exercise: Full Seasonal Cycle
+
+**Objective**: Simulate a complete seasonal cycle and identify peak transmission periods.
+
+**Task**:
+1. Create a full year (365 days) of synthetic climate data with:
+   - Seasonal temperature cycle (20°C to 30°C)
+   - Seasonal rainfall (dry season: 1 mm/day, wet season: 15 mm/day)
+2. Run the full VECTRI calculation
+3. Calculate monthly mean EIR
+4. Identify which months have highest transmission potential
+5. Create a comprehensive visualization showing all key variables
+
+**Bonus**: Add a lag analysis - do peak transmission months align with peak rainfall months?
+
+---
+
+## 10. Test Your Knowledge
+
+Ready to test your understanding of VECTRI core equations and processes? Take the interactive quiz to assess your knowledge of model components, parameters, and physical interpretations.
+
+[Take the VECTRI Equations Quiz →](../quizzes/vectri-equations-quiz.md){ .md-button .md-button--primary }
+
+---
+
+## 📚 Summary
+
+In this tutorial, you've learned:
+
+✅ **VECTRI Core Parameters** - All key parameters and their physical meanings  
+✅ **Temperature Dependencies** - How temperature affects development, survival, and transmission  
+✅ **Hydrological Processes** - Pond dynamics and breeding habitat availability  
+✅ **Larval Dynamics** - Development, survival, crowding, and flushing  
+✅ **Adult Mosquito Processes** - Gonotrophic cycle, survival, and lifespan  
+✅ **Parasite Development** - Sporogonic cycle and EIP  
+✅ **Transmission Metrics** - Biting rates, EIR, and infection probabilities  
+✅ **Physical Interpretation** - Understanding model outputs in real-world context
+
+---
+
+## 🔗 Additional Resources
+
+- [VECTRI Model Components Guide](05-vectri_model_components_larvae_to_hydrology.md)
+- The VECTRI online documentation at [VECTRI](https://users.ictp.it/~tompkins/vectri/documentation/)   
+- The PDF manual `VECTRI_manual_v1.6.pdf` [VECTRI PDF manual](../pdfs/VECTRI_manual_v1.6.pdf): Introductory sections describing motivation and history.  
+- Tompkins & Ermert (2013) - A regional-scale, high resolution dynamical malaria model
+- Bayoh & Lindsay (2003) - Effect of temperature on the development of the aquatic stages of Anopheles gambiae
+- Martens et al. (1995) - Potential impact of global climate change on malaria risk
 

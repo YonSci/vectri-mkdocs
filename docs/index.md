@@ -25,7 +25,7 @@ It will cover both foundational concepts and hands-on practical applications usi
 | **Duration** | 5 Days |
 | **Format** | In-person (mix of lectures, practical exercises, and discussions) |
 | **Participants** | Up to 15 participants |
-| **Venue** | Elilly Hotel,Addis Ababa, Ethiopia |
+| **Venue** | Elilly Hotel, Addis Ababa, Ethiopia |
 
 ---
 
