@@ -4,12 +4,12 @@ site_author: Yonas Mersha
 site_url: https://vectri-workshop-2025.netlify.app
 
 # Repository
-repo_name: vectri-workshop-2025
-repo_url: https://github.com/your-org/vectri-workshop-2025
+repo_name: vectri-mkdocs
+repo_url:  https://github.com/YonSci/vectri-mkdocs
 edit_uri: edit/main/docs/
 
 # Copyright
-copyright: Copyright &copy; 2025 VECTRI Workshop Team
+copyright: Copyright &copy; 2025 VECTRI Workshop AAU-EMI-SMHI. All rights reserved.
 
 theme:
   name: material
@@ -150,11 +150,8 @@ extra:
   
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/your-org/vectri-workshop-2025
+      link: https://github.com/YonSci/vectri-mkdocs
       name: Workshop Repository
-    - icon: fontawesome/brands/slack
-      link: https://vectri-workshop-2025.slack.com
-      name: Workshop Slack
     - icon: fontawesome/solid/envelope
       link: mailto:yonas.mersha14@gmail.com
       name: Email Support
