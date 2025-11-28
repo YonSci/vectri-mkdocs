@@ -726,3 +726,29 @@ plt.show() # Show plot
 
 
 ## 📝 Test Your Knowledge
+
+Ready to test your understanding of Matplotlib? Take the interactive quiz to assess your knowledge of plotting, customization, and visualization techniques.
+
+[Take the Matplotlib Quiz →](../quizzes/matplotlib-quiz.md){ .md-button .md-button--primary }
+
+---
+
+## 📚 Summary
+
+In this tutorial, you've learned:
+
+✅ **Matplotlib Basics** - Figure, axes, and plot creation  
+✅ **Plot Types** - Line plots, scatter plots, histograms, bar charts, box plots  
+✅ **Heatmaps** - Hovmöller diagrams and spatial maps  
+✅ **Customization** - Titles, labels, legends, grids, and styles  
+✅ **Advanced Layouts** - Subplots, dual axes, and GridSpec  
+✅ **Saving Figures** - Multiple formats (PNG, PDF, SVG, EPS)
+
+---
+
+## 🔗 Additional Resources
+
+- [Matplotlib Official Documentation](https://matplotlib.org/stable/contents.html)
+- [Matplotlib Gallery](https://matplotlib.org/stable/gallery/index.html)
+- [Matplotlib Tutorials](https://matplotlib.org/stable/tutorials/index.html)
+- [Matplotlib Cheat Sheet](https://matplotlib.org/cheatsheets/)

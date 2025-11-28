@@ -76,19 +76,19 @@ By the end of this training, participants will be able to:
 ### Key Datasets
 
 - **Climate:** 
-  - Rainfall" 
-      - Historical: CHIRPS, ARC2, TAMSAT
-      - Near-real-timeL CHIRPS-GEFS, NCEP-GFS, ECMWF HRES
-      - Sub-seasonal: ECMWF S2S
-      - Seasonal: ECMWF SEAS5, NCEP CFSv2, NMME
-      - Long-term projections: CMIP6, ISIMIP3b, CHC-CMIP6, Regional products (e.g. CORDEX, CHC-CMIP6)
+    - Rainfall 
+        - Historical: CHIRPS, ARC2, TAMSAT
+        - Near-real-timeL CHIRPS-GEFS, NCEP-GFS, ECMWF HRES
+        - Sub-seasonal: ECMWF S2S
+        - Seasonal: ECMWF SEAS5, NCEP CFSv2, NMME
+        - Long-term projections: CMIP6, ISIMIP3b, CHC-CMIP6, Regional products (e.g. CORDEX, CHC-CMIP6)
 
-  - Temperature:
-      - Historical: ERA5/ERA5-Land
-      - Near-real-time: NCEP-GFS, ECMWF HRES
-      - Sub-seasonal: ECMWF S2S
-      - Seasonal: ECMWF SEAS5, NCEP CFSv2, NMME
-      - Long-term projections: ISIMIP3b (CMIP6-based)	
+    - Temperature:
+        - Historical: ERA5/ERA5-Land
+        - Near-real-time: NCEP-GFS, ECMWF HRES
+        - Sub-seasonal: ECMWF S2S
+        - Seasonal: ECMWF SEAS5, NCEP CFSv2, NMME
+        - Long-term projections: ISIMIP3b (CMIP6-based)	
 
 - **Population data:** 
     - AFRIPOP

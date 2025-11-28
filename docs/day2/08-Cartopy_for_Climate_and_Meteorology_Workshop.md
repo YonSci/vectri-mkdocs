@@ -325,4 +325,34 @@ c:\Users\yonas\Documents\ICPAC\python-ml-gha-venv\Lib\site-packages\cartopy\io\_
 
 ## 📝 Test Your Knowledge
 
+Ready to test your understanding of Cartopy? Take the interactive quiz to assess your knowledge of map projections, coordinate systems, and climate data visualization.
 
+[Take the Cartopy Quiz →](../quizzes/cartopy-quiz.md){ .md-button .md-button--primary }
+
+---
+
+## 📚 Summary
+
+In this tutorial, you've learned:
+
+✅ **Map Projections** - Understanding different projections and their use cases  
+✅ **GeoAxes Fundamentals** - Creating maps with projection parameter  
+✅ **Transform vs Projection** - Correctly specifying data and display coordinate systems  
+✅ **Common Projections** - PlateCarree, LambertConformal, Robinson, Orthographic  
+✅ **Regional Mapping** - Creating focused maps for specific regions (e.g., Ethiopia)  
+✅ **Map Features** - Adding coastlines, borders, land, ocean with Natural Earth  
+✅ **Gridlines** - Adding and customizing gridlines and tick labels  
+✅ **Shapefiles** - Reading and plotting Natural Earth shapefiles  
+✅ **Data Overlay** - Combining climate data with cartographic features  
+✅ **Advanced Layouts** - Creating multi-panel maps with subplots
+
+---
+
+## 🔗 Additional Resources
+
+- [Cartopy Official Documentation](https://scitools.org.uk/cartopy/docs/latest/)
+- [Cartopy Gallery](https://scitools.org.uk/cartopy/docs/latest/gallery/index.html)
+- [Map Projections Guide](https://proj.org/)
+- [Natural Earth Data](https://www.naturalearthdata.com/)
+- [PROJ Documentation](https://proj.org/index.html)
+- [Understanding Map Projections](https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/gcs_vs_pcs/)

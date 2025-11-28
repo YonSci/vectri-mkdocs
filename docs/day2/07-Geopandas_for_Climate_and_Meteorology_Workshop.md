@@ -1726,3 +1726,34 @@ plt.show()
 ```
 
 ## 📝 Test Your Knowledge
+
+Ready to test your understanding of GeoPandas? Take the interactive quiz to assess your knowledge of geospatial data handling, spatial operations, and climate data integration.
+
+[Take the GeoPandas Quiz →](../quizzes/geopandas-quiz.md){ .md-button .md-button--primary }
+
+---
+
+## 📚 Summary
+
+In this tutorial, you've learned:
+
+✅ **GeoPandas Fundamentals** - GeoDataFrames, geometry columns, and CRS  
+✅ **Data Creation** - Creating spatial data from coordinates  
+✅ **Visualization** - Plotting maps and spatial data  
+✅ **Spatial Operations** - Buffers, dissolve, overlay, spatial joins  
+✅ **CRS Management** - Coordinate system transformations and reprojection  
+✅ **Climate Data Integration** - Extracting point data from NetCDF files  
+✅ **Masking** - Using shapefiles to mask climate data with salem  
+✅ **File I/O** - Reading and writing shapefiles and GeoJSON  
+✅ **Advanced Visualization** - Integration with Cartopy for professional maps
+
+---
+
+## 🔗 Additional Resources
+
+- [GeoPandas Official Documentation](https://geopandas.org/)
+- [GeoPandas User Guide](https://geopandas.org/en/stable/getting_started.html)
+- [Shapely Documentation](https://shapely.readthedocs.io/)
+- [Rioxarray Documentation](https://corteva.github.io/rioxarray/)
+- [Salem Documentation](https://salem.readthedocs.io/)
+- [Coordinate Reference Systems Guide](https://epsg.io/)

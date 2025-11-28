@@ -209,6 +209,9 @@ nav:
       - Python Basics Quiz: quizzes/python-basics-quiz.md
       - NumPy Quiz: quizzes/numpy-quiz.md
       - Pandas Quiz: quizzes/pandas-quiz.md
+      - Matplotlib Quiz: quizzes/matplotlib-quiz.md
+      - GeoPandas Quiz: quizzes/geopandas-quiz.md
+      - Cartopy Quiz: quizzes/cartopy-quiz.md
       - Xarray Quiz: quizzes/xarray-interactive.md
   - Collaboration: collaboration.md
   - Resources: resources.md
