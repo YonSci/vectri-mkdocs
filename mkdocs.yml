@@ -197,6 +197,8 @@ nav:
       - Xarray: day2/06-Xarray_for_Climate_and_Meteorology_Workshop.md
       - Cartopy: day2/07-Geopandas_for_Climate_and_Meteorology_Workshop.md
       - Geopandas: day2/08-Cartopy_for_Climate_and_Meteorology_Workshop.md
+      - Climate Data Downloading (Data acquisition) : day2/09-climate_data_access_and_extraction.md
+      - CHIRPS Data Download: day2/10-download_chirps.md
   - Assessments:
       - Overview: assessments.md
       - VECTRI Introduction Quiz: quizzes/vectri-intro-quiz.md
