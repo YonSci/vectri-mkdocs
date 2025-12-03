@@ -78,9 +78,9 @@ By the end of this training, participants will be able to:
 - **Climate:** 
     - Rainfall 
         - Historical: CHIRPS, ARC2, TAMSAT
-        - Near-real-timeL CHIRPS-GEFS, NCEP-GFS, ECMWF HRES
-        - Sub-seasonal: ECMWF S2S
-        - Seasonal: ECMWF SEAS5, NCEP CFSv2, NMME
+        - Near-real-time: CHIRPS-GEFS, NCEP-GFS, ECMWF HRES
+        - Sub-seasonal: ECMWF S2S (WMO S2S database)
+        - Seasonal: ECMWF seasonal / extended-range (C3S)
         - Long-term projections: CMIP6, ISIMIP3b, CHC-CMIP6, Regional products (e.g. CORDEX, CHC-CMIP6)
 
     - Temperature:

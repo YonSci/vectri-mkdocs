@@ -1,5 +1,5 @@
 site_name: Climate-Driven Malaria Modeling with VECTRI
-site_description: One-week intensive training workshop on climate-driven malaria modeling using VECTRI (Dec 15–19, 2025) for East African practitioners
+site_description: One-week intensive training workshop on climate-driven malaria modeling using VECTRI (Dec 8–12, 2025) for East African practitioners
 site_author: Yonas Mersha
 site_url: https://vectri-workshop-2025.netlify.app
 
@@ -199,6 +199,8 @@ nav:
       - Geopandas: day2/08-Cartopy_for_Climate_and_Meteorology_Workshop.md
       - Climate Data Downloading (Data acquisition) : day2/09-climate_data_access_and_extraction.md
       - CHIRPS Data Download: day2/10-download_chirps.md
+      - ARC2 Data Download: day2/11-download_arc2.md
+      - TAMSAT Data Download: day2/12-download_tamsat.md
   - Assessments:
       - Overview: assessments.md
       - VECTRI Introduction Quiz: quizzes/vectri-intro-quiz.md
