@@ -77,23 +77,23 @@ By the end of this training, participants will be able to:
 
 - **Climate:** 
     - Rainfall 
-        - Historical: CHIRPS, ARC2, TAMSAT
-        - Near-real-time: CHIRPS-GEFS, NCEP-GFS, ECMWF HRES
-        - Sub-seasonal: ECMWF S2S (WMO S2S database)
-        - Seasonal: ECMWF seasonal / extended-range (C3S)
-        - Long-term projections: CMIP6, ISIMIP3b, CHC-CMIP6, Regional products (e.g. CORDEX, CHC-CMIP6)
+        - Historical: **[CHIRPS](scripts/download_chirps.py)**, **[ARC2](scripts/download_arc2.py)**, **[TAMSAT](scripts/download_tamsatpy)**
+        - Near-real-time: **[CHIRPS-GEFS](scripts/download_gfs_precipitation_forecast.py)**, **[ECMWF HRES]()**, NCEP-GFS
+        - Sub-seasonal: **[ECMWF S2S (WMO S2S database)]()**
+        - Seasonal: **[ECMWF seasonal / extended-range (C3S)]()**
+        - Long-term projections: **[CHC-CMIP6]()**, CMIP6, ISIMIP3b, Regional products (e.g. CORDEX)
 
     - Temperature:
-        - Historical: ERA5/ERA5-Land
-        - Near-real-time: NCEP-GFS, ECMWF HRES
-        - Sub-seasonal: ECMWF S2S
-        - Seasonal: ECMWF SEAS5, NCEP CFSv2, NMME
-        - Long-term projections: ISIMIP3b (CMIP6-based)	
+        - Historical: **CHIRTS**, **ERA5**, **ERA5-Land** 
+        - Near-real-time: **NCEP-GFS**, **ECMWF HRES**
+        - Sub-seasonal: **ECMWF S2S**
+        - Seasonal: **ECMWF SEAS5**, NCEP CFSv2, NMME
+        - Long-term projections: **CHC-CMIP6**, CMIP6, ISIMIP3b, Regional products (e.g. CORDEX)
 
 - **Population data:** 
-    - AFRIPOP
-    - GRUMP
-    - WorldPop/HRSL
+    - **AFRIPOP** 
+    - **GRUMP** 
+    - **WorldPop/HRSL** 
   
 - **Geographic:** 
     - Administrative boundaries (shapefiles) GADM/FAO GAUL

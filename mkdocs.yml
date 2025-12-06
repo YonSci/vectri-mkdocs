@@ -201,6 +201,16 @@ nav:
       - CHIRPS Data Download: day2/10-download_chirps.md
       - ARC2 Data Download: day2/11-download_arc2.md
       - TAMSAT Data Download: day2/12-download_tamsat.md
+      - GFS Precipitation Forecast: day2/13-download_gfs_precipitation_forecast.md
+      - GFS Temperature Forecast: day2/14-download_gfs_temp_forecast.md
+      - ECMWF HRES Precipitation: day2/15-download_ecmwf_hres_precip.md
+      - ECMWF HRES Temperature: day2/15-download_ecmwf_hres_temp.md
+      - ECMWF S2S Precipitation: day2/16-download_ecmwf_s2s_tp_daily.md
+      - ECMWF S2S Temperature: day2/17-download_ecmwf_s2s_t2m_daily.md
+      - ECMWF S2S Ensemble Precipitation: day2/18-download_ecmwf_s2s_tp_daily_ensemble.md
+      - ECMWF S2S Ensemble Temperature: day2/19-download_ecmwf_s2s_t2m_daily_ensemble.md
+      - CHC-CMIP6 Precipitation: day2/20-download_chc_cmip6_precip_daily.md
+      - CHC-CMIP6 Temperature: day2/21-download_chc_cmip6_temp_daily.md
   - Assessments:
       - Overview: assessments.md
       - VECTRI Introduction Quiz: quizzes/vectri-intro-quiz.md
