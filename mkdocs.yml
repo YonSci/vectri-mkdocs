@@ -211,6 +211,9 @@ nav:
       - ECMWF S2S Ensemble Temperature: day2/19-download_ecmwf_s2s_t2m_daily_ensemble.md
       - CHC-CMIP6 Precipitation: day2/20-download_chc_cmip6_precip_daily.md
       - CHC-CMIP6 Temperature: day2/21-download_chc_cmip6_temp_daily.md
+      - CHIRTS Daily Temperature: day2/22-download_chirts_daily.md
+      - ERA5-Land Temperature: day2/23-download_era5_land_temp_daily.md
+      - ERA5 Temperature: day2/24-download_era5_temp_daily.md
   - Assessments:
       - Overview: assessments.md
       - VECTRI Introduction Quiz: quizzes/vectri-intro-quiz.md

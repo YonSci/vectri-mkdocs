@@ -78,27 +78,28 @@ By the end of this training, participants will be able to:
 - **Climate:** 
     - Rainfall 
         - Historical: **[CHIRPS](scripts/download_chirps.py)**, **[ARC2](scripts/download_arc2.py)**, **[TAMSAT](scripts/download_tamsatpy)**
-        - Near-real-time: **[CHIRPS-GEFS](scripts/download_gfs_precipitation_forecast.py)**, **[ECMWF HRES]()**, NCEP-GFS
-        - Sub-seasonal: **[ECMWF S2S (WMO S2S database)]()**
-        - Seasonal: **[ECMWF seasonal / extended-range (C3S)]()**
-        - Long-term projections: **[CHC-CMIP6]()**, CMIP6, ISIMIP3b, Regional products (e.g. CORDEX)
+        - Near-real-time: **[CHIRPS-GEFS](scripts/download_gfs_precipitation_forecast.py)**, **[ECMWF HRES](scripts/download_ecmwf-hres_precip.py)**, NCEP-GFS
+        - Sub-seasonal: **[ECMWF S2S](scripts/download_ecmwf-s2s-precip.py)**, **[ECMWF S2S Ensemble](scripts/download_ecmwf_s2s_precip_daily_ensemble.py)**
+        - Seasonal: **[ECMWF Seasonal (C3S)](scripts/download_c3s_seasonal_precip_ensmean_daily.py)** 
+        - Long-term projections: **[CHC-CMIP6](scripts/download_chc_cmip6_precip_daily.py)**, CMIP6, ISIMIP3b, Regional products (e.g. CORDEX)
 
     - Temperature:
-        - Historical: **CHIRTS**, **ERA5**, **ERA5-Land** 
-        - Near-real-time: **NCEP-GFS**, **ECMWF HRES**
-        - Sub-seasonal: **ECMWF S2S**
-        - Seasonal: **ECMWF SEAS5**, NCEP CFSv2, NMME
-        - Long-term projections: **CHC-CMIP6**, CMIP6, ISIMIP3b, Regional products (e.g. CORDEX)
+        - Historical: **[CHIRTS](scripts/download_chirts.py)**, **[ERA5-Land](scripts/download_era5-land-temp.py)**, **[ERA5](scripts/download_era5-temp.py)**  
+        - Near-real-time: **[NCEP-GFS](scripts/download_gfs_temp_forecast.py)**, **[ECMWF HRES](scripts/download_ecmwf-hres_temp.py)**
+        - Sub-seasonal: **[ECMWF S2S](scripts/download_ecmwf-s2s-temp.py)**, **[ECMWF S2S Ensemble](scripts/download_ecmwf_s2s_temp_daily_ensemble.py)**
+        - Seasonal: **[ECMWF Seasonal (C3S)](scripts/download_c3s_seasonal_temp_ensmean_daily.py)**, NCEP CFSv2, NMME
+        - Long-term projections: **[CHC-CMIP6](scripts/download_chc_cmip6_temp_daily.py)**, CMIP6, ISIMIP3b, Regional products (e.g. CORDEX)
 
 - **Population data:** 
-    - **AFRIPOP** 
-    - **GRUMP** 
-    - **WorldPop/HRSL** 
+    - **[AfriPop (WorldPop)](scripts/download_afripop_worldpop.py)** 
+    - **[WorldPop Projections](scripts/download_harmonized_world_soil_database.py)**
+
+
+- **Soil Type/Soil Fraction:**
+    - **[Harmonized World Soil Database (HWSD)](scripts/download_harmonized_world_soil_database.py)**
   
 - **Geographic:** 
     - Administrative boundaries (shapefiles) GADM/FAO GAUL
-    - Land cover data
-    - Soil Type Map
 
 - **Malaria:** EPHI confirmed case data
 

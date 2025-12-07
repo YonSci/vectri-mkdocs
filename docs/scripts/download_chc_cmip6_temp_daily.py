@@ -1,0 +1,545 @@
+#!/usr/bin/env python
+"""
+Download CHC-CMIP6 daily temperature GeoTIFFs (Tmax & Tmin),
+clip to a bounding box, convert to NetCDF, and compute
+daily average temperature:
+
+    tavg = (tmax + tmin) / 2
+
+Expected CHC-CMIP6 structure:
+  https://data.chc.ucsb.edu/products/CHC_CMIP6/<period_tag>/<Tmax|Tmin>/<year>/
+Files:
+  <period_tag>.Tmax.YYYY.MM.DD.tif
+  <period_tag>.Tmin.YYYY.MM.DD.tif
+
+Outputs:
+  One NetCDF per year per period tag with dims (time, lat, lon)
+  Variables:
+    - tmax (degC)
+    - tmin (degC)
+    - tavg (degC)  [computed]
+
+Examples
+--------
+# Save tmax, tmin, and tavg
+python download_chc_cmip6_temp_daily.py \
+  --period-tags 2030_SSP245 2030_SSP585 \
+  --start-year 1983 --end-year 1984 \
+  --outdir data/CHC_CMIP6 \
+  --lat-min 3 --lat-max 15 --lon-min 33 --lon-max 48
+
+# Save ONLY tavg
+python download_chc_cmip6_temp_daily.py \
+  --period-tags 2030_SSP245 \
+  --start-year 1983 --end-year 1983 \
+  --outdir data/CHC_CMIP6 \
+  --lat-min 3 --lat-max 15 --lon-min 33 --lon-max 48 \
+  --tavg-only
+
+Notes
+-----
+- CHC/CHIRTS temperature is typically in degC.
+  A small heuristic is included: if values look like Kelvin (>100),
+  they are converted to degC.
+- The script skips a day if either Tmax or Tmin is missing.
+"""
+
+import argparse
+import calendar
+import os
+import time
+from pathlib import Path
+from typing import Iterable, Tuple, List, Optional
+
+import numpy as np
+import requests
+import rioxarray
+import xarray as xr
+
+BASE_URL = "https://data.chc.ucsb.edu/products/CHC_CMIP6"
+
+
+# -----------------------------------------------------------------------------#
+# Utilities
+# -----------------------------------------------------------------------------#
+
+def iter_dates(year: int) -> Iterable[Tuple[int, int, int]]:
+    """Yield (year, month, day) for every day in a given year."""
+    for month in range(1, 13):
+        ndays = calendar.monthrange(year, month)[1]
+        for day in range(1, ndays + 1):
+            yield year, month, day
+
+
+def log(msg: str) -> None:
+    """Print info message."""
+    print(f"[info] {msg}")
+
+
+def warn(msg: str) -> None:
+    """Print warning message."""
+    print(f"[warn] {msg}")
+
+
+def download_file(url: str, dest_path: str, max_retries: int = 5, verbose: bool = False) -> bool:
+    """
+    Download file from URL to dest_path with retry logic.
+
+    Returns True on success, False otherwise.
+    """
+    for attempt in range(1, max_retries + 1):
+        try:
+            r = requests.get(url, stream=True, timeout=60)
+            if r.status_code == 200:
+                with open(dest_path, "wb") as f:
+                    for chunk in r.iter_content(1024 * 1024):
+                        if chunk:
+                            f.write(chunk)
+                if verbose:
+                    print(f"[ok] Downloaded {os.path.basename(dest_path)}")
+                return True
+            else:
+                if verbose:
+                    warn(f"HTTP {r.status_code} for {url}")
+        except Exception as exc:
+            if verbose:
+                warn(f"Failed to download {url}: {exc}")
+
+        if attempt < max_retries:
+            sleep_s = min(10 * attempt, 60)
+            time.sleep(sleep_s)
+
+    return False
+
+
+def subset_bbox(
+    da: xr.DataArray,
+    lat_min: float,
+    lat_max: float,
+    lon_min: float,
+    lon_max: float,
+) -> xr.DataArray:
+    """
+    Subset DataArray to bounding box.
+
+    Handles both ascending and descending latitude.
+    """
+    da = da.rio.write_crs("EPSG:4326", inplace=True)
+
+    # Handle y ascending/descending
+    y0 = float(da.y.values[0])
+    y1 = float(da.y.values[-1])
+    if y0 > y1:
+        lat_slice = slice(lat_max, lat_min)
+    else:
+        lat_slice = slice(lat_min, lat_max)
+
+    return da.sel(y=lat_slice, x=slice(lon_min, lon_max))
+
+
+def rename_xy_to_latlon(da: xr.DataArray) -> xr.DataArray:
+    """Rename raster dims/coords from x/y to lon/lat."""
+    rename_dims = {}
+    if "x" in da.dims:
+        rename_dims["x"] = "lon"
+    if "y" in da.dims:
+        rename_dims["y"] = "lat"
+    if rename_dims:
+        da = da.rename(rename_dims)
+
+    rename_coords = {}
+    if "x" in da.coords:
+        rename_coords["x"] = "lon"
+    if "y" in da.coords:
+        rename_coords["y"] = "lat"
+    if rename_coords:
+        da = da.rename(rename_coords)
+
+    return da
+
+
+def maybe_kelvin_to_celsius(da: xr.DataArray) -> xr.DataArray:
+    """
+    Heuristic unit fix: if values look like Kelvin (>100), convert to °C.
+    """
+    try:
+        vmax = float(da.max().values)
+        # Daily air temperature in degC should never exceed ~70 realistically.
+        if vmax > 100:
+            da = da - 273.15
+            log("Converted temperature from Kelvin to Celsius")
+    except Exception:
+        pass
+    return da
+
+
+def standardize_temp_da(da: xr.DataArray, name: str) -> xr.DataArray:
+    """
+    Standardize temperature variable name and metadata.
+
+    Parameters
+    ----------
+    da : xr.DataArray
+        Temperature data
+    name : str
+        Variable name: "tmax", "tmin", or "tavg"
+    """
+    da = maybe_kelvin_to_celsius(da)
+    da.name = name
+    da.attrs["units"] = "degC"
+    da.attrs["standard_name"] = "air_temperature"
+
+    if name == "tmax":
+        da.attrs["long_name"] = "Daily maximum 2m air temperature"
+    elif name == "tmin":
+        da.attrs["long_name"] = "Daily minimum 2m air temperature"
+    elif name == "tavg":
+        da.attrs["long_name"] = "Daily average 2m air temperature"
+        da.attrs["description"] = "Computed as (tmax + tmin) / 2"
+    else:
+        da.attrs["long_name"] = "Daily temperature"
+
+    return da
+
+
+def combine_and_save_year(
+    tmax_list: List[xr.DataArray],
+    tmin_list: List[xr.DataArray],
+    tavg_list: List[xr.DataArray],
+    out_path: Path,
+    tavg_only: bool = False,
+    period_tag: str = "",
+):
+    """
+    Combine daily DataArrays into a single NetCDF for the year.
+
+    Parameters
+    ----------
+    tmax_list : list
+        List of daily Tmax DataArrays
+    tmin_list : list
+        List of daily Tmin DataArrays
+    tavg_list : list
+        List of daily Tavg DataArrays
+    out_path : Path
+        Output NetCDF path
+    tavg_only : bool
+        If True, only save Tavg (smaller file)
+    period_tag : str
+        Scenario name for metadata
+    """
+    if not tavg_list:
+        warn(f"No daily data to save for {out_path.name}")
+        return
+
+    tavg = xr.concat(tavg_list, dim="time").sortby("time")
+
+    if tavg_only:
+        ds = tavg.to_dataset(name="tavg")
+        varnames = ["tavg"]
+    else:
+        tmax = xr.concat(tmax_list, dim="time").sortby("time")
+        tmin = xr.concat(tmin_list, dim="time").sortby("time")
+
+        # Align defensively
+        tmax, tmin, tavg = xr.align(tmax, tmin, tavg, join="exact")
+
+        ds = xr.Dataset({"tmax": tmax, "tmin": tmin, "tavg": tavg})
+        varnames = ["tmax", "tmin", "tavg"]
+
+    # Add global attributes
+    ds.attrs["title"] = "CHC-CMIP6 Daily Temperature"
+    ds.attrs["source"] = "Climate Hazards Center, UC Santa Barbara"
+    ds.attrs["institution"] = "CHC-UCSB"
+    ds.attrs["scenario"] = period_tag
+    ds.attrs["references"] = "https://data.chc.ucsb.edu/products/CHC_CMIP6"
+    ds.attrs["history"] = "Downloaded and processed with download_chc_cmip6_temp_daily.py"
+
+    # Compression encoding
+    encoding = {
+        v: {"zlib": True, "complevel": 4, "dtype": "float32"}
+        for v in varnames
+    }
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    ds.to_netcdf(out_path, encoding=encoding)
+    print(f"[ok] Saved NetCDF → {out_path}")
+
+
+# -----------------------------------------------------------------------------#
+# Core processing
+# -----------------------------------------------------------------------------#
+
+def process_period(
+    period_tag: str,
+    start_year: int,
+    end_year: int,
+    outdir: Path,
+    lat_min: float,
+    lat_max: float,
+    lon_min: float,
+    lon_max: float,
+    tavg_only: bool = False,
+    verbose: bool = False,
+):
+    """
+    Download + process CHC-CMIP6 daily Tmax/Tmin for one period tag
+    and write one NetCDF per year including tavg.
+    """
+    tmp_root = outdir / "_tmp_chc_cmip6_temp"
+    tmp_root.mkdir(parents=True, exist_ok=True)
+
+    for year in range(start_year, end_year + 1):
+        print(f"\n{'='*60}")
+        log(f"Processing {period_tag} temperature {year}")
+        print(f"{'='*60}")
+
+        tmax_list: List[xr.DataArray] = []
+        tmin_list: List[xr.DataArray] = []
+        tavg_list: List[xr.DataArray] = []
+
+        success_count = 0
+        fail_count = 0
+
+        tmax_year_url = f"{BASE_URL}/{period_tag}/Tmax/{year}"
+        tmin_year_url = f"{BASE_URL}/{period_tag}/Tmin/{year}"
+
+        for y, m, d in iter_dates(year):
+            fname_max = f"{period_tag}.Tmax.{y}.{m:02d}.{d:02d}.tif"
+            fname_min = f"{period_tag}.Tmin.{y}.{m:02d}.{d:02d}.tif"
+
+            url_max = f"{tmax_year_url}/{fname_max}"
+            url_min = f"{tmin_year_url}/{fname_min}"
+
+            tmp_max = tmp_root / fname_max
+            tmp_min = tmp_root / fname_min
+
+            # Download both files
+            ok_max = download_file(url_max, str(tmp_max), verbose=verbose)
+            ok_min = download_file(url_min, str(tmp_min), verbose=verbose)
+
+            if not (ok_max and ok_min):
+                # Clean any partial download
+                for p in (tmp_max, tmp_min):
+                    if p.exists():
+                        try:
+                            p.unlink()
+                        except Exception:
+                            pass
+                fail_count += 1
+                continue
+
+            try:
+                # Open GeoTIFFs
+                da_max = rioxarray.open_rasterio(tmp_max).squeeze(drop=True)
+                da_min = rioxarray.open_rasterio(tmp_min).squeeze(drop=True)
+
+                # Subset to bounding box
+                da_max = subset_bbox(da_max, lat_min, lat_max, lon_min, lon_max)
+                da_min = subset_bbox(da_min, lat_min, lat_max, lon_min, lon_max)
+
+                # Rename coordinates
+                da_max = rename_xy_to_latlon(da_max)
+                da_min = rename_xy_to_latlon(da_min)
+
+                # Standardize and load into memory
+                da_max = standardize_temp_da(da_max, "tmax").load()
+                da_min = standardize_temp_da(da_min, "tmin").load()
+
+                # Align grids & coords
+                da_max, da_min = xr.align(da_max, da_min, join="exact")
+
+                # Compute average temperature
+                da_avg = (da_max + da_min) / 2.0
+                da_avg = standardize_temp_da(da_avg, "tavg")
+
+                # Add time dimension
+                time_val = np.datetime64(f"{y:04d}-{m:02d}-{d:02d}")
+                da_max = da_max.expand_dims(time=[time_val])
+                da_min = da_min.expand_dims(time=[time_val])
+                da_avg = da_avg.expand_dims(time=[time_val])
+
+                tmax_list.append(da_max)
+                tmin_list.append(da_min)
+                tavg_list.append(da_avg)
+
+                success_count += 1
+
+                # Close handles if supported
+                try:
+                    da_max.rio.close()
+                    da_min.rio.close()
+                except Exception:
+                    pass
+
+            except Exception as exc:
+                warn(f"Failed to process {fname_max} / {fname_min}: {exc}")
+                fail_count += 1
+
+            finally:
+                # Remove temp files
+                for p in (tmp_max, tmp_min):
+                    try:
+                        if p.exists():
+                            p.unlink()
+                    except Exception:
+                        pass
+
+        # Summary
+        total_days = 366 if calendar.isleap(year) else 365
+        print(f"\n[summary] {period_tag} {year}: {success_count}/{total_days} days processed")
+
+        if not tavg_list:
+            warn(f"No valid data for {period_tag} {year}")
+            continue
+
+        # Output path
+        if tavg_only:
+            out_path = outdir / period_tag / "temperature" / f"{period_tag}_Tavg_{year}_daily.nc"
+        else:
+            out_path = outdir / period_tag / "temperature" / f"{period_tag}_Tmax_Tmin_Tavg_{year}_daily.nc"
+
+        combine_and_save_year(
+            tmax_list=tmax_list,
+            tmin_list=tmin_list,
+            tavg_list=tavg_list,
+            out_path=out_path,
+            tavg_only=tavg_only,
+            period_tag=period_tag,
+        )
+
+
+def process_all_periods(
+    period_tags: list,
+    start_year: int,
+    end_year: int,
+    outdir: Path,
+    lat_min: float,
+    lat_max: float,
+    lon_min: float,
+    lon_max: float,
+    tavg_only: bool = False,
+    verbose: bool = False,
+):
+    """Process multiple CHC-CMIP6 periods/scenarios."""
+    print(f"\n{'#'*60}")
+    print(f"# CHC-CMIP6 Daily Temperature Download")
+    print(f"# Scenarios: {', '.join(period_tags)}")
+    print(f"# Years: {start_year} to {end_year}")
+    print(f"# Region: lat [{lat_min}, {lat_max}], lon [{lon_min}, {lon_max}]")
+    print(f"# Output: {'Tavg only' if tavg_only else 'Tmax, Tmin, Tavg'}")
+    print(f"{'#'*60}\n")
+
+    for tag in period_tags:
+        process_period(
+            period_tag=tag,
+            start_year=start_year,
+            end_year=end_year,
+            outdir=outdir,
+            lat_min=lat_min,
+            lat_max=lat_max,
+            lon_min=lon_min,
+            lon_max=lon_max,
+            tavg_only=tavg_only,
+            verbose=verbose,
+        )
+
+    print(f"\n{'#'*60}")
+    print(f"# Download complete!")
+    print(f"# Output directory: {outdir}")
+    print(f"{'#'*60}\n")
+
+
+# -----------------------------------------------------------------------------#
+# CLI
+# -----------------------------------------------------------------------------#
+
+def parse_args():
+    p = argparse.ArgumentParser(
+        description=(
+            "Download CHC-CMIP6 daily temperature (Tmax & Tmin), "
+            "subset to a bounding box, convert to NetCDF, "
+            "and compute daily average temperature."
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # All temperature variables
+  python download_chc_cmip6_temp_daily.py \\
+      --period-tags 2030_SSP245 \\
+      --start-year 1983 --end-year 1983 \\
+      --outdir data/CHC_CMIP6 \\
+      --lat-min 3 --lat-max 15 --lon-min 33 --lon-max 48
+
+  # Only average temperature (smaller files)
+  python download_chc_cmip6_temp_daily.py \\
+      --period-tags 2030_SSP245 \\
+      --start-year 1983 --end-year 1983 \\
+      --outdir data/CHC_CMIP6 \\
+      --lat-min 3 --lat-max 15 --lon-min 33 --lon-max 48 \\
+      --tavg-only
+        """
+    )
+
+    p.add_argument(
+        "--period-tags",
+        nargs="+",
+        required=True,
+        help="Period tags: 2030_SSP245 2030_SSP585 2050_SSP245 2050_SSP585 etc.",
+    )
+    p.add_argument(
+        "--start-year", 
+        type=int, 
+        default=1983,
+        help="Start year (default: 1983)"
+    )
+    p.add_argument(
+        "--end-year", 
+        type=int, 
+        default=1983,
+        help="End year (default: 1983)"
+    )
+    p.add_argument(
+        "--outdir", 
+        required=True,
+        help="Output directory for NetCDF files"
+    )
+    p.add_argument("--lat-min", type=float, default=3.0, help="Min latitude")
+    p.add_argument("--lat-max", type=float, default=15.0, help="Max latitude")
+    p.add_argument("--lon-min", type=float, default=33.0, help="Min longitude")
+    p.add_argument("--lon-max", type=float, default=48.0, help="Max longitude")
+    p.add_argument(
+        "--tavg-only",
+        action="store_true",
+        help="Output only Tavg (drop Tmax/Tmin from NetCDF for smaller files)",
+    )
+    p.add_argument(
+        "--verbose", "-v",
+        action="store_true",
+        help="Print verbose download messages"
+    )
+
+    return p.parse_args()
+
+
+def main():
+    args = parse_args()
+    outdir = Path(args.outdir)
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    process_all_periods(
+        period_tags=args.period_tags,
+        start_year=args.start_year,
+        end_year=args.end_year,
+        outdir=outdir,
+        lat_min=args.lat_min,
+        lat_max=args.lat_max,
+        lon_min=args.lon_min,
+        lon_max=args.lon_max,
+        tavg_only=args.tavg_only,
+        verbose=args.verbose,
+    )
+
+
+if __name__ == "__main__":
+    main()
