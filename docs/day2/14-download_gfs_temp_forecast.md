@@ -1138,7 +1138,7 @@ ds_combined.to_netcdf('data/gfs_combined_ethiopia_10day.nc')
 
 ### Related Tutorials
 
-- [GFS Precipitation Forecast](13-download_gfs_precipitation_forecast.md) - Download precipitation data
+- [GFS Precipitation Forecast](13-download_gfs_precip_forecast.md) - Download precipitation data
 - [CHIRPS Rainfall](10-download_chirps.md) - Historical rainfall observations
 - [ERA5 Reanalysis](#) - Historical temperature and precipitation
 
@@ -1173,7 +1173,7 @@ ds_combined.to_netcdf('data/gfs_combined_ethiopia_10day.nc')
     Get matching precipitation forecasts  
     Combine for complete weather  
     
-    → [GFS Precipitation](13-download_gfs_precipitation_forecast.md)
+    → [GFS Precipitation](13-download_gfs_precip_forecast.md)
 
 -   :material-bug: **VECTRI Integration**
     

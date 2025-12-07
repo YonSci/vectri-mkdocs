@@ -1155,7 +1155,7 @@ ds_combined.to_netcdf('ecmwf_hres_combined.nc')
     Multi-model comparison  
     Ensemble-like analysis  
     
-    → [GFS Precipitation](13-download_gfs_precipitation_forecast.md)
+    → [GFS Precipitation](13-download_gfs_precip_forecast.md)
 
 -   :material-bug: **VECTRI Integration**
     

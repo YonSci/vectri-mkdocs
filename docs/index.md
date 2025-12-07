@@ -76,8 +76,8 @@ By the end of this training, participants will be able to:
 
 - **Climate:** 
     - Rainfall 
-        - Historical: **[CHIRPS](scripts/download_chirps.py)**, **[ARC2](scripts/download_arc2.py)**, **[TAMSAT](scripts/download_tamsatpy)**
-        - Near-real-time: **[CHIRPS-GEFS](scripts/download_gfs_precipitation_forecast.py)**, **[ECMWF HRES](scripts/download_ecmwf-hres_precip.py)**, NCEP-GFS
+        - Historical: **[CHIRPS](scripts/download_chirps.py)**, **[ARC2](scripts/download_arc2.py)**, **[TAMSAT](scripts/download_tamsat.py)**
+        - Near-real-time: **[NCEP-GFS](scripts/download_gfs_precip_forecast.py)**, **[ECMWF HRES](scripts/download_ecmwf-hres_precip.py)**
         - Sub-seasonal: **[ECMWF S2S](scripts/download_ecmwf-s2s-precip.py)**, **[ECMWF S2S Ensemble](scripts/download_ecmwf_s2s_precip_daily_ensemble.py)**
         - Seasonal: **[ECMWF Seasonal (C3S)](scripts/download_c3s_seasonal_precip_ensmean_daily.py)** 
         - Long-term projections: **[CHC-CMIP6](scripts/download_chc_cmip6_precip_daily.py)**, CMIP6, ISIMIP3b, Regional products (e.g. CORDEX)

@@ -806,8 +806,8 @@ Test your understanding of VECTRI's biological and physical components with this
 
 ## 📚 Additional Resources
 
-- [VECTRI Model Components Guide](../day1/03-vectri_model_components_larvae_to_hydrology.md)
-- [VECTRI Introduction](../day1/01-vectri-intro.md)
+- [VECTRI Model Components Guide](../day1/06-vectri_model_components_larvae_to_hydrology.md)
+- [VECTRI Introduction](../day1/03-vectri-intro.md)
 - Original VECTRI publications (Tompkins & Ermert 2013, and references therein)
 - Workshop Lab Exercises
 

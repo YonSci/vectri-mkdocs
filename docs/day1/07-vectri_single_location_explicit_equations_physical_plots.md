@@ -945,7 +945,7 @@ In this tutorial, you've learned:
 
 ## 🔗 Additional Resources
 
-- [VECTRI Model Components Guide](05-vectri_model_components_larvae_to_hydrology.md)
+- [VECTRI Model Components Guide](06-vectri_model_components_larvae_to_hydrology.md)
 - The VECTRI online documentation at [VECTRI](https://users.ictp.it/~tompkins/vectri/documentation/)   
 - The PDF manual `VECTRI_manual_v1.6.pdf` [VECTRI PDF manual](../pdfs/VECTRI_manual_v1.6.pdf): Introductory sections describing motivation and history.  
 - Tompkins & Ermert (2013) - A regional-scale, high resolution dynamical malaria model

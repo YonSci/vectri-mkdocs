@@ -185,8 +185,8 @@ nav:
       - Malaria-Climate Link: day1/01-theory_lecture.md
       - Use Case: day1/02-use-case.md
       - VECTRI Introduction: day1/03-vectri-intro.md
-      - Setup: day1/04-setup.md
-      - Basic Linux Commands: day1/05-basic-linux-commands.md
+      - Basic Linux Commands: day1/04-basic-linux-commands.md
+      - Setup: day1/05-setup.md
       - Vectri Model Components: day1/06-vectri_model_components_larvae_to_hydrology.md
       - Vectri Model Components Equations: day1/07-vectri_single_location_explicit_equations_physical_plots.md
       - Python Setup: day2/01-Python_Setup_for_Climate_and_Meteorology_Workshop.md
@@ -201,7 +201,7 @@ nav:
       - CHIRPS Data Download: day2/10-download_chirps.md
       - ARC2 Data Download: day2/11-download_arc2.md
       - TAMSAT Data Download: day2/12-download_tamsat.md
-      - GFS Precipitation Forecast: day2/13-download_gfs_precipitation_forecast.md
+      - GFS Precipitation Forecast: day2/13-download_gfs_precip_forecast.md
       - GFS Temperature Forecast: day2/14-download_gfs_temp_forecast.md
       - ECMWF HRES Precipitation: day2/15-download_ecmwf_hres_precip.md
       - ECMWF HRES Temperature: day2/15-download_ecmwf_hres_temp.md
@@ -215,6 +215,8 @@ nav:
       - ERA5-Land Temperature: day2/23-download_era5_land_temp_daily.md
       - ERA5 Temperature: day2/24-download_era5_temp_daily.md
       - WorldPop Population: day2/25-download_worldpop_population.md
+      - WorldPop Projections: day2/26-download_worldpop_projections.md
+      - HWSD Soil Texture: day2/27-download_hwsd_soil_texture.md
   - Assessments:
       - Overview: assessments.md
       - VECTRI Introduction Quiz: quizzes/vectri-intro-quiz.md
