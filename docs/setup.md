@@ -1,80 +1,13 @@
 # Setup
 
-## 🧬 VECTRI Modular Installation Guide  
-
+## 🧬 VECTRI Installation Guide  
 
 **Target OS:** Ubuntu 22.04 LTS  
-**Purpose:** Install and manage all libraries for the VECTRI malaria model using Lua-based Lmod modules  
+**Purpose:** Install all required libraries and build the VECTRI malaria model  
 
 ---
 
-## 1️⃣ Install Lua and Lmod (Environment Modules)
-
-```bash
-# Create a workspace for source downloads
-cd ~
-mkdir -p ~/download_lib && cd ~/download_lib
-
-sudo apt update
-
-# 1. Install Tcl/Tk (optional utilities some modules still use)
-sudo apt install -y tcl tcl-dev tk tk-dev
-
-# 2. Install Lua and headers (for Lmod)
-sudo apt install -y lua5.3 lua5.3-dev liblua5.3-dev
-
-# 3. Build Lua 5.1.4.9 from source (Lmod’s embedded Lua)
-wget https://sourceforge.net/projects/lmod/files/lua-5.1.4.9.tar.bz2
-tar xf lua-5.1.4.9.tar.bz2 && cd lua-5.1.4.9
-
-./configure --prefix=/opt/apps/lua/5.1.4.9   # installation prefix
-make -j$(nproc)
-sudo make install
-
-# 4. Symlink binaries so lua is found system-wide
-sudo ln -s /opt/apps/lua/5.1.4.9/bin/lua /usr/local/bin/lua
-cd ~
-```
-
-**Configure your shell to find Lua and Lmod**
-
-```bash
-# Append to ~/.bashrc
-echo 'export PATH=/opt/apps/lua/5.1.4.9/bin:$PATH' >> ~/.bashrc
-source ~/.bashrc
-```
-
----
-
-## 2️⃣ Install Lmod (8.7)
-
-```bash
-cd ~/download_lib
-wget https://sourceforge.net/projects/lmod/files/Lmod-8.7.tar.bz2
-tar xf Lmod-8.7.tar.bz2 && cd Lmod-8.7
-
-# Configure and install Lmod into /opt/apps/lmod/8.7
-./configure --prefix=/opt/apps/lmod/8.7
-make -j$(nproc)
-sudo make install
-```
-
-### Activate Lmod for your shell
-
-```bash
-# Add to ~/.bashrc for automatic initialization
-echo 'source /opt/apps/lmod/8.7/init/bash' >> ~/.bashrc
-echo 'export MODULEPATH=/opt/apps/modulefiles/lib:/opt/apps/modulefiles/mpi' >> ~/.bashrc
-source ~/.bashrc
-
-# Verify installation
-module --version
-lmod --version
-```
-
----
-
-## 3️⃣ Set Compilers and Flags
+## 1️⃣ Set Compilers and Flags
 
 ```bash
 which gcc g++ gfortran
@@ -102,9 +35,15 @@ export FCFLAGS="$fallow_argument $boz_argument"
 
 ---
 
-## 4️⃣ Create installation prefix directories
+## 2️⃣ Create Installation Prefix Directories
 
 ```bash
+# Create a workspace for source downloads
+cd ~
+mkdir -p ~/download_lib && cd ~/download_lib
+
+sudo apt update
+
 sudo mkdir -p /opt/apps/libs
 BASE_DIR=/opt/apps/libs
 
@@ -120,7 +59,7 @@ sudo mkdir -p $ZPFX $SPFX $JPFX $HPFX $NPFX
 
 ---
 
-## 5️⃣ Download Sources
+## 3️⃣ Download Sources
 
 ```bash
 cd ~/download_lib
@@ -144,7 +83,7 @@ wget -c -4 https://github.com/Unidata/netcdf-fortran/archive/refs/tags/v4.6.0.ta
 
 ---
 
-## 6️⃣ Build and Install Each Library
+## 4️⃣ Build and Install Each Library
 
 ### 🔹 ZLIB
 ```bash
@@ -214,70 +153,24 @@ cd ..
 
 ---
 
-## 7️⃣ Create Modulefiles
+## 5️⃣ Set Environment Variables
+
+Add the following to your `~/.bashrc` to make the libraries available:
 
 ```bash
-sudo mkdir -p /opt/apps/modulefiles/lib/{zlib,szip,jasper,hdf5,netcdf-c,netcdf-fortran}
+cat <<'EOF' >> ~/.bashrc
+# NetCDF libraries for VECTRI
+export PATH=/opt/apps/libs/netcdf/4.9.0/bin:$PATH
+export LD_LIBRARY_PATH=/opt/apps/libs/netcdf/4.9.0/lib:/opt/apps/libs/hdf5/1.12.2/lib:/opt/apps/libs/zlib/1.2.12/lib:/opt/apps/libs/szip/2.1.1/lib:$LD_LIBRARY_PATH
+export CPATH=/opt/apps/libs/netcdf/4.9.0/include:$CPATH
+EOF
+
+source ~/.bashrc
 ```
 
-Example: `/opt/apps/modulefiles/lib/hdf5/1.12.2.lua`
+### Verify Installation
 
-```lua
-help([[HDF5 1.12.2 (serial build)]])
-whatis("Name: hdf5")
-whatis("Version: 1.12.2")
-
-local root = "/opt/apps/libs/hdf5/1.12.2"
-
-depends_on("zlib/1.2.12")
-depends_on("szip/2.1.1")
-
-prepend_path("PATH",            pathJoin(root, "bin"))
-prepend_path("CPATH",           pathJoin(root, "include"))
-prepend_path("LIBRARY_PATH",    pathJoin(root, "lib"))
-prepend_path("LD_LIBRARY_PATH", pathJoin(root, "lib"))
-prepend_path("PKG_CONFIG_PATH", pathJoin(root, "lib/pkgconfig"))
-setenv("HDF5_HOME", root)
-```
-
-### Example: `/opt/apps/modulefiles/lib/netcdf-c/4.9.0.lua`
-```lua
-help([[NetCDF-C 4.9.0]])
-whatis("Name: netcdf-c")
-whatis("Version: 4.9.0")
-
-local root = "/opt/apps/libs/netcdf/4.9.0"
-depends_on("hdf5/1.12.2")
-
-prepend_path("PATH",            pathJoin(root, "bin"))
-prepend_path("CPATH",           pathJoin(root, "include"))
-prepend_path("LIBRARY_PATH",    pathJoin(root, "lib"))
-prepend_path("LD_LIBRARY_PATH", pathJoin(root, "lib"))
-setenv("NETCDF_C_HOME", root)
-```
-
-### Example: `/opt/apps/modulefiles/lib/netcdf-fortran/4.6.0.lua`
-```lua
-help([[NetCDF-Fortran 4.6.0]])
-whatis("Name: netcdf-fortran")
-whatis("Version: 4.6.0")
-
-local root = "/opt/apps/libs/netcdf/4.9.0"
-depends_on("netcdf-c/4.9.0")
-
-prepend_path("PATH",            pathJoin(root, "bin"))
-prepend_path("CPATH",           pathJoin(root, "include"))
-prepend_path("LIBRARY_PATH",    pathJoin(root, "lib"))
-prepend_path("LD_LIBRARY_PATH", pathJoin(root, "lib"))
-setenv("NETCDF_FORTRAN_HOME", root)
-```
-
-### Load and verify
 ```bash
-module purge
-module use /opt/apps/modulefiles/lib
-module load netcdf-fortran/4.6.0
-
 which nc-config
 which nf-config
 nc-config --version
@@ -286,21 +179,7 @@ nf-config --version
 
 ---
 
-## 8️⃣ Add Paths to `.bashrc`
-
-```bash
-cat <<'EOF' >> ~/.bashrc
-# HPC module system
-source /opt/apps/lmod/8.7/init/bash
-module use /opt/apps/modulefiles/lib /opt/apps/modulefiles/mpi
-EOF
-
-source ~/.bashrc
-```
-
----
-
-## 9️⃣ VECTRI Model Installation (Ref: ICTP Prerequisites)
+## 6️⃣ VECTRI Model Installation
 
 ### Download and build VECTRI
 
@@ -324,34 +203,31 @@ echo $VECTRI
 nc-config --version && nf-config --version
 ```
 
-
 ### Persist across logins
 
-Append to ~/.bashrc (or ~/.bash_profile on some systems):
+Append to `~/.bashrc` (or `~/.bash_profile` on some systems):
 
 ```bash
+cat <<'EOF' >> ~/.bashrc
 export VECTRI="$HOME/vectri"
 export NETCDF_LIB="$(nf-config --flibs)"
 export NETCDF_INCLUDE="$(nf-config --fflags)"
 export FC="$(nf-config --fc)"
+EOF
 
-
-Reload:
 source ~/.bashrc
 ```
 
-
 ### Create a separate workspace and run the simulation  
 
-
-Why separate? Running inside the repo pollutes the git tree and makes future git pull painful. VECTRI’s run wrapper will also try to guard against this.
+Why separate? Running inside the repo pollutes the git tree and makes future git pull painful. VECTRI's run wrapper will also try to guard against this.
 
 ```bash
 cd ~
 
-mkdir -p ~/vectri-run/vectri-demo
+mkdir -p ~/run
 # go to your run workspace
-cd vectri-run/vectri-demo
+cd run
 
 # To get list of command line options
 $VECTRI/vectri
@@ -359,7 +235,6 @@ $VECTRI/vectri
 # Example Simulation
 $VECTRI/vectri -c $VECTRI/data/example_sys5.nc -d $VECTRI/data/example_data.nc
 ```
-
 
 If the model compiles successfully there should then be a number of messages about the options chosen.
 
@@ -371,22 +246,21 @@ You should see:
   
   - The output will show the simulation progress and completion status.
 
-  ![simulation progress and completion status](assets/img/vectri-test-run.png)
+  ![simulation progress and completion status](../assets/img/vectri-test-run.png)
 
   - If your simulation has ended correctly 🎉 and if you type ls, you should find the output file vectri.nc has appeared.
   
-  ![vectri output file](assets/img/vectri-test-dir.png)
-
+  ![vectri output file](../assets/img/vectri-test-dir.png)
 
 ---
 
-## 🔟 Verification and Troubleshooting
+## 7️⃣ Verification and Troubleshooting
 
 - `which nc-config` → `/opt/apps/libs/netcdf/4.9.0/bin/nc-config`  
 - `ldd vectri | grep netcdf` → ensures it links to your local libraries  
-- `module list` → shows all loaded modules  
-- To unload: `module unload netcdf-fortran/4.6.0`
+- Check environment: `echo $LD_LIBRARY_PATH`
+- If libraries not found: verify paths in `~/.bashrc` and `source ~/.bashrc`
 
 ---
 
-### ✅ You now have a fully modular, Lua/Lmod-managed scientific environment for VECTRI on Ubuntu 22.04 LTS.
+### ✅ You now have a fully configured scientific environment for VECTRI on Ubuntu 22.04 LTS.
