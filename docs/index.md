@@ -122,7 +122,7 @@ By the end of this training, participants will be able to:
 
 <div class="facilitators-grid">
   <div class="facilitator-card">
-    <h3>Dr. Addisu Gezahegn</h3>
+    <h3><a href="https://youtu.be/yCuJHWiX3jo?si=K3ds-ZhjMYkHkZpm&t=2" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">Dr. Addisu Gezahegn</a></h3>
     <p class="affiliation">NSF Science and Technology Center, Columbia University</p>
   </div>
 
