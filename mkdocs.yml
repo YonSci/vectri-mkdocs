@@ -214,6 +214,7 @@ nav:
       - CHIRTS Daily Temperature: day2/22-download_chirts_daily.md
       - ERA5-Land Temperature: day2/23-download_era5_land_temp_daily.md
       - ERA5 Temperature: day2/24-download_era5_temp_daily.md
+      - WorldPop Population: day2/25-download_worldpop_population.md
   - Assessments:
       - Overview: assessments.md
       - VECTRI Introduction Quiz: quizzes/vectri-intro-quiz.md

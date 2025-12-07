@@ -31,7 +31,7 @@ It will cover both foundational concepts and hands-on practical applications usi
 
 ## Target Audience
 
-- **EMI hydrology and meteorology team**
+- **EMI health, hydrology and meteorology team**
 - **Masters and PhD students from AAU**
 
 ---
@@ -46,7 +46,6 @@ By the end of this training, participants will be able to:
 4. Create environmental input files (population, land cover) for VECTRI modeling
 5. Conduct spatial and temporal analysis of model outputs to identify malaria transmission hotspots and seasonal patterns
 6. Prototype a simple early-warning workflow for Amhara's Kiremt/Belg seasonality
-7. Communicate findings effectively for public health decision-making
 
 ---
 
@@ -71,7 +70,7 @@ By the end of this training, participants will be able to:
 - Python 3.8+ (Jupyter Notebooks)
 - VECTRI model (compiled from source)
 - Linux/Unix environment (native or WSL2)
-- NetCDF utilities (nco, cdo)
+- NetCDF utilities 
 
 ### Key Datasets
 
