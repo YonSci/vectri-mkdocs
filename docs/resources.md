@@ -259,6 +259,7 @@ This page provides links to datasets, tools, documentation, and templates used t
 |------------|-------------|------|
 | **Workshop Docs** | This documentation site | [GitHub](https://github.com/YonSci/vectri-mkdocs) |
 | **VECTRI Model** | Official VECTRI source code | [GitLab](https://gitlab.com/tompkins/vectri) |
+| **VECTRI Documentation** | Official VECTRI Documentation | [VECTRI Documentation](https://users.ictp.it/~tompkins/vectri/documentation/index.html) |
 | **Binder** | Interactive notebooks | [Launch Binder](https://mybinder.org/v2/gh/YonSci/vectri-mkdocs/main) |
 
 ---

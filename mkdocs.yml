@@ -232,3 +232,4 @@ nav:
       - Xarray Quiz: quizzes/xarray-interactive.md
   - Collaboration: collaboration.md
   - Resources: resources.md
+  - Notebooks & Scripts: lessons.md
