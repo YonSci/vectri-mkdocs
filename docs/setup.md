@@ -1189,3 +1189,355 @@ This guide covers the complete setup process for running VECTRI, including WSL i
       <h3 style="margin: 0 0 1rem 0;">✅ VECTRI Setup Complete!</h3>
       <p style="margin: 0; opacity: 0.95;">You now have a fully configured scientific environment for VECTRI on Ubuntu 22.04 LTS.</p>
     </div>
+
+=== "VECTRI Docker"
+
+    # 🐳 VECTRI Docker Image – User Guide
+
+    Run the VECTRI malaria transmission model using Docker
+
+    <div class="grid" markdown>
+
+    | | |
+    |---|---|
+    | **Image** | `yonasmersha/vectri:latest` |
+    | **Repository** | [hub.docker.com/r/yonasmersha/vectri](https://hub.docker.com/r/yonasmersha/vectri) |
+
+    </div>
+
+    ---
+
+    ## 📌 Overview
+
+    This Docker image provides a clean, reproducible environment for running the **VECTRI** malaria model.
+
+    <div class="grid cards" markdown>
+
+    -   :material-cube-outline: **Preinstalled VECTRI**
+        
+        ---
+        
+        Ready-to-run VECTRI executable with all dependencies configured.
+
+    -   :material-library: **Required Libraries**
+        
+        ---
+        
+        NetCDF, HDF5, and Fortran libraries pre-installed and linked.
+
+    -   :material-database: **Example Datasets**
+        
+        ---
+        
+        Sample climate and population data included for testing.
+
+    -   :material-shield-account: **Safe Execution**
+        
+        ---
+        
+        Non-root `vectriuser` configured for secure container operation.
+
+    </div>
+
+    !!! success "Why Use Docker?"
+        - **No installation required** – Skip the library compilation process
+        - **Reproducible** – Same environment on any machine
+        - **Portable** – Works on Windows, macOS, and Linux
+        - **Isolated** – Doesn't affect your system configuration
+
+    ---
+
+    ## ✅ 1. Pull the VECTRI Docker Image
+
+    Use this command to download the latest stable build:
+
+    ```bash
+    docker pull yonasmersha/vectri:latest
+    ```
+
+    Verify the image was downloaded:
+
+    ```bash
+    docker images | grep vectri
+    ```
+
+    Expected output:
+
+    ```
+    yonasmersha/vectri   latest   abc123def456   2 days ago   1.2GB
+    ```
+
+    ---
+
+    ## 📂 2. Prepare a Working Directory
+
+    VECTRI writes outputs to a run directory. Create one on your host machine:
+
+    ```bash
+    mkdir -p vectri_runs
+    cd vectri_runs
+    ```
+
+    This directory will be mounted inside the container, allowing you to:
+    
+    - Pass input files to VECTRI
+    - Retrieve output files after the simulation
+
+    ---
+
+    ## ▶️ 3. Start the VECTRI Docker Container
+
+    Run an interactive shell inside the image and mount your `vectri_runs` directory:
+
+    === "Linux / macOS / WSL"
+
+        ```bash
+        docker run --rm -it \
+          -v "$PWD:/home/vectriuser/runs" \
+          yonasmersha/vectri:latest
+        ```
+
+    === "Windows (PowerShell)"
+
+        ```powershell
+        docker run --rm -it `
+          -v "${PWD}:/home/vectriuser/runs" `
+          yonasmersha/vectri:latest
+        ```
+
+    === "Windows (CMD)"
+
+        ```bat
+        docker run --rm -it -v "%cd%:/home/vectriuser/runs" yonasmersha/vectri:latest
+        ```
+
+    You should now see a prompt like:
+
+    ```
+    vectriuser@<container-id>:~$
+    ```
+
+    | Flag | Description |
+    |------|-------------|
+    | `--rm` | Automatically remove container when it exits |
+    | `-it` | Interactive terminal mode |
+    | `-v` | Mount host directory to container |
+
+    ---
+
+    ## 🧪 4. Run a Sample VECTRI Simulation
+
+    Inside the container, navigate to your mounted run directory:
+
+    ```bash
+    cd ~/runs
+    mkdir demo_run
+    cd demo_run
+    ```
+
+    Run VECTRI using example input files included in the image:
+
+    ```bash
+    vectri -c $VECTRI/data/example_sys5.nc \
+           -d $VECTRI/data/example_data.nc \
+           -o vectri_output.nc
+    ```
+
+    When successful, your folder will contain:
+
+    ```
+    vectri_output.nc
+    ```
+
+    !!! tip "Output Location"
+        This file is saved **both in the container and on your host** inside `vectri_runs/demo_run/`. After exiting the container, you can access the output directly from your host machine.
+
+    ---
+
+    ## 🧾 5. Understanding Input and Output Files
+
+    ### Input Files
+
+    | File | Description |
+    |------|-------------|
+    | `example_sys5.nc` | Example climate forcing (temperature, precipitation) |
+    | `example_data.nc` | Example demographic/environment data (population, land cover) |
+
+    ### Output File
+
+    | File | Description |
+    |------|-------------|
+    | `vectri_output.nc` | Model results including EIR, vector density, etc. |
+
+    ### Inspect Output (Optional)
+
+    View the output file structure:
+
+    ```bash
+    ncdump -h vectri_output.nc
+    ```
+
+    Or use Python (if available on your host):
+
+    ```python
+    import xarray as xr
+    ds = xr.open_dataset("vectri_runs/demo_run/vectri_output.nc")
+    print(ds)
+    ```
+
+    ---
+
+    ## 🔁 6. Run VECTRI With Your Own Input Files
+
+    ### Step 1: Place Your Files in the Mounted Directory
+
+    On your host machine, copy your input files to `vectri_runs/`:
+
+    ```
+    vectri_runs/
+     ├── my_climate.nc
+     ├── my_population.nc
+     └── ...
+    ```
+
+    ### Step 2: Start the Container
+
+    ```bash
+    docker run --rm -it \
+      -v "$PWD:/home/vectriuser/runs" \
+      yonasmersha/vectri:latest
+    ```
+
+    ### Step 3: Run VECTRI
+
+    Inside the container:
+
+    ```bash
+    cd ~/runs
+    vectri -c ~/runs/my_climate.nc \
+           -d ~/runs/my_population.nc \
+           -o my_vectri_results.nc
+    ```
+
+    ### Step 4: Access Results
+
+    Exit the container (`exit` or `Ctrl+D`) and find your results in:
+
+    ```
+    vectri_runs/my_vectri_results.nc
+    ```
+
+    ---
+
+    ## ⚠️ 7. Troubleshooting
+
+    ??? warning "Permission Denied When Creating Directory"
+        
+        This happens if you try to run VECTRI outside `/home/vectriuser/runs`.
+        
+        **Solution:** Always work inside the mounted directory:
+        
+        ```bash
+        cd ~/runs
+        ```
+
+    ??? warning "Output File Missing"
+        
+        **Possible causes:**
+        
+        1. The `-o` argument path is invalid
+        2. The output directory doesn't exist
+        3. VECTRI encountered an error during simulation
+        
+        **Solution:** Check the console output for error messages and ensure you're in a writable directory.
+
+    ??? warning "Cannot Write to /opt/apps/vectri"
+        
+        This folder is **read-only** by design. It contains the VECTRI installation and example data.
+        
+        **Solution:** Never run VECTRI simulations inside `/opt/apps/vectri`. Always use `~/runs`.
+
+    ??? info "Container Exited Unexpectedly"
+        
+        If the container exits immediately:
+        
+        1. Check Docker is running: `docker info`
+        2. Try running without `-it`: `docker run --rm yonasmersha/vectri:latest ls`
+        3. Check available disk space
+
+    ---
+
+    ## 🧹 8. Manage Docker Resources
+
+    ### Remove the VECTRI Image
+
+    ```bash
+    docker rmi yonasmersha/vectri:latest
+    ```
+
+    ### Clean Up Unused Docker Resources
+
+    ```bash
+    docker system prune
+    ```
+
+    ### Check Disk Usage
+
+    ```bash
+    docker system df
+    ```
+
+    ---
+
+    ## 📚 Quick Reference
+
+    | Task | Command |
+    |------|---------|
+    | Pull image | `docker pull yonasmersha/vectri:latest` |
+    | Start container | `docker run --rm -it -v "$PWD:/home/vectriuser/runs" yonasmersha/vectri:latest` |
+    | Run example | `vectri -c $VECTRI/data/example_sys5.nc -d $VECTRI/data/example_data.nc -o output.nc` |
+    | Exit container | `exit` or `Ctrl+D` |
+    | Remove image | `docker rmi yonasmersha/vectri:latest` |
+
+    ---
+
+    ## 📖 Citation
+
+    If you use VECTRI in research, please cite the original authors:
+
+    !!! quote "VECTRI Citation"
+        Tompkins, A. M., and F. Di Giuseppe (2015), *Potential predictability of malaria in Africa using ECMWF monthly and seasonal climate forecasts*, Journal of Applied Meteorology and Climatology, 54(3), 521-540.
+        
+        **VECTRI – A dynamical malaria transmission model**  
+        International Centre for Theoretical Physics (ICTP)
+
+    ---
+
+    ## 👤 Contact
+
+    <div class="grid cards" markdown>
+
+    -   :material-account: **Maintainer**
+        
+        ---
+        
+        **Yonas Mersha**
+
+    -   :material-github: **Issues & Requests**
+        
+        ---
+        
+        [GitHub Issues](https://github.com/YonSci/vectri-mkdocs/issues)
+
+    -   :material-docker: **Docker Hub**
+        
+        ---
+        
+        [yonasmersha/vectri](https://hub.docker.com/r/yonasmersha/vectri)
+
+    </div>
+
+    ---
+
+    !!! success "VECTRI Docker Ready!"
+        You can now run VECTRI simulations without installing any dependencies. For manual installation (building from source), see the **VECTRI Installation** tab.
