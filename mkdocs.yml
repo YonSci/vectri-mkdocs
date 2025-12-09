@@ -184,11 +184,10 @@ nav:
       # - Overview: lessons.md
       - Malaria-Climate Link: day1/01-theory_lecture.md
       - Use Case: day1/02-use-case.md
-      - VECTRI Introduction: day1/03-vectri-intro.md
+      - Setup: day1/03-setup.md
       - Basic Linux Commands: day1/04-basic-linux-commands.md
-      - Setup: day1/05-setup.md
-      - Vectri Model Components: day1/06-vectri_model_components_larvae_to_hydrology.md
-      - Vectri Model Components Equations: day1/07-vectri_single_location_explicit_equations_physical_plots.md
+      - VECTRI Introduction: day1/05-vectri-intro.md
+      - VECTRI Model Theory & Code: day1/06-vectri-model-theory-and-code.md
       - Python Setup: day2/01-Python_Setup_for_Climate_and_Meteorology_Workshop.md
       - Python Basics: day2/02-Python_Basics_for_Climate_and_Meteorology_Workshop.md
       - Numpy: day2/03-Numpy_for_Climate_and_Meteorology_Workshop.md

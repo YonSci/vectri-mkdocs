@@ -356,15 +356,163 @@ less data/temperature.txt
     - Press **q** to quit
     - Press **/** to search
 
-### nano - Simple Text Editor
+### vi/vim - Powerful Text Editor
 
-**Edit a file with nano**
+Vi (or Vim) is the standard text editor available on virtually every Linux/Unix system. Learning it is essential for working on remote servers.
+
+**Edit a file with vi**
 
 ```bash
-nano data/temperature.txt
+vi data/temperature.txt
 ```
 
-!!! tip "Nano Commands"
+**Edit a file with vim (improved version)**
+
+```bash
+vim data/temperature.txt
+```
+
+!!! info "Vi Has Two Main Modes"
+    - **Normal Mode** (default) - for navigation and commands
+    - **Insert Mode** - for typing text
+    
+    Press `i` to enter Insert Mode, press `Esc` to return to Normal Mode.
+
+#### Essential Vi Commands
+
+**Entering Insert Mode (to type text):**
+
+| Key | Action |
+|-----|--------|
+| `i` | Insert before cursor |
+| `I` | Insert at beginning of line |
+| `a` | Append after cursor |
+| `A` | Append at end of line |
+| `o` | Open new line below |
+| `O` | Open new line above |
+
+**Saving and Quitting (in Normal Mode):**
+
+| Command | Action |
+|---------|--------|
+| `:w` | Save (write) file |
+| `:q` | Quit (only if no changes) |
+| `:wq` | Save and quit |
+| `:q!` | Quit without saving (force) |
+| `:wq!` | Save and quit (force) |
+| `ZZ` | Save and quit (shortcut) |
+
+**Navigation (in Normal Mode):**
+
+| Key | Action |
+|-----|--------|
+| `h` | Move left |
+| `j` | Move down |
+| `k` | Move up |
+| `l` | Move right |
+| `0` | Go to beginning of line |
+| `$` | Go to end of line |
+| `gg` | Go to first line |
+| `G` | Go to last line |
+| `:10` | Go to line 10 |
+
+**Editing (in Normal Mode):**
+
+| Key | Action |
+|-----|--------|
+| `x` | Delete character under cursor |
+| `dd` | Delete entire line |
+| `dw` | Delete word |
+| `yy` | Copy (yank) entire line |
+| `p` | Paste after cursor |
+| `P` | Paste before cursor |
+| `u` | Undo last change |
+| `Ctrl + r` | Redo |
+
+**Search (in Normal Mode):**
+
+| Command | Action |
+|---------|--------|
+| `/word` | Search forward for "word" |
+| `?word` | Search backward for "word" |
+| `n` | Go to next match |
+| `N` | Go to previous match |
+
+**Search and Replace:**
+
+| Command | Action |
+|---------|--------|
+| `:%s/old/new/g` | Replace all "old" with "new" in file |
+| `:s/old/new/g` | Replace all "old" with "new" in current line |
+| `:%s/old/new/gc` | Replace with confirmation |
+
+#### Hands-On Vi Practice
+
+**Create a new file with vi**
+
+```bash
+vi ~/linux_training/data/notes.txt
+```
+
+**Practice these steps:**
+
+1. Press `i` to enter Insert Mode
+2. Type: "This is my first vi file"
+3. Press `Enter` for a new line
+4. Type: "Learning vi is essential for Linux"
+5. Press `Esc` to return to Normal Mode
+6. Type `:wq` and press `Enter` to save and quit
+
+**Verify the file was created**
+
+```bash
+cat ~/linux_training/data/notes.txt
+```
+
+**Open the file again and add more content**
+
+```bash
+vi ~/linux_training/data/notes.txt
+```
+
+**Practice these steps:**
+
+1. Press `G` to go to the last line
+2. Press `o` to open a new line below and enter Insert Mode
+3. Type: "Vi has powerful editing capabilities"
+4. Press `Esc` then type `:wq` to save and quit
+
+**Open and delete a line**
+
+```bash
+vi ~/linux_training/data/notes.txt
+```
+
+**Practice these steps:**
+
+1. Press `j` to move down to the second line
+2. Press `dd` to delete the entire line
+3. Press `u` to undo the deletion
+4. Type `:q!` to quit without saving
+
+!!! tip "Vi Survival Guide"
+    If you get stuck in vi:
+    
+    1. Press `Esc` multiple times to ensure you're in Normal Mode
+    2. Type `:q!` and press `Enter` to quit without saving
+    
+    If you want to save your changes:
+    
+    1. Press `Esc` to ensure you're in Normal Mode
+    2. Type `:wq` and press `Enter` to save and quit
+
+!!! note "Nano Alternative"
+    If you prefer a simpler editor, `nano` is also available on most systems:
+    
+    ```bash
+    nano data/temperature.txt
+    ```
+    
     - **Ctrl + O** to save
     - **Ctrl + X** to exit
     - **Ctrl + K** to cut a line
@@ -582,13 +730,17 @@ echo $HOME
 
 ### Permanent Variables (Add to ~/.bashrc)
 
-**Open your .bashrc file**
+**Open your .bashrc file with vi**
 
 ```bash
-nano ~/.bashrc
+vi ~/.bashrc
 ```
 
 **Add these lines at the end (for VECTRI):**
+
+1. Press `G` to go to the end of the file
+2. Press `o` to open a new line and enter Insert Mode
+3. Type the following lines:
 
 ```bash
 export VECTRI=$HOME/vectri
@@ -598,7 +750,30 @@ export FC=$(nf-config --fc)
 alias vectri="$VECTRI/vectri"
 ```
 
-**Save and exit nano (Ctrl+O, then Ctrl+X)**
+4. Press `Esc` to return to Normal Mode
+5. Type `:wq` and press `Enter` to save and quit
+
+**Alternative: Use echo to append (no editor needed)**
+
+```bash
+echo 'export VECTRI=$HOME/vectri' >> ~/.bashrc
+```
+
+```bash
+echo 'export NETCDF_LIB=$(nf-config --flibs)' >> ~/.bashrc
+```
+
+```bash
+echo 'export NETCDF_INCLUDE=$(nf-config --fflags)' >> ~/.bashrc
+```
+
+```bash
+echo 'export FC=$(nf-config --fc)' >> ~/.bashrc
+```
+
+```bash
+echo 'alias vectri="$VECTRI/vectri"' >> ~/.bashrc
+```
 
 **Apply the changes immediately**
 
@@ -920,10 +1095,6 @@ Or press: `Ctrl + L`
 
 Press: `Ctrl + C`
 
-**Search command history**
-
-Press: `Ctrl + R` then start typing
-
 **Auto-complete file/folder names**
 
 Type first few letters and press: `Tab`
@@ -939,14 +1110,6 @@ history
 ```bash
 !!
 ```
-
-**Go to beginning of line**
-
-Press: `Ctrl + A`
-
-**Go to end of line**
-
-Press: `Ctrl + E`
 
 ---
 
@@ -978,7 +1141,20 @@ Viewing Files:
   less file        - view page by page
   head file        - first 10 lines
   tail file        - last 10 lines
-  nano file        - edit file
+
+Vi Editor:
+  vi file          - edit file with vi
+  i                - enter Insert Mode
+  Esc              - return to Normal Mode
+  :w               - save file
+  :q               - quit
+  :wq              - save and quit
+  :q!              - quit without saving
+  dd               - delete line
+  yy               - copy line
+  p                - paste
+  u                - undo
+  /word            - search for word
 
 Finding:
   find . -name "*.txt"  - find files
@@ -1087,12 +1263,6 @@ ls -lh vectri_project_backup.tar.gz
 
 ```bash
 tree vectri_project/
-```
-
-Or if tree is not installed:
-
-```bash
-find vectri_project/ -type f -o -type d | sort
 ```
 
 **Clean up (optional)**

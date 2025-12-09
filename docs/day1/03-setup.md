@@ -149,6 +149,9 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
         ```bat
         wsl --status
+        ```
+
+        ```bat
         wsl -l -v
         ```
 
@@ -164,6 +167,9 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
         ```bat
         wsl --list --online
+        ```
+
+        ```bat
         wsl --install -d Ubuntu-22.04
         ```
 
@@ -199,6 +205,9 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
         ```bat
         wsl --status
+        ```
+
+        ```bat
         wsl -l -v
         ```
 
@@ -268,6 +277,9 @@ This guide covers the complete setup process for running VECTRI, including WSL i
         
         ```bat
         dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+        ```
+
+        ```bat
         dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
         ```
         
@@ -295,17 +307,27 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ??? info "Common WSL Commands"
         
+        List all installed distros:
+
         ```bat
-        :: List all installed distros
         wsl -l -v
+        ```
         
-        :: Shut down all WSL instances
+        Shut down all WSL instances:
+
+        ```bat
         wsl --shutdown
+        ```
         
-        :: Update WSL
+        Update WSL:
+
+        ```bat
         wsl --update
+        ```
         
-        :: Uninstall a distro (deletes its data)
+        Uninstall a distro (deletes its data):
+
+        ```bat
         wsl --unregister Ubuntu-22.04
         ```
 
@@ -317,6 +339,9 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     sudo apt update && sudo apt upgrade -y
+    ```
+
+    ```bash
     sudo apt install -y build-essential git curl wget unzip gfortran
     ```
 
@@ -368,6 +393,9 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     sudo apt update
+    ```
+
+    ```bash
     sudo apt upgrade -y
     ```
 
@@ -385,6 +413,9 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     cd ~
+    ```
+
+    ```bash
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
     ```
 
@@ -416,20 +447,40 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     mamba create -n ds python=3.11 -y
+    ```
+
+    ```bash
     conda activate ds
     ```
 
     Install the core scientific stack:
 
     ```bash
-    mamba install -c conda-forge -y \
-      numpy pandas scipy scikit-learn \
-      matplotlib seaborn \
-      jupyterlab ipykernel \
-      xarray netcdf4 h5netcdf dask \
-      cftime bottleneck \
-      cartopy geopandas rasterio rioxarray \
-      cfgrib eccodes
+    mamba install -c conda-forge -y numpy pandas scipy scikit-learn
+    ```
+
+    ```bash
+    mamba install -c conda-forge -y matplotlib seaborn
+    ```
+
+    ```bash
+    mamba install -c conda-forge -y jupyterlab ipykernel
+    ```
+
+    ```bash
+    mamba install -c conda-forge -y xarray netcdf4 h5netcdf dask
+    ```
+
+    ```bash
+    mamba install -c conda-forge -y cftime bottleneck
+    ```
+
+    ```bash
+    mamba install -c conda-forge -y cartopy geopandas rasterio rioxarray
+    ```
+
+    ```bash
+    mamba install -c conda-forge -y cfgrib eccodes
     ```
 
     !!! note "Package Notes"
@@ -504,11 +555,15 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     Your Windows drives are mounted under `/mnt/`:
 
-    ```bash
-    # Access C: drive
-    cd /mnt/c
+    Access C: drive:
 
-    # Access your Windows Documents folder
+    ```bash
+    cd /mnt/c
+    ```
+
+    Access your Windows Documents folder:
+
+    ```bash
     cd /mnt/c/Users/<YourWindowsUser>/Documents
     ```
 
@@ -522,11 +577,19 @@ This guide covers the complete setup process for running VECTRI, including WSL i
     Additional packages for climate and geospatial analysis:
 
     ```bash
-    mamba install -c conda-forge -y \
-      xclim xesmf regionmask \
-      intake intake-xarray \
-      zarr kerchunk \
-      metpy
+    mamba install -c conda-forge -y xclim xesmf regionmask
+    ```
+
+    ```bash
+    mamba install -c conda-forge -y intake intake-xarray
+    ```
+
+    ```bash
+    mamba install -c conda-forge -y zarr kerchunk
+    ```
+
+    ```bash
+    mamba install -c conda-forge -y metpy
     ```
 
     ---
@@ -537,10 +600,21 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```python
     import xarray as xr
-    import numpy as np
+    ```
 
+    ```python
+    import numpy as np
+    ```
+
+    ```python
     print("xarray:", xr.__version__)
+    ```
+
+    ```python
     da = xr.DataArray(np.random.rand(10, 5, 5), dims=("time", "lat", "lon"))
+    ```
+
+    ```python
     print("Random data mean:", da.mean().item())
     ```
 
@@ -559,7 +633,13 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     mamba create -n torch python=3.11 -y
+    ```
+
+    ```bash
     conda activate torch
+    ```
+
+    ```bash
     mamba install -c pytorch -c nvidia pytorch torchvision torchaudio pytorch-cuda=12.1 -y
     ```
 
@@ -576,6 +656,9 @@ This guide covers the complete setup process for running VECTRI, including WSL i
     ??? warning "SSL/Certificate Issues"
         ```bash
         sudo apt install -y ca-certificates
+        ```
+
+        ```bash
         sudo update-ca-certificates
         ```
 
@@ -594,10 +677,14 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     mamba create -n light python=3.11 -y
+    ```
+
+    ```bash
     conda activate light
-    mamba install -c conda-forge -y \
-      numpy pandas matplotlib \
-      xarray netcdf4 dask jupyterlab
+    ```
+
+    ```bash
+    mamba install -c conda-forge -y numpy pandas matplotlib xarray netcdf4 dask jupyterlab
     ```
 
     ---
@@ -632,6 +719,9 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bat
     wsl --status
+    ```
+
+    ```bat
     wsl -l -v
     ```
 
@@ -709,7 +799,13 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     docker --version
+    ```
+
+    ```bash
     docker compose version
+    ```
+
+    ```bash
     docker run hello-world
     ```
 
@@ -723,6 +819,9 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     mkdir -p ~/projects
+    ```
+
+    ```bash
     cd ~/projects
     ```
 
@@ -737,26 +836,45 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ### Step 1: Install Docker Engine
 
+    Update packages:
+
     ```bash
-    # Update packages
     sudo apt update && sudo apt upgrade -y
+    ```
 
-    # Install prerequisites
+    Install prerequisites:
+
+    ```bash
     sudo apt-get install -y ca-certificates curl gnupg
+    ```
 
-    # Add Docker's official GPG key
+    Add Docker's official GPG key:
+
+    ```bash
     sudo install -m 0755 -d /etc/apt/keyrings
+    ```
+
+    ```bash
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    ```
+
+    ```bash
     sudo chmod a+r /etc/apt/keyrings/docker.gpg
+    ```
 
-    # Add Docker repository
-    echo \
-      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    Add Docker repository:
 
-    # Install Docker Engine
+    ```bash
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    ```
+
+    Install Docker Engine:
+
+    ```bash
     sudo apt update
+    ```
+
+    ```bash
     sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
     ```
 
@@ -902,18 +1020,41 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ## 1️⃣ Set Compilers and Flags
 
+    Check compiler availability:
+
     ```bash
     which gcc g++ gfortran
+    ```
+
+    ```bash
     gcc --version
+    ```
+
+    ```bash
     gfortran --version
+    ```
 
-    # Export compiler environment variables
+    Export compiler environment variables:
+
+    ```bash
     export CC=gcc
-    export CXX=g++
-    export FC=gfortran
-    export F77=gfortran
+    ```
 
-    # Enable Fortran-10+ argument compatibility flags
+    ```bash
+    export CXX=g++
+    ```
+
+    ```bash
+    export FC=gfortran
+    ```
+
+    ```bash
+    export F77=gfortran
+    ```
+
+    Enable Fortran-10+ argument compatibility flags:
+
+    ```bash
     gcc_version=$(gcc -dumpversion | cut -d. -f1)
     if [ "$gcc_version" -ge 10 ]; then
       export fallow_argument="-fallow-argument-mismatch"
@@ -922,7 +1063,13 @@ This guide covers the complete setup process for running VECTRI, including WSL i
       export fallow_argument=""
       export boz_argument=""
     fi
+    ```
+
+    ```bash
     export FFLAGS="$fallow_argument $boz_argument"
+    ```
+
+    ```bash
     export FCFLAGS="$fallow_argument $boz_argument"
     ```
 
@@ -930,23 +1077,57 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ## 2️⃣ Create Installation Prefix Directories
 
+    Create a workspace for source downloads:
+
     ```bash
-    # Create a workspace for source downloads
     cd ~
-    mkdir -p ~/download_lib && cd ~/download_lib
+    ```
 
+    ```bash
+    mkdir -p ~/download_lib
+    ```
+
+    ```bash
+    cd ~/download_lib
+    ```
+
+    ```bash
     sudo apt update
+    ```
 
+    ```bash
     sudo mkdir -p /opt/apps/libs
+    ```
+
+    ```bash
     BASE_DIR=/opt/apps/libs
+    ```
 
-    # Shared prefix for most libs
+    Set shared prefix for each library:
+
+    ```bash
     ZPFX=$BASE_DIR/zlib/1.2.12
-    SPFX=$BASE_DIR/szip/2.1.1
-    JPFX=$BASE_DIR/jasper/1.900.1
-    HPFX=$BASE_DIR/hdf5/1.12.2
-    NPFX=$BASE_DIR/netcdf/4.9.0
+    ```
 
+    ```bash
+    SPFX=$BASE_DIR/szip/2.1.1
+    ```
+
+    ```bash
+    JPFX=$BASE_DIR/jasper/1.900.1
+    ```
+
+    ```bash
+    HPFX=$BASE_DIR/hdf5/1.12.2
+    ```
+
+    ```bash
+    NPFX=$BASE_DIR/netcdf/4.9.0
+    ```
+
+    Create the prefix directories:
+
+    ```bash
     sudo mkdir -p $ZPFX $SPFX $JPFX $HPFX $NPFX
     ```
 
@@ -956,21 +1137,41 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     cd ~/download_lib
+    ```
 
-    # ZLIB
+    Download ZLIB:
+
+    ```bash
     wget -c -4 https://github.com/madler/zlib/archive/refs/tags/v1.2.12.tar.gz
+    ```
 
-    # SZIP
+    Download SZIP:
+
+    ```bash
     wget -c -4 https://support.hdfgroup.org/ftp/lib-external/szip/2.1.1/src/szip-2.1.1.tar.gz
+    ```
 
-    # JasPer (JPEG-2000)
+    Download JasPer (JPEG-2000):
+
+    ```bash
     wget -c -4 https://www.ece.uvic.ca/~frodo/jasper/software/jasper-1.900.1.zip
+    ```
 
-    # HDF5
+    Download HDF5:
+
+    ```bash
     wget -c -4 https://github.com/HDFGroup/hdf5/archive/refs/tags/hdf5-1_12_2.tar.gz
+    ```
 
-    # NetCDF C and Fortran
+    Download NetCDF-C:
+
+    ```bash
     wget -c -4 https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.9.0.tar.gz
+    ```
+
+    Download NetCDF-Fortran:
+
+    ```bash
     wget -c -4 https://github.com/Unidata/netcdf-fortran/archive/refs/tags/v4.6.0.tar.gz
     ```
 
@@ -982,10 +1183,25 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     tar xf v1.2.12.tar.gz
+    ```
+
+    ```bash
     cd zlib-1.2.12
+    ```
+
+    ```bash
     ./configure --prefix=$ZPFX
-    make -j$(nproc)
+    ```
+
+    ```bash
+    make 
+    ```
+
+    ```bash
     sudo make install
+    ```
+
+    ```bash
     cd ..
     ```
 
@@ -993,10 +1209,25 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     tar xf szip-2.1.1.tar.gz
+    ```
+
+    ```bash
     cd szip-2.1.1
+    ```
+
+    ```bash
     ./configure --prefix=$SPFX
-    make -j$(nproc)
+    ```
+
+    ```bash
+    make 
+    ```
+
+    ```bash
     sudo make install
+    ```
+
+    ```bash
     cd ..
     ```
 
@@ -1004,11 +1235,31 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     unzip jasper-1.900.1.zip
+    ```
+
+    ```bash
     cd jasper-1.900.1
-    autoreconf -i            # regenerate configure scripts
+    ```
+
+    Regenerate configure scripts:
+
+    ```bash
+    autoreconf -i
+    ```
+
+    ```bash
     ./configure --prefix=$JPFX
-    make -j$(nproc)
+    ```
+
+    ```bash
+    make
+    ```
+
+    ```bash
     sudo make install
+    ```
+
+    ```bash
     cd ..
     ```
 
@@ -1016,18 +1267,33 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     tar xf hdf5-1_12_2.tar.gz
+    ```
+
+    ```bash
     cd hdf5-hdf5-1_12_2
+    ```
 
-    CPPFLAGS="-I$ZPFX/include -I$SPFX/include" \
-    LDFLAGS="-L$ZPFX/lib -L$SPFX/lib" \
-    ./configure --prefix=$HPFX \
-        --enable-hl \
-        --enable-fortran \
-        --with-zlib=$ZPFX \
-        --with-szlib=$SPFX
+    ```bash
+    export CPPFLAGS="-I$ZPFX/include -I$SPFX/include"
+    ```
 
-    make -j$(nproc)
+    ```bash
+    export LDFLAGS="-L$ZPFX/lib -L$SPFX/lib"
+    ```
+
+    ```bash
+    ./configure --prefix=$HPFX --enable-hl --enable-fortran --with-zlib=$ZPFX --with-szlib=$SPFX
+    ```
+
+    ```bash
+    make
+    ```
+
+    ```bash
     sudo make install
+    ```
+
+    ```bash
     cd ..
     ```
 
@@ -1035,16 +1301,33 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     tar xf v4.9.0.tar.gz
+    ```
+
+    ```bash
     cd netcdf-c-4.9.0
+    ```
 
-    CPPFLAGS="-I$HPFX/include" \
-    LDFLAGS="-L$HPFX/lib -L$ZPFX/lib -L$SPFX/lib" \
-    ./configure --prefix=$NPFX \
-        --enable-netcdf-4 \
-        --disable-dap
+    ```bash
+    export CPPFLAGS="-I$HPFX/include"
+    ```
 
-    make -j$(nproc)
+    ```bash
+    export LDFLAGS="-L$HPFX/lib -L$ZPFX/lib -L$SPFX/lib"
+    ```
+
+    ```bash
+    ./configure --prefix=$NPFX --enable-netcdf-4 --disable-dap
+    ```
+
+    ```bash
+    make 
+    ```
+
+    ```bash
     sudo make install
+    ```
+
+    ```bash
     cd ..
     ```
 
@@ -1052,14 +1335,33 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     tar xf v4.6.0.tar.gz
+    ```
+
+    ```bash
     cd netcdf-fortran-4.6.0
+    ```
 
-    CPPFLAGS="-I$NPFX/include" \
-    LDFLAGS="-L$NPFX/lib -Wl,-rpath,$NPFX/lib" \
+    ```bash
+    export CPPFLAGS="-I$NPFX/include"
+    ```
+
+    ```bash
+    export LDFLAGS="-L$NPFX/lib -Wl,-rpath,$NPFX/lib"
+    ```
+
+    ```bash
     ./configure --prefix=$NPFX
+    ```
 
-    make -j$(nproc)
+    ```bash
+    make 
+    ```
+
+    ```bash
     sudo make install
+    ```
+
+    ```bash
     cd ..
     ```
 
@@ -1076,7 +1378,9 @@ This guide covers the complete setup process for running VECTRI, including WSL i
     export LD_LIBRARY_PATH=/opt/apps/libs/netcdf/4.9.0/lib:/opt/apps/libs/hdf5/1.12.2/lib:/opt/apps/libs/zlib/1.2.12/lib:/opt/apps/libs/szip/2.1.1/lib:$LD_LIBRARY_PATH
     export CPATH=/opt/apps/libs/netcdf/4.9.0/include:$CPATH
     EOF
+    ```
 
+    ```bash
     source ~/.bashrc
     ```
 
@@ -1084,8 +1388,17 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     which nc-config
+    ```
+
+    ```bash
     which nf-config
+    ```
+
+    ```bash
     nc-config --version
+    ```
+
+    ```bash
     nf-config --version
     ```
 
@@ -1097,23 +1410,44 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     cd ~
-    git clone https://gitlab.com/tompkins/vectri.git  
+    ```
+
+    ```bash
+    git clone https://gitlab.com/tompkins/vectri.git
+    ```
+
+    ```bash
     cd vectri
-    ls 
+    ```
+
+    ```bash
+    ls
     ```
 
     ### Set Environment Variables
 
     ```bash
     export VECTRI="$HOME/vectri"
-    export NETCDF_LIB="$(nf-config --flibs)"
-    export NETCDF_INCLUDE="$(nf-config --fflags)"
-    export FC="$(nf-config --fc)"   # usually gfortran
-
-    # Verify:
-    echo $VECTRI
-    nc-config --version && nf-config --version
     ```
+
+    ```bash
+    export NETCDF_LIB="$(nf-config --flibs)"
+    ```
+
+    ```bash
+    export NETCDF_INCLUDE="$(nf-config --fflags)"
+    ```
+
+    ```bash
+    export FC="$(nf-config --fc)"
+    ```
+
+    Verify the variables:
+
+    ```bash
+    echo $VECTRI
+    ```
+
 
     ### Persist Across Logins
 
@@ -1126,7 +1460,9 @@ This guide covers the complete setup process for running VECTRI, including WSL i
     export NETCDF_INCLUDE="$(nf-config --fflags)"
     export FC="$(nf-config --fc)"
     EOF
+    ```
 
+    ```bash
     source ~/.bashrc
     ```
 
@@ -1137,14 +1473,25 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     cd ~
+    ```
 
+    ```bash
     mkdir -p ~/run
+    ```
+
+    ```bash
     cd run
+    ```
 
-    # View command line options
+    View command line options:
+
+    ```bash
     $VECTRI/vectri
+    ```
 
-    # Run example simulation
+    Run example simulation:
+
+    ```bash
     $VECTRI/vectri -c $VECTRI/data/example_sys5.nc -d $VECTRI/data/example_data.nc
     ```
 
@@ -1275,6 +1622,9 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     mkdir -p vectri_runs
+    ```
+
+    ```bash
     cd vectri_runs
     ```
 
@@ -1292,17 +1642,13 @@ This guide covers the complete setup process for running VECTRI, including WSL i
     === "Linux / macOS / WSL"
 
         ```bash
-        docker run --rm -it \
-          -v "$PWD:/home/vectriuser/runs" \
-          yonasmersha/vectri:latest
+        docker run --rm -it -v "$PWD:/home/vectriuser/runs" yonasmersha/vectri:latest
         ```
 
     === "Windows (PowerShell)"
 
         ```powershell
-        docker run --rm -it `
-          -v "${PWD}:/home/vectriuser/runs" `
-          yonasmersha/vectri:latest
+        docker run --rm -it -v "${PWD}:/home/vectriuser/runs" yonasmersha/vectri:latest
         ```
 
     === "Windows (CMD)"
@@ -1331,16 +1677,20 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     cd ~/runs
+    ```
+
+    ```bash
     mkdir demo_run
+    ```
+
+    ```bash
     cd demo_run
     ```
 
     Run VECTRI using example input files included in the image:
 
     ```bash
-    vectri -c $VECTRI/data/example_sys5.nc \
-           -d $VECTRI/data/example_data.nc \
-           -o vectri_output.nc
+    vectri -c $VECTRI/data/example_sys5.nc -d $VECTRI/data/example_data.nc -o vectri_output.nc
     ```
 
     When successful, your folder will contain:
@@ -1381,7 +1731,13 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```python
     import xarray as xr
+    ```
+
+    ```python
     ds = xr.open_dataset("vectri_runs/demo_run/vectri_output.nc")
+    ```
+
+    ```python
     print(ds)
     ```
 
@@ -1403,9 +1759,7 @@ This guide covers the complete setup process for running VECTRI, including WSL i
     ### Step 2: Start the Container
 
     ```bash
-    docker run --rm -it \
-      -v "$PWD:/home/vectriuser/runs" \
-      yonasmersha/vectri:latest
+    docker run --rm -it -v "$PWD:/home/vectriuser/runs" yonasmersha/vectri:latest
     ```
 
     ### Step 3: Run VECTRI
@@ -1414,9 +1768,10 @@ This guide covers the complete setup process for running VECTRI, including WSL i
 
     ```bash
     cd ~/runs
-    vectri -c ~/runs/my_climate.nc \
-           -d ~/runs/my_population.nc \
-           -o my_vectri_results.nc
+    ```
+
+    ```bash
+    vectri -c ~/runs/my_climate.nc -d ~/runs/my_population.nc -o my_vectri_results.nc
     ```
 
     ### Step 4: Access Results
