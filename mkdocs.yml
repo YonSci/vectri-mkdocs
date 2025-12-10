@@ -219,6 +219,8 @@ nav:
       - VECTRI Output Analysis: day3/01-vectri-output-analysis.md
       - VECTRI Command Line Tutorial: day3/02-vectri-command-line-tutorial.md
       - VECTRI Hands-On Simulations: day3/03-vectri-hands-on-simulations.md
+      - VECTRI Configuring Parameters: day3/04-vectri-configuring-parameters.md
+      - VECTRI Parameter Sensitivity: day3/05-vectri-parameter-sensitivity.md
   - Assessments:
       - Overview: assessments.md
       - VECTRI Introduction Quiz: quizzes/vectri-intro-quiz.md
