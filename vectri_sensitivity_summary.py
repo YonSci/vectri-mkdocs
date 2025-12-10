@@ -1,0 +1,256 @@
+#!/usr/bin/env python3
+"""
+VECTRI Sensitivity Summary
+--------------------------
+Scans VECTRI NetCDF outputs, auto-detects likely key variables by keyword,
+and computes baseline vs experiment differences.
+
+Outputs:
+  - outputs/sensitivity_report.csv
+  - outputs/sensitivity_report.md
+
+Usage:
+  python scripts/vectri_sensitivity_summary.py --baseline outputs/base.nc --pattern "outputs/*.nc"
+  python scripts/vectri_sensitivity_summary.py --baseline outputs/base.nc --pattern "outputs/*.nc" --ethiopia
+
+Requirements:
+  - xarray
+  - numpy
+  - pandas
+"""
+
+from __future__ import annotations
+
+import argparse
+import glob
+from pathlib import Path
+from typing import List, Tuple, Optional, Dict
+
+import numpy as np
+import pandas as pd
+import xarray as xr
+
+
+KEYWORDS = [
+    # transmission / risk
+    "eir", "incidence", "case", "cases", "risk",
+    # infection / immunity
+    "infect", "host", "immune",
+    # vector / mosquitoes
+    "vector", "mosquito", "larv", "larva", "egg", "bite", "cspr", "spr",
+    # hydro / climate proxies that may appear in outputs
+    "water", "pond", "wperm", "rain", "precip", "temp", "t2m", "tas",
+]
+
+
+def detect_coord_name(ds: xr.Dataset, kind: str) -> Optional[str]:
+    """Detect coordinate/dimension name for 'lat', 'lon', or 'time'."""
+    kind = kind.lower()
+    candidates = []
+    for c in list(ds.coords) + list(ds.dims):
+        cl = c.lower()
+        if kind == "time" and "time" in cl:
+            candidates.append(c)
+        elif kind == "lat" and (cl in ["lat", "latitude", "y"] or "lat" in cl):
+            candidates.append(c)
+        elif kind == "lon" and (cl in ["lon", "longitude", "x"] or "lon" in cl):
+            candidates.append(c)
+
+    for c in candidates:
+        if c in ds.coords:
+            return c
+    return candidates[0] if candidates else None
+
+
+def keyword_score(var_name: str) -> int:
+    vn = var_name.lower()
+    return sum(1 for k in KEYWORDS if k in vn)
+
+
+def pick_priority_vars(ds: xr.Dataset, max_vars: int = 8) -> List[str]:
+    """Choose a small set of likely important variables."""
+    scored: List[Tuple[str, int]] = []
+    for v in ds.data_vars:
+        score = keyword_score(v)
+        if score > 0:
+            scored.append((v, score))
+
+    scored.sort(key=lambda x: (-x[1], x[0]))
+
+    if not scored:
+        return list(ds.data_vars)[:max_vars]
+
+    lat = detect_coord_name(ds, "lat")
+    lon = detect_coord_name(ds, "lon")
+    time = detect_coord_name(ds, "time")
+
+    priority = []
+    for v, _ in scored:
+        dims = set(ds[v].dims)
+        has_space = (lat in dims if lat else False) and (lon in dims if lon else False)
+        has_time = (time in dims if time else False)
+        if has_space or has_time:
+            priority.append(v)
+        if len(priority) >= max_vars:
+            break
+
+    if len(priority) < max_vars:
+        for v, _ in scored:
+            if v not in priority:
+                priority.append(v)
+            if len(priority) >= max_vars:
+                break
+
+    return priority[:max_vars]
+
+
+def subset_bbox(ds: xr.Dataset, lat_min: float, lat_max: float, lon_min: float, lon_max: float) -> xr.Dataset:
+    lat = detect_coord_name(ds, "lat")
+    lon = detect_coord_name(ds, "lon")
+    if lat is None or lon is None:
+        return ds
+
+    lat_vals = ds[lat].values
+    lon_vals = ds[lon].values
+
+    lat_slice = slice(lat_min, lat_max) if lat_vals[0] <= lat_vals[-1] else slice(lat_max, lat_min)
+    lon_slice = slice(lon_min, lon_max) if lon_vals[0] <= lon_vals[-1] else slice(lon_max, lon_min)
+
+    return ds.sel({lat: lat_slice, lon: lon_slice})
+
+
+def safe_mean(da: xr.DataArray) -> float:
+    try:
+        val = da.mean(skipna=True).values
+        return float(val)
+    except Exception:
+        return float("nan")
+
+
+def compute_summary_rows(
+    base: xr.Dataset,
+    exp: xr.Dataset,
+    exp_name: str,
+    vars_to_use: List[str],
+    scope: str,
+    ethiopia: bool = False,
+    lat_min: float = 3,
+    lat_max: float = 15,
+    lon_min: float = 33,
+    lon_max: float = 48,
+) -> List[Dict]:
+    rows = []
+
+    base_sub = subset_bbox(base, lat_min, lat_max, lon_min, lon_max) if ethiopia else base
+    exp_sub = subset_bbox(exp, lat_min, lat_max, lon_min, lon_max) if ethiopia else exp
+
+    for v in vars_to_use:
+        if v not in base_sub.data_vars or v not in exp_sub.data_vars:
+            continue
+
+        b = base_sub[v]
+        e = exp_sub[v]
+
+        b_mean = safe_mean(b)
+        e_mean = safe_mean(e)
+
+        delta = e_mean - b_mean
+        pct = (delta / b_mean * 100.0) if np.isfinite(b_mean) and b_mean != 0 else np.nan
+
+        rows.append({
+            "scope": scope,
+            "variable": v,
+            "baseline_mean": b_mean,
+            "experiment": exp_name,
+            "experiment_mean": e_mean,
+            "delta": delta,
+            "pct_change": pct,
+        })
+
+    return rows
+
+
+def render_markdown(df: pd.DataFrame, title: str) -> str:
+    lines = [f"# {title}", "", "This report was generated by `vectri_sensitivity_summary.py`.", ""]
+    for scope, sdf in df.groupby("scope"):
+        lines.append(f"## {scope} summary")
+        lines.append("")
+        cols = ["variable", "baseline_mean", "experiment", "experiment_mean", "delta", "pct_change"]
+        view = sdf[cols].copy()
+        for c in ["baseline_mean", "experiment_mean", "delta", "pct_change"]:
+            view[c] = view[c].astype(float).round(4)
+        lines.append(view.to_markdown(index=False))
+        lines.append("")
+    return "\n".join(lines)
+
+
+def main():
+    ap = argparse.ArgumentParser(description="Summarize VECTRI parameter sensitivity outputs.")
+    ap.add_argument("--baseline", required=True, help="Baseline NetCDF file (e.g., outputs/base.nc).")
+    ap.add_argument("--pattern", default="outputs/*.nc", help='Glob pattern for experiment files.')
+    ap.add_argument("--out-csv", default="outputs/sensitivity_report.csv", help="Output CSV path.")
+    ap.add_argument("--out-md", default="outputs/sensitivity_report.md", help="Output Markdown path.")
+    ap.add_argument("--max-vars", type=int, default=8, help="Max number of priority variables to report.")
+    ap.add_argument("--ethiopia", action="store_true", help="Also compute Ethiopia-bbox summary.")
+    ap.add_argument("--lat-min", type=float, default=3)
+    ap.add_argument("--lat-max", type=float, default=15)
+    ap.add_argument("--lon-min", type=float, default=33)
+    ap.add_argument("--lon-max", type=float, default=48)
+    args = ap.parse_args()
+
+    baseline_path = Path(args.baseline)
+    if not baseline_path.exists():
+        raise FileNotFoundError(f"Baseline file not found: {baseline_path}")
+
+    base = xr.open_dataset(baseline_path)
+
+    files = sorted(glob.glob(args.pattern))
+    files = [f for f in files if Path(f).resolve() != baseline_path.resolve()]
+
+    if not files:
+        raise FileNotFoundError(f"No experiment files found for pattern: {args.pattern}")
+
+    vars_to_use = pick_priority_vars(base, max_vars=args.max_vars)
+
+    rows = []
+
+    # Global
+    for f in files:
+        exp = xr.open_dataset(f)
+        exp_name = Path(f).stem
+        rows.extend(compute_summary_rows(base, exp, exp_name, vars_to_use, scope="Global", ethiopia=False))
+
+    # Ethiopia optional
+    if args.ethiopia:
+        for f in files:
+            exp = xr.open_dataset(f)
+            exp_name = Path(f).stem
+            rows.extend(compute_summary_rows(
+                base, exp, exp_name, vars_to_use,
+                scope="Ethiopia",
+                ethiopia=True,
+                lat_min=args.lat_min, lat_max=args.lat_max,
+                lon_min=args.lon_min, lon_max=args.lon_max
+            ))
+
+    df = pd.DataFrame(rows).sort_values(by=["scope", "variable", "experiment"]).reset_index(drop=True)
+
+    Path(args.out_csv).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.out_md).parent.mkdir(parents=True, exist_ok=True)
+
+    df.to_csv(args.out_csv, index=False)
+
+    md_text = render_markdown(df, title="VECTRI Parameter Sensitivity Report")
+    Path(args.out_md).write_text(md_text, encoding="utf-8")
+
+    print("Priority variables:")
+    for v in vars_to_use:
+        print(" -", v)
+
+    print("\nWrote:")
+    print(" -", args.out_csv)
+    print(" -", args.out_md)
+
+
+if __name__ == "__main__":
+    main()

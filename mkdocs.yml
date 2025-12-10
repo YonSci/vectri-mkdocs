@@ -208,6 +208,8 @@ nav:
       - ECMWF S2S Temperature: day2/17-download_ecmwf_s2s_t2m_daily.md
       - ECMWF S2S Ensemble Precipitation: day2/18-download_ecmwf_s2s_tp_daily_ensemble.md
       - ECMWF S2S Ensemble Temperature: day2/19-download_ecmwf_s2s_t2m_daily_ensemble.md
+      - C3S Seasonal ECMWF Precipitation: day2/28-download_c3s_seasonal_precip_ensmean_daily.md
+      - C3S Seasonal ECMWF Temperature: day2/29-download_c3s_seasonal_temp_ensmean_daily.md
       - CHC-CMIP6 Precipitation: day2/20-download_chc_cmip6_precip_daily.md
       - CHC-CMIP6 Temperature: day2/21-download_chc_cmip6_temp_daily.md
       - CHIRTS Daily Temperature: day2/22-download_chirts_daily.md
