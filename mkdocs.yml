@@ -218,6 +218,7 @@ nav:
       - HWSD Soil Texture: day2/27-download_hwsd_soil_texture.md
       - VECTRI Output Analysis: day3/01-vectri-output-analysis.md
       - VECTRI Command Line Tutorial: day3/02-vectri-command-line-tutorial.md
+      - VECTRI Hands-On Simulations: day3/03-vectri-hands-on-simulations.md
   - Assessments:
       - Overview: assessments.md
       - VECTRI Introduction Quiz: quizzes/vectri-intro-quiz.md
