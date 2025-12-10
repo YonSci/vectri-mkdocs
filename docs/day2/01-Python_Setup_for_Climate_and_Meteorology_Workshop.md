@@ -23,11 +23,6 @@ print("Python version:", sys.version)
 print("Platform:", platform.platform())
 ```
 
-```text
-Python executable: c:\Users\yonas\Documents\ICPAC\python-ml-gha-venv\Scripts\python.exe
-Python version: 3.13.8 (tags/v3.13.8:a15ae61, Oct  7 2025, 12:34:25) [MSC v.1944 64 bit (AMD64)]
-Platform: Windows-11-10.0.26100-SP0
-```
 
 ```python
 def which(cmd):
@@ -38,14 +33,6 @@ print("conda:", which("conda"))
 print("mamba:", which("mamba"))
 print("python:", which("python"))
 print("py:", which("py"))  # Windows launcher
-```
-
-```text
-pip: c:\Users\yonas\Documents\ICPAC\python-ml-gha-venv\Scripts\pip.EXE
-conda: <not found>
-mamba: <not found>
-python: c:\Users\yonas\Documents\ICPAC\python-ml-gha-venv\Scripts\python.EXE
-py: C:\Windows\py.EXE
 ```
 
 ---
@@ -73,10 +60,15 @@ Choose one of these Conda-based options:
 
 Verify: Command Prompt/Powershell
 
-
 ```
 conda --version
+```
+
+```
 python --version
+```
+
+```
 conda env list
 ```
 
@@ -135,8 +127,12 @@ conda env list
 1. Download the latest **[Windows installer](https://www.python.org/downloads/)** from python.org.
 2. During setup, check **"Add Python to PATH"**.
 3. Open **Command Prompt/Powershell**:
+
 ```powershell
 python --version
+```
+
+```powershell
 pip --version
 ```
 
@@ -148,20 +144,36 @@ pip --version
 2)  Scroll down until you see "Windows Subsystem for Linux" and "Virtual Machine Platform" click the checkbox
 3) Click "OK" and Click "Restart Now". when you are ready. 
 4) Open **Command Prompt/Powershell**:
-    ```
-    wsl --status
-    wsl --update 
 
-    ```
+```
+wsl --status
+```
+
+```
+wsl --update
+```
 4) When your machine is back, go back to the search bar on your Desktop and search for "Microsoft Store".
 5) In the Microsoft Store application, search for "Ubuntu" and "GET"
 6) For first time set "user name" and "password"
+
+```bash
+ls
 ```
-    ls
-    cd ..
-    cd ~
-    ls
-    cd mnt
+
+```bash
+cd ..
+```
+
+```bash
+cd ~
+```
+
+```bash
+ls
+```
+
+```bash
+cd mnt
 ```
 
 
@@ -172,12 +184,20 @@ pip --version
 ---
 
 ### Linux (Ubuntu/Debian/Fedora)
-```bash
-# Ubuntu/Debian
-sudo apt update
-sudo apt install -y python3 python3-venv python3-pip
 
-# Fedora
+**Ubuntu/Debian:**
+
+```bash
+sudo apt update
+```
+
+```bash
+sudo apt install -y python3 python3-venv python3-pip
+```
+
+**Fedora:**
+
+```bash
 sudo dnf install -y python3 python3-pip python3-virtualenv
 ```
 
@@ -188,16 +208,42 @@ sudo dnf install -y python3 python3-pip python3-virtualenv
 1. Download **arm64** (Apple Silicon) or **x86_64** (Intel) installer.
 2. Run the `.pkg` or use the `.sh` installer from Terminal.
 3. Restart the terminal.
+
 ```bash
 conda --version
+```
+
+```bash
 python --version
 ```
 
 #### Option B: Homebrew + (pyenv or CPython)
+
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install python  # or: brew install pyenv && pyenv install 3.12.6
+```
+
+```bash
+brew install python
+```
+
+Or use pyenv:
+
+```bash
+brew install pyenv
+```
+
+```bash
+pyenv install 3.12.6
+```
+
+Verify installation:
+
+```bash
 python3 --version
+```
+
+```bash
 pip3 --version
 ```
 
@@ -208,19 +254,63 @@ pip3 --version
 **Conda/mamba** manage Python _and_ non-Python deps (e.g., `gdal`, `geos`, `cuda`). **Pip** installs Python packages from PyPI.
 
 ### Conda / Mamba Basics
+
+Set up your shell (run once):
+
 ```bash
-conda init            # set up your shell once
+conda init
+```
+
+Configure channels:
+
+```bash
 conda config --add channels conda-forge
+```
+
+```bash
 conda config --set channel_priority strict
+```
+
+Create a new environment:
+
+```bash
 conda create -n ds-312 python=3.12
+```
+
+Activate the environment:
+
+```bash
 conda activate ds-312
+```
+
+Install packages:
+
+```bash
 conda install numpy pandas jupyterlab
+```
+
+List installed packages:
+
+```bash
 conda list
+```
+
+Export environment to file:
+
+```bash
 conda env export > environment.yml
+```
+
+Create environment from file:
+
+```bash
 conda env create -f environment.yml
-conda remove --name ds-312
-conda remove -n ds-312
-conda remove
+```
+
+Remove an environment:
+
+```bash
+conda remove --name ds-312 --all
 ```
 
 Deactivate:
@@ -230,10 +320,28 @@ conda deactivate
 ```
 
 ### Pip Basics
+
+Upgrade pip:
+
 ```bash
 python -m pip install --upgrade pip
+```
+
+Install packages:
+
+```bash
 pip install numpy pandas jupyterlab
+```
+
+Export requirements to file:
+
+```bash
 pip freeze > requirements.txt
+```
+
+Install from requirements file:
+
+```bash
 pip install -r requirements.txt
 ```
 
@@ -251,12 +359,27 @@ pip install -r requirements.txt
 - Below are step-by-step guides for creating virtual environments using Conda and pip.
 
 ### A) Conda 
+
+Create environment:
+
 ```bash
 conda create -n myenv python=3.11
+```
+
+Activate environment:
+
+```bash
 conda activate myenv
+```
+
+Install packages:
+
+```bash
 conda install numpy
 ```
+
 Deactivate:
+
 ```bash
 conda deactivate
 ```
@@ -275,17 +398,47 @@ conda deactivate
 - Customizable Requirements: Supports dependency management with requirements.txt files.
 
 ### B) Built-in `venv` (works everywhere)
+
+Create virtual environment:
+
 ```bash
 python -m venv .venv
-# Windows (PowerShell)
-.venv\Scripts\Activate.ps1
-# macOS/Linux (bash)
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install numpy
-
 ```
-Deactivate: `deactivate`
+
+**Windows (PowerShell)** - Activate:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+**Windows Command Prompt** - Activate:
+```
+.venv\Scripts\activate
+```
+
+**macOS/Linux (bash)** - Activate:
+
+```bash
+source .venv/bin/activate
+```
+
+Upgrade pip:
+
+```bash
+python -m pip install --upgrade pip
+```
+
+Install packages:
+
+```bash
+pip install numpy
+```
+
+Deactivate:
+
+```bash
+deactivate
+```
 
 ---
 
@@ -327,19 +480,31 @@ Jupyter Notebooks are a versatile tool for professionals, researchers, educators
 Install and launch inside your target environment.
 
 ### Install
-```bash
-# Conda
-conda install jupyterlab ipykernel
 
-# Pip
+**Using Conda:**
+
+```bash
+conda install jupyterlab ipykernel
+```
+
+**Using Pip:**
+
+```bash
 pip install jupyterlab ipykernel
 ```
 
 ### Launch
+
+Launch JupyterLab:
+
 ```bash
-jupyter lab   
+jupyter lab
+```
+
+Or launch classic Jupyter Notebook:
+
+```bash
 jupyter notebook
-jupyter-notebook
 ```
 
 ---
@@ -420,11 +585,13 @@ These IDEs support multiple programming languages, including Python.
 4) Mount Google Drive in Colab
     - To access files in your Google Drive from the Colab notebook, mount the drive:
 
-    
-    ```python
-        from google.colab import drive
-        drive.mount('/content/drive')
-    ```
+```python
+from google.colab import drive
+```
+
+```python
+drive.mount('/content/drive')
+```
 
 
     ### Save Notebook to Drive
@@ -433,14 +600,20 @@ These IDEs support multiple programming languages, including Python.
 
 
 #### Replace 'Colab-Projects' with your folder name
-```
+
+```python
 import os
-os.chdir('/content/drive/MyDrive/Colab-Projects')  
+```
+
+```python
+os.chdir('/content/drive/MyDrive/Colab-Projects')
 ```
 
 ### Unmount Drive (Optional)
-`drive.flush_and_unmount()`
 
+```python
+drive.flush_and_unmount()
+```
 
 
 1) Configure the Runtime
