@@ -218,12 +218,13 @@ nav:
       - WorldPop Population: day2/25-download_worldpop_population.md
       - WorldPop Projections: day2/26-download_worldpop_projections.md
       - HWSD Soil Texture: day2/27-download_hwsd_soil_texture.md
-      - VECTRI Output Analysis: day3/01-vectri-output-analysis.md
-      - VECTRI Command Line Tutorial: day3/02-vectri-command-line-tutorial.md
-      - VECTRI Hands-On Simulations: day3/03-vectri-hands-on-simulations.md
-      - VECTRI Configuring Parameters: day3/04-vectri-configuring-parameters.md
-      - VECTRI Parameter Sensitivity: day3/05-vectri-parameter-sensitivity.md
-      - VECTRI Analyzing Outputs & Visualizations: day3/06-vectri-analyzing-outputs-visualizations.md
+      - VECTRI Data Processing and Inspecting: day3/01-data-processing-and-inspecting.md
+      - VECTRI Output Analysis: day3/02-vectri-output-analysis.md
+      - VECTRI Command Line Tutorial: day3/03-vectri-command-line-tutorial.md
+      - VECTRI Hands-On Simulations: day3/04-vectri-hands-on-simulations.md
+      - VECTRI Configuring Parameters: day3/05-vectri-configuring-parameters.md
+      - VECTRI Parameter Sensitivity: day3/06-vectri-parameter-sensitivity.md
+      - VECTRI Analyzing Outputs & Visualizations: day3/07-vectri-analyzing-outputs-visualizations.md
   - Assessments:
       - Overview: assessments.md
       - VECTRI Introduction Quiz: quizzes/vectri-intro-quiz.md
