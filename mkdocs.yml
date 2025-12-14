@@ -194,8 +194,8 @@ nav:
       - Pandas: day2/04-Pandas_for_Climate_and_Meteorology_Workshop.md
       - Matplotlib: day2/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md
       - Xarray: day2/06-Xarray_for_Climate_and_Meteorology_Workshop.md
-      - Cartopy: day2/07-Geopandas_for_Climate_and_Meteorology_Workshop.md
-      - Geopandas: day2/08-Cartopy_for_Climate_and_Meteorology_Workshop.md
+      - Geopandas: day2/07-Geopandas_for_Climate_and_Meteorology_Workshop.
+      - Cartopy: day2/08-Cartopy_for_Climate_and_Meteorology_Workshop.md
       - Climate Data Downloading (Data acquisition) : day2/09-climate_data_access_and_extraction.md
       - CHIRPS Data Download: day2/10-download_chirps.md
       - ARC2 Data Download: day2/11-download_arc2.md
