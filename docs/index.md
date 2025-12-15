@@ -57,7 +57,7 @@ By the end of this training, participants will be able to:
 1. Source, quality check, and preprocess ERA5/CHIRPS climate data into daily, VECTRI-ready NetCDF format (rainfall, 2-m temperature)
 2. Compile and run VECTRI; interpret outputs (EIR - Entomological Inoculation Rate, HBR - Human Biting Rate, cases) and evaluate lags (EIR→cases)
 3. Understand the biological basis of malaria transmission and how climate variables drive vector and parasite dynamics
-4. Create environmental input files (population, land cover) for VECTRI modeling
+4. Create environmental input files (population, soil type) for VECTRI modeling
 5. Conduct spatial and temporal analysis of model outputs to identify malaria transmission hotspots and seasonal patterns
 
 ---
