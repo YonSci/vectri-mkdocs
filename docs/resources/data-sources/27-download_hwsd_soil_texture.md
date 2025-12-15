@@ -1082,8 +1082,8 @@ print("Added hydraulic properties")
 ### Related Tutorials
 
 - [WorldPop Population](25-download_worldpop_population.md) - Population data
-- [Climate Data Access](09-climate_data_access_and_extraction.md) - Overview
-- [VECTRI Model](../day1/06-vectri_model_components_larvae_to_hydrology.md) - Model input
+- [Climate Data Access](../../day3/09-climate_data_access_and_extraction.md) - Overview
+- [VECTRI Model](../../day1/vectri_model_components_larvae_to_hydrology.md) - Model input
 
 ---
 
@@ -1098,7 +1098,7 @@ print("Added hydraulic properties")
     Soil classification  
     Hydraulic properties  
     
-    → [Xarray Tutorial](06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+    → [Xarray Tutorial](../../day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-map: **Visualize Data**
     
@@ -1107,7 +1107,7 @@ print("Added hydraulic properties")
     Soil texture maps  
     Regional patterns  
     
-    → [Matplotlib Tutorial](05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    → [Matplotlib Tutorial](../../day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-grid: **Regrid Data**
     
@@ -1116,7 +1116,7 @@ print("Added hydraulic properties")
     Match climate grids  
     Prepare for modeling  
     
-    → [GeoPandas Tutorial](07-Geopandas_for_Climate_and_Meteorology_Workshop.md)
+    → [GeoPandas Tutorial](../../day3/07-Geopandas_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-bug: **VECTRI Modeling**
     
@@ -1125,7 +1125,7 @@ print("Added hydraulic properties")
     Soil-hydrology coupling  
     Breeding site suitability  
     
-    → [VECTRI Model](../day1/06-vectri_model_components_larvae_to_hydrology.md)
+    → [VECTRI Model](../../day1/vectri_model_components_larvae_to_hydrology.md)
 
 </div>
 

@@ -1137,7 +1137,7 @@ ds_combined.to_netcdf('ecmwf_hres_combined.nc')
     Compare with observations  
     Calculate skill scores  
     
-    → [Xarray Tutorial](06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+    → [Xarray Tutorial](../../day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-map: **Visualize Forecasts**
     
@@ -1146,7 +1146,7 @@ ds_combined.to_netcdf('ecmwf_hres_combined.nc')
     Create forecast maps  
     Plot time series  
     
-    → [Matplotlib Tutorial](05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    → [Matplotlib Tutorial](../../day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-weather-cloudy: **Compare with GFS**
     
@@ -1164,7 +1164,7 @@ ds_combined.to_netcdf('ecmwf_hres_combined.nc')
     Prepare inputs for malaria modeling  
     Forecast-based early warning  
     
-    → [VECTRI Model](../day1/06-vectri_model_components_larvae_to_hydrology.md)
+    → [VECTRI Model](../../day1/vectri_model_components_larvae_to_hydrology.md)
 
 </div>
 

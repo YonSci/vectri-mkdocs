@@ -924,7 +924,7 @@ plt.show()
     Compute percentiles and spread  
     Create probability maps  
     
-    → [Xarray Tutorial](06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+    → [Xarray Tutorial](../../day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-map: **Visualize Uncertainty**
     
@@ -933,7 +933,7 @@ plt.show()
     Plot ensemble spaghetti  
     Probability exceedance maps  
     
-    → [Matplotlib Tutorial](05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    → [Matplotlib Tutorial](../../day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-thermometer: **Temperature Ensemble**
     
@@ -951,7 +951,7 @@ plt.show()
     Probabilistic malaria risk  
     Ensemble-based early warning  
     
-    → [VECTRI Model](../day1/06-vectri_model_components_larvae_to_hydrology.md)
+    → [VECTRI Model](../../day1/vectri_model_components_larvae_to_hydrology.md)
 
 </div>
 

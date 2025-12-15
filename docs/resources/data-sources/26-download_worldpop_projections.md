@@ -855,7 +855,7 @@ print(f"Population exposed to >{hot_threshold}°C: {float(pct_exposed):.1f}%")
 
 - [WorldPop Population](25-download_worldpop_population.md) - Historical data
 - [CHC-CMIP6 Temperature](21-download_chc_cmip6_temp_daily.md) - Future climate
-- [Climate Data Access](09-climate_data_access_and_extraction.md) - Overview
+- [Climate Data Access](../../day3/09-climate_data_access_and_extraction.md) - Overview
 
 ---
 
@@ -870,7 +870,7 @@ print(f"Population exposed to >{hot_threshold}°C: {float(pct_exposed):.1f}%")
     Population growth rates  
     Urban expansion  
     
-    → [Xarray Tutorial](06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+    → [Xarray Tutorial](../../day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-map: **Visualize Projections**
     
@@ -879,7 +879,7 @@ print(f"Population exposed to >{hot_threshold}°C: {float(pct_exposed):.1f}%")
     Future population maps  
     Change detection  
     
-    → [Matplotlib Tutorial](05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    → [Matplotlib Tutorial](../../day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-thermometer: **Climate Exposure**
     
@@ -897,7 +897,7 @@ print(f"Population exposed to >{hot_threshold}°C: {float(pct_exposed):.1f}%")
     Future disease burden  
     Climate-population interactions  
     
-    → [VECTRI Model](../day1/06-vectri_model_components_larvae_to_hydrology.md)
+    → [VECTRI Model](../../day1/vectri_model_components_larvae_to_hydrology.md)
 
 </div>
 

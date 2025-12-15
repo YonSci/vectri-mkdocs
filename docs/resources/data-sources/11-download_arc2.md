@@ -957,5 +957,5 @@ After downloading ARC2 data:
 4. **Integration**: Combine with temperature data for VECTRI
 5. **Comparison**: Evaluate ARC2 vs CHIRPS for your region
 
-[← Back to Data Access](09-climate_data_access_and_extraction.md){ .md-button }
+[← Back to Data Access](../../day3/09-climate_data_access_and_extraction.md){ .md-button }
 [Compare with CHIRPS →](10-download_chirps.md){ .md-button .md-button--primary }

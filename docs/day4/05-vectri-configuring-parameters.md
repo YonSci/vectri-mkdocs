@@ -489,5 +489,5 @@ You now have a working pattern to:
 
 - [VECTRI Documentation](https://users.ictp.it/~tompkins/vectri/documentation/)
 - [VECTRI Manual (PDF)](../pdfs/VECTRI_manual_v1.6.pdf)
-- [VECTRI Command Line Tutorial](./02-vectri-command-line-tutorial.md)
+- [VECTRI Command Line Tutorial](./03-vectri-command-line-tutorial.md)
 

@@ -807,8 +807,8 @@ Test your Python programming knowledge with this interactive quiz! Select your a
 
 ## 📚 Additional Resources
 
-- [Python Basics Tutorial](../day2/02-Python_Basics_for_Climate_and_Meteorology_Workshop.md)
-- [Python Setup Guide](../day2/01-Python_Setup_for_Climate_and_Meteorology_Workshop.md)
+- [Python Basics Tutorial](../day2/06-Python_Basics_for_Climate_and_Meteorology_Workshop.md)
+- [Python Setup Guide](../day2/05-Python_Setup_for_Climate_and_Meteorology_Workshop.md)
 - [Official Python Documentation](https://docs.python.org/3/)
 - [Python for Data Science](https://www.python.org/about/gettingstarted/)
 - Practice on [Python.org Interactive Shell](https://www.python.org/shell/)

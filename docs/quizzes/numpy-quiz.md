@@ -808,7 +808,7 @@ Test your NumPy knowledge for climate data analysis with this interactive quiz! 
 
 ## 📚 Additional Resources
 
-- [NumPy Tutorial](../day2/03-Numpy_for_Climate_and_Meteorology_Workshop.md)
+- [NumPy Tutorial](../day2/07-Numpy_for_Climate_and_Meteorology_Workshop.md)
 - [Official NumPy Documentation](https://numpy.org/doc/)
 - [NumPy for Absolute Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html)
 - [NumPy Tutorial - W3Schools](https://www.w3schools.com/python/numpy/)

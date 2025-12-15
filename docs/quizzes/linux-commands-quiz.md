@@ -808,7 +808,7 @@ Test your Linux command knowledge with this interactive quiz! Select your answer
 
 ## 📚 Additional Resources
 
-- [Basic Linux Commands Guide](../day1/04-basic-linux-commands.md)
+- [Basic Linux Commands Guide](../day2/04-basic-linux-commands.md)
 - [Linux Command Line Basics - Ubuntu Tutorial](https://ubuntu.com/tutorials/command-line-for-beginners)
 - [The Linux Command Line (Free Book)](http://linuxcommand.org/tlcl.php)
 - Practice in your terminal every day!
@@ -820,7 +820,7 @@ Test your Linux command knowledge with this interactive quiz! Select your answer
 After mastering these commands:
 
 1. Practice in your own terminal
-2. Try the hands-on exercises in the [Basic Linux Commands guide](../day1/04-basic-linux-commands.md)
+2. Try the hands-on exercises in the [Basic Linux Commands guide](../day2/04-basic-linux-commands.md)
 3. Set up your VECTRI environment
 4. Explore more advanced commands like `awk`, `sed`, and shell scripting
 

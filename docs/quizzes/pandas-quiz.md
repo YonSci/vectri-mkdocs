@@ -805,7 +805,7 @@ Test your Pandas knowledge for climate data analysis with this interactive quiz!
 
 ## 📚 Additional Resources
 
-- [Pandas Tutorial](../day2/04-Pandas_for_Climate_and_Meteorology_Workshop.md)
+- [Pandas Tutorial](../day3/04-Pandas_for_Climate_and_Meteorology_Workshop.md)
 - [Official Pandas Documentation](https://pandas.pydata.org/docs/)
 - [Pandas Getting Started](https://pandas.pydata.org/getting_started.html)
 - [10 Minutes to Pandas](https://pandas.pydata.org/docs/user_guide/10min.html)

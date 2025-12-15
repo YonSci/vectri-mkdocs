@@ -1029,7 +1029,7 @@ https://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_0p25.pl?
     Compare forecasts with observations  
     Calculate skill scores and biases  
     
-    → [Xarray Tutorial](06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+    → [Xarray Tutorial](../../day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-map: **Visualize Forecasts**
     
@@ -1038,7 +1038,7 @@ https://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_0p25.pl?
     Create forecast maps with Cartopy  
     Time series and ensemble plots  
     
-    → [Matplotlib Tutorial](05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    → [Matplotlib Tutorial](../../day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-vector-combine: **Combine with Observations**
     
@@ -1056,7 +1056,7 @@ https://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_0p25.pl?
     Use forecasts for malaria modeling  
     Prepare inputs for VECTRI  
     
-    → [VECTRI Model](../day1/06-vectri_model_components_larvae_to_hydrology.md)
+    → [VECTRI Model](../../day1/vectri_model_components_larvae_to_hydrology.md)
 
 </div>
 

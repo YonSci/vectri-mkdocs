@@ -997,7 +997,7 @@ print(f"Linear trend: {trend_mm_per_decade:.1f} mm/decade")
 ### Related Tutorials
 
 - [CHIRPS Historical Data](10-download_chirps.md) - Observed precipitation
-- [Climate Data Access](09-climate_data_access_and_extraction.md) - Overview of sources
+- [Climate Data Access](../../day3/09-climate_data_access_and_extraction.md) - Overview of sources
 
 ---
 
@@ -1012,7 +1012,7 @@ print(f"Linear trend: {trend_mm_per_decade:.1f} mm/decade")
     Compute precipitation trends  
     Compare scenarios  
     
-    → [Xarray Tutorial](06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+    → [Xarray Tutorial](../../day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-map: **Visualize Changes**
     
@@ -1021,7 +1021,7 @@ print(f"Linear trend: {trend_mm_per_decade:.1f} mm/decade")
     Map future projections  
     Difference plots  
     
-    → [Matplotlib Tutorial](05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    → [Matplotlib Tutorial](../../day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-thermometer: **Temperature Projections**
     
@@ -1039,7 +1039,7 @@ print(f"Linear trend: {trend_mm_per_decade:.1f} mm/decade")
     Future malaria scenarios  
     Climate impact modeling  
     
-    → [VECTRI Model](../day1/06-vectri_model_components_larvae_to_hydrology.md)
+    → [VECTRI Model](../../day1/vectri_model_components_larvae_to_hydrology.md)
 
 </div>
 

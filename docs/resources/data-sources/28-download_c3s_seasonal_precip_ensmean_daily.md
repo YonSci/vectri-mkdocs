@@ -867,7 +867,7 @@ request = {
     Calculate monthly anomalies  
     Compare with climatology  
     
-    → [Xarray Tutorial](06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+    → [Xarray Tutorial](../../day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-map: **Visualize Seasonal Outlook**
     
@@ -876,7 +876,7 @@ request = {
     Create monthly forecast maps  
     Plot probability distributions  
     
-    → [Matplotlib Tutorial](05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    → [Matplotlib Tutorial](../../day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-weather-cloudy: **Combine with S2S**
     
@@ -894,7 +894,7 @@ request = {
     Long-range malaria risk  
     1-3 month outbreak prediction  
     
-    → [VECTRI Model](../day1/06-vectri-model-theory-and-code.md)
+    → [VECTRI Model](../../day1/06-vectri-model-theory-and-code.md)
 
 </div>
 

@@ -1275,7 +1275,7 @@ print("Saved thermal indices")
 ### Related Tutorials
 
 - [CHC-CMIP6 Precipitation](20-download_chc_cmip6_precip_daily.md) - Precipitation projections
-- [Climate Data Access](09-climate_data_access_and_extraction.md) - Overview of sources
+- [Climate Data Access](../../day3/09-climate_data_access_and_extraction.md) - Overview of sources
 
 ---
 
@@ -1290,7 +1290,7 @@ print("Saved thermal indices")
     Compute temperature trends  
     Compare warming scenarios  
     
-    → [Xarray Tutorial](06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+    → [Xarray Tutorial](../../day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-map: **Visualize Changes**
     
@@ -1299,7 +1299,7 @@ print("Saved thermal indices")
     Map future projections  
     Warming difference plots  
     
-    → [Matplotlib Tutorial](05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    → [Matplotlib Tutorial](../../day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-weather-rainy: **Precipitation Projections**
     
@@ -1317,7 +1317,7 @@ print("Saved thermal indices")
     Future malaria scenarios  
     Temperature-driven transmission  
     
-    → [VECTRI Model](../day1/06-vectri_model_components_larvae_to_hydrology.md)
+    → [VECTRI Model](../../day1/vectri_model_components_larvae_to_hydrology.md)
 
 </div>
 

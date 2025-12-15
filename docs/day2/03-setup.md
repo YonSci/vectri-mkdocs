@@ -1501,11 +1501,11 @@ This guide covers the complete setup process for running VECTRI, including WSL i
     - Runtime logs (vector/disease, climate variable aliases, etc.)
     - Simulation progress and completion status
 
-    ![simulation progress and completion status](assets/img/vectri-test-run.png)
+    ![simulation progress and completion status](../assets/img/vectri-test-run.png)
 
     - If successful 🎉, typing `ls` should show the output file `vectri.nc`
 
-    ![vectri output file](assets/img/vectri-test-dir.png)
+    ![vectri output file](../assets/img/vectri-test-dir.png)
 
     ---
 

@@ -592,6 +592,6 @@ Test your understanding of VECTRI with this interactive quiz! Select your answer
 
 - [VECTRI Online Documentation](https://users.ictp.it/~tompkins/vectri/documentation/)
 - [VECTRI PDF Manual](../pdfs/VECTRI_manual_v1.6.pdf)
-- [Back to VECTRI Introduction](../day1/03-vectri-intro.md)
+- [Back to VECTRI Introduction](../day1/05-vectri-intro.md)
 - Workshop Lab Exercises (Days 2-5)
 

@@ -146,13 +146,13 @@ This page provides links to datasets, tools, documentation, and templates used t
     
     ---
     
-    - [Python Basics](day2/02-Python_Basics_for_Climate_and_Meteorology_Workshop.md)
-    - [NumPy](day2/03-Numpy_for_Climate_and_Meteorology_Workshop.md)
-    - [Pandas](day2/04-Pandas_for_Climate_and_Meteorology_Workshop.md)
-    - [Matplotlib](day2/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
-    - [Xarray](day2/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
-    - [GeoPandas](day2/07-Geopandas_for_Climate_and_Meteorology_Workshop.md)
-    - [Cartopy](day2/08-Cartopy_for_Climate_and_Meteorology_Workshop.md)
+    - [Python Basics](day2/06-Python_Basics_for_Climate_and_Meteorology_Workshop.md)
+    - [NumPy](day2/07-Numpy_for_Climate_and_Meteorology_Workshop.md)
+    - [Pandas](day3/04-Pandas_for_Climate_and_Meteorology_Workshop.md)
+    - [Matplotlib](day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    - [Xarray](day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+    - [GeoPandas](day3/07-Geopandas_for_Climate_and_Meteorology_Workshop.md)
+    - [Cartopy](day3/08-Cartopy_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-download: **Download Scripts**
     
@@ -182,23 +182,23 @@ This page provides links to datasets, tools, documentation, and templates used t
 
 | Category | Tutorial | Script |
 |----------|----------|--------|
-| **Rainfall** | [CHIRPS](day2/10-download_chirps.md) | `download_chirps.py` |
-| | [ARC2](day2/11-download_arc2.md) | `download_arc2.py` |
-| | [TAMSAT](day2/12-download_tamsat.md) | `download_tamsat.py` |
-| | [GFS Precipitation](day2/13-download_gfs_precip_forecast.md) | `download_gfs_precip_forecast.py` |
-| | [ECMWF HRES Precip](day2/15-download_ecmwf_hres_precip.md) | `download_ecmwf-hres_precip.py` |
-| | [ECMWF S2S Precip](day2/16-download_ecmwf_s2s_tp_daily.md) | `download_ecmwf-s2s-precip.py` |
-| | [CHC-CMIP6 Precip](day2/20-download_chc_cmip6_precip_daily.md) | `download_chc_cmip6_precip_daily.py` |
-| **Temperature** | [CHIRTS](day2/22-download_chirts_daily.md) | `download_chirts.py` |
-| | [ERA5-Land](day2/23-download_era5_land_temp_daily.md) | `download_era5-land-temp.py` |
-| | [ERA5](day2/24-download_era5_temp_daily.md) | `download_era5-temp.py` |
-| | [GFS Temperature](day2/14-download_gfs_temp_forecast.md) | `download_gfs_temp_forecast.py` |
-| | [ECMWF HRES Temp](day2/15-download_ecmwf_hres_temp.md) | `download_ecmwf-hres_temp.py` |
-| | [ECMWF S2S Temp](day2/17-download_ecmwf_s2s_t2m_daily.md) | `download_ecmwf-s2s-temp.py` |
-| | [CHC-CMIP6 Temp](day2/21-download_chc_cmip6_temp_daily.md) | `download_chc_cmip6_temp_daily.py` |
-| **Population** | [WorldPop](day2/25-download_worldpop_population.md) | `download_afripop_worldpop.py` |
-| | [WorldPop Projections](day2/26-download_worldpop_projections.md) | `download_worldpop_projections.py` |
-| **Soil** | [HWSD](day2/27-download_hwsd_soil_texture.md) | `download_harmonized_world_soil_database.py` |
+| **Rainfall** | [CHIRPS](resources/data-sources/10-download_chirps.md) | `download_chirps.py` |
+| | [ARC2](resources/data-sources/11-download_arc2.md) | `download_arc2.py` |
+| | [TAMSAT](resources/data-sources/12-download_tamsat.md) | `download_tamsat.py` |
+| | [GFS Precipitation](resources/data-sources/13-download_gfs_precip_forecast.md) | `download_gfs_precip_forecast.py` |
+| | [ECMWF HRES Precip](resources/data-sources/15-download_ecmwf_hres_precip.md) | `download_ecmwf-hres_precip.py` |
+| | [ECMWF S2S Precip](resources/data-sources/16-download_ecmwf_s2s_tp_daily.md) | `download_ecmwf-s2s-precip.py` |
+| | [CHC-CMIP6 Precip](resources/data-sources/20-download_chc_cmip6_precip_daily.md) | `download_chc_cmip6_precip_daily.py` |
+| **Temperature** | [CHIRTS](resources/data-sources/22-download_chirts_daily.md) | `download_chirts.py` |
+| | [ERA5-Land](resources/data-sources/23-download_era5_land_temp_daily.md) | `download_era5-land-temp.py` |
+| | [ERA5](resources/data-sources/24-download_era5_temp_daily.md) | `download_era5-temp.py` |
+| | [GFS Temperature](resources/data-sources/14-download_gfs_temp_forecast.md) | `download_gfs_temp_forecast.py` |
+| | [ECMWF HRES Temp](resources/data-sources/15-download_ecmwf_hres_temp.md) | `download_ecmwf-hres_temp.py` |
+| | [ECMWF S2S Temp](resources/data-sources/17-download_ecmwf_s2s_t2m_daily.md) | `download_ecmwf-s2s-temp.py` |
+| | [CHC-CMIP6 Temp](resources/data-sources/21-download_chc_cmip6_temp_daily.md) | `download_chc_cmip6_temp_daily.py` |
+| **Population** | [WorldPop](resources/data-sources/25-download_worldpop_population.md) | `download_afripop_worldpop.py` |
+| | [WorldPop Projections](resources/data-sources/26-download_worldpop_projections.md) | `download_worldpop_projections.py` |
+| **Soil** | [HWSD](resources/data-sources/27-download_hwsd_soil_texture.md) | `download_harmonized_world_soil_database.py` |
 
 ---
 

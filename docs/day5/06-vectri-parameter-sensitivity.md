@@ -391,8 +391,8 @@ After completing this mini-pack, you can:
 
 ## 🔗 Additional Resources
 
-- [VECTRI Configuring Parameters](./04-vectri-configuring-parameters.md)
-- [VECTRI Hands-On Simulations](./03-vectri-hands-on-simulations.md)
-- [VECTRI Output Analysis](./01-vectri-output-analysis.md)
+- [VECTRI Configuring Parameters](../day4/05-vectri-configuring-parameters.md)
+- [VECTRI Hands-On Simulations](../day4/04-vectri-hands-on-simulations.md)
+- [VECTRI Output Analysis](../day4/02-vectri-output-analysis.md)
 - [VECTRI Documentation](https://users.ictp.it/~tompkins/vectri/documentation/)
 

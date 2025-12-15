@@ -1078,7 +1078,7 @@ ds_stats.to_netcdf('era5_temp_statistics.nc')
 
 - [ERA5-Land Temperature](23-download_era5_land_temp_daily.md) - Higher resolution land
 - [CHIRTS Daily Temperature](22-download_chirts_daily.md) - Africa observations
-- [Climate Data Access](09-climate_data_access_and_extraction.md) - Overview
+- [Climate Data Access](../../day3/09-climate_data_access_and_extraction.md) - Overview
 
 ---
 
@@ -1093,7 +1093,7 @@ ds_stats.to_netcdf('era5_temp_statistics.nc')
     Compute temperature trends  
     Long-term climate analysis  
     
-    → [Xarray Tutorial](06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+    → [Xarray Tutorial](../../day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-map: **Visualize Data**
     
@@ -1102,7 +1102,7 @@ ds_stats.to_netcdf('era5_temp_statistics.nc')
     Map temperature patterns  
     Seasonal climatologies  
     
-    → [Matplotlib Tutorial](05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    → [Matplotlib Tutorial](../../day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-compare: **Compare Datasets**
     
@@ -1120,7 +1120,7 @@ ds_stats.to_netcdf('era5_temp_statistics.nc')
     Temperature-driven transmission  
     Historical malaria analysis  
     
-    → [VECTRI Model](../day1/06-vectri_model_components_larvae_to_hydrology.md)
+    → [VECTRI Model](../../day1/vectri_model_components_larvae_to_hydrology.md)
 
 </div>
 

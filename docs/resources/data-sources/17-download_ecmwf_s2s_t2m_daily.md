@@ -901,7 +901,7 @@ print("Saved combined temperature and precipitation dataset")
     Calculate weekly/monthly anomalies  
     Compare with climatology  
     
-    → [Xarray Tutorial](06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+    → [Xarray Tutorial](../../day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-map: **Visualize Extended Forecasts**
     
@@ -910,7 +910,7 @@ print("Saved combined temperature and precipitation dataset")
     Create weekly forecast maps  
     Plot temperature evolution  
     
-    → [Matplotlib Tutorial](05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    → [Matplotlib Tutorial](../../day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-weather-pouring: **Download Precipitation**
     
@@ -928,7 +928,7 @@ print("Saved combined temperature and precipitation dataset")
     Temperature-dependent transmission  
     2-6 week malaria risk  
     
-    → [VECTRI Model](../day1/06-vectri_model_components_larvae_to_hydrology.md)
+    → [VECTRI Model](../../day1/vectri_model_components_larvae_to_hydrology.md)
 
 </div>
 

@@ -953,7 +953,7 @@ Now that you understand the theory, you're ready to explore VECTRI in action!
 
     Introduction to the VECTRI model structure and components
     
-    [VECTRI Introduction →](03-vectri-intro.md){ .md-button .md-button--primary }
+    [VECTRI Introduction →](05-vectri-intro.md){ .md-button .md-button--primary }
 
 -   :material-book-open-variant:{ .lg .middle } __Deep Dive: Model Components__
 
@@ -961,7 +961,7 @@ Now that you understand the theory, you're ready to explore VECTRI in action!
 
     Detailed equations and implementations for all VECTRI components
     
-    [Model Components →](06-vectri_model_components_larvae_to_hydrology.md){ .md-button }
+    [Model Components →](vectri_model_components_larvae_to_hydrology.md){ .md-button }
 
 </div>
 

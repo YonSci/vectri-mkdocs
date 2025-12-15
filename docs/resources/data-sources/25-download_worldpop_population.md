@@ -986,8 +986,8 @@ print(f"Regridded from {pop.shape} to {pop_regrid.shape}")
 
 ### Related Tutorials
 
-- [Climate Data Access](09-climate_data_access_and_extraction.md) - Overview
-- [VECTRI Model](../day1/06-vectri_model_components_larvae_to_hydrology.md) - Model input
+- [Climate Data Access](../../day3/09-climate_data_access_and_extraction.md) - Overview
+- [VECTRI Model](../../day1/vectri_model_components_larvae_to_hydrology.md) - Model input
 
 ---
 
@@ -1002,7 +1002,7 @@ print(f"Regridded from {pop.shape} to {pop_regrid.shape}")
     Population statistics  
     Urban/rural classification  
     
-    → [Xarray Tutorial](06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+    → [Xarray Tutorial](../../day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-map: **Visualize Data**
     
@@ -1011,7 +1011,7 @@ print(f"Regridded from {pop.shape} to {pop_regrid.shape}")
     Population density maps  
     Regional comparisons  
     
-    → [Matplotlib Tutorial](05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    → [Matplotlib Tutorial](../../day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-grid: **Regrid Data**
     
@@ -1020,7 +1020,7 @@ print(f"Regridded from {pop.shape} to {pop_regrid.shape}")
     Match climate grids  
     Prepare for modeling  
     
-    → [GeoPandas Tutorial](07-Geopandas_for_Climate_and_Meteorology_Workshop.md)
+    → [GeoPandas Tutorial](../../day3/07-Geopandas_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-bug: **VECTRI Modeling**
     
@@ -1029,7 +1029,7 @@ print(f"Regridded from {pop.shape} to {pop_regrid.shape}")
     Population at risk  
     Disease burden estimates  
     
-    → [VECTRI Model](../day1/06-vectri_model_components_larvae_to_hydrology.md)
+    → [VECTRI Model](../../day1/vectri_model_components_larvae_to_hydrology.md)
 
 </div>
 

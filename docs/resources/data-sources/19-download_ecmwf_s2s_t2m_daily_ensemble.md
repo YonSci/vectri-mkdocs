@@ -999,7 +999,7 @@ print("Saved combined ensemble mean dataset")
     Compute percentiles and spread  
     Create probability maps  
     
-    → [Xarray Tutorial](06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+    → [Xarray Tutorial](../../day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-map: **Visualize Uncertainty**
     
@@ -1008,7 +1008,7 @@ print("Saved combined ensemble mean dataset")
     Plot ensemble spaghetti  
     Spread evolution maps  
     
-    → [Matplotlib Tutorial](05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    → [Matplotlib Tutorial](../../day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-weather-pouring: **Precipitation Ensemble**
     
@@ -1026,7 +1026,7 @@ print("Saved combined ensemble mean dataset")
     Temperature-dependent transmission  
     Ensemble-based malaria risk  
     
-    → [VECTRI Model](../day1/06-vectri_model_components_larvae_to_hydrology.md)
+    → [VECTRI Model](../../day1/vectri_model_components_larvae_to_hydrology.md)
 
 </div>
 

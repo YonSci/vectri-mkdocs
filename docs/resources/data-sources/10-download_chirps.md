@@ -946,5 +946,5 @@ After downloading CHIRPS data:
 3. **Integration**: Combine with temperature data (ERA5)
 4. **VECTRI Setup**: Prepare climate forcing files
 
-[← Back to Data Access](09-climate_data_access_and_extraction.md){ .md-button }
+[← Back to Data Access](../../day3/09-climate_data_access_and_extraction.md){ .md-button }
 [Continue to ERA5 Download →](#){ .md-button .md-button--primary }

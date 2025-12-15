@@ -874,7 +874,7 @@ request = {
     Calculate weekly/monthly anomalies  
     Compare with climatology  
     
-    → [Xarray Tutorial](06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+    → [Xarray Tutorial](../../day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-map: **Visualize Extended Forecasts**
     
@@ -883,7 +883,7 @@ request = {
     Create weekly forecast maps  
     Plot probability distributions  
     
-    → [Matplotlib Tutorial](05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    → [Matplotlib Tutorial](../../day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-weather-cloudy: **Combine with HRES**
     
@@ -901,7 +901,7 @@ request = {
     Extended-range malaria risk  
     2-6 week outbreak prediction  
     
-    → [VECTRI Model](../day1/06-vectri_model_components_larvae_to_hydrology.md)
+    → [VECTRI Model](../../day1/vectri_model_components_larvae_to_hydrology.md)
 
 </div>
 

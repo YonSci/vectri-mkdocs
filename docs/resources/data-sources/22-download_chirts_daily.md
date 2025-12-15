@@ -1223,7 +1223,7 @@ print(f"Temperature trend: {trend_per_decade:.2f}°C per decade")
 
 - [CHIRPS Precipitation](10-download_chirps.md) - Companion precipitation data
 - [CHC-CMIP6 Temperature](21-download_chc_cmip6_temp_daily.md) - Future projections
-- [Climate Data Access](09-climate_data_access_and_extraction.md) - Overview of sources
+- [Climate Data Access](../../day3/09-climate_data_access_and_extraction.md) - Overview of sources
 
 ---
 
@@ -1238,7 +1238,7 @@ print(f"Temperature trend: {trend_per_decade:.2f}°C per decade")
     Compute temperature trends  
     Analyze extremes  
     
-    → [Xarray Tutorial](06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+    → [Xarray Tutorial](../../day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-map: **Visualize Data**
     
@@ -1247,7 +1247,7 @@ print(f"Temperature trend: {trend_per_decade:.2f}°C per decade")
     Map temperature patterns  
     Seasonal climatologies  
     
-    → [Matplotlib Tutorial](05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    → [Matplotlib Tutorial](../../day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-weather-rainy: **Add Precipitation**
     
@@ -1265,7 +1265,7 @@ print(f"Temperature trend: {trend_per_decade:.2f}°C per decade")
     Temperature-driven transmission  
     Historical malaria analysis  
     
-    → [VECTRI Model](../day1/06-vectri_model_components_larvae_to_hydrology.md)
+    → [VECTRI Model](../../day1/vectri_model_components_larvae_to_hydrology.md)
 
 </div>
 

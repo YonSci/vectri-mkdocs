@@ -926,7 +926,7 @@ t2m_ens_mean.attrs["units"] = "degC"
     Calculate monthly anomalies  
     Compare with climatology  
     
-    → [Xarray Tutorial](06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+    → [Xarray Tutorial](../../day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-map: **Visualize Seasonal Outlook**
     
@@ -935,7 +935,7 @@ t2m_ens_mean.attrs["units"] = "degC"
     Create monthly forecast maps  
     Plot temperature evolution  
     
-    → [Matplotlib Tutorial](05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    → [Matplotlib Tutorial](../../day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-weather-pouring: **Download Precipitation**
     
@@ -953,7 +953,7 @@ t2m_ens_mean.attrs["units"] = "degC"
     Long-range malaria risk  
     1-3 month outbreak prediction  
     
-    → [VECTRI Model](../day1/06-vectri-model-theory-and-code.md)
+    → [VECTRI Model](../../day1/06-vectri-model-theory-and-code.md)
 
 </div>
 

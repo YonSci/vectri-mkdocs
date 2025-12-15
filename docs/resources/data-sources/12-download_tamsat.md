@@ -927,7 +927,7 @@ ds.rfe_filled.sel(time='2020-07-15').plot()
     Create maps with Cartopy and GeoPandas  
     Time series and spatial plots  
     
-    → [Matplotlib Tutorial](05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
+    → [Matplotlib Tutorial](../../day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md)
 
 -   :material-vector-combine: **Compare Datasets**
     

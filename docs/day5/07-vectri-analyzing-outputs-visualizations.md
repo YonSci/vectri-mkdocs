@@ -1826,9 +1826,9 @@ for var in variables:
 
 ## 🔗 Additional Resources
 
-- [VECTRI Output Analysis](./01-vectri-output-analysis.md)
-- [VECTRI Parameter Sensitivity](./05-vectri-parameter-sensitivity.md)
-- [VECTRI Hands-On Simulations](./03-vectri-hands-on-simulations.md)
+- [VECTRI Output Analysis](../day4/02-vectri-output-analysis.md)
+- [VECTRI Parameter Sensitivity](./06-vectri-parameter-sensitivity.md)
+- [VECTRI Hands-On Simulations](../day4/04-vectri-hands-on-simulations.md)
 - [VECTRI Documentation](https://users.ictp.it/~tompkins/vectri/documentation/)
 - [Xarray Documentation](https://docs.xarray.dev/)
 - [Matplotlib Documentation](https://matplotlib.org/)

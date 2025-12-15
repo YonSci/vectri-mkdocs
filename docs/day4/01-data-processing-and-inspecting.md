@@ -641,8 +641,8 @@ Use this checklist to ensure you've completed all steps:
 
 ### Related Tutorials
 
-- [Xarray for Climate Data](../day2/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
-- [Python Setup](../day2/01-Python_Setup_for_Climate_and_Meteorology_Workshop.md)
+- [Xarray for Climate Data](../day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md)
+- [Python Setup](../day2/05-Python_Setup_for_Climate_and_Meteorology_Workshop.md)
 - [VECTRI Model Theory](../day1/06-vectri-model-theory-and-code.md)
 
 ---
@@ -658,7 +658,7 @@ Use this checklist to ensure you've completed all steps:
     Use processed data for VECTRI  
     Configure model parameters  
     
-    → [VECTRI Hands-On](../day3/03-vectri-hands-on-simulations.md)
+    → [VECTRI Hands-On](../day4/04-vectri-hands-on-simulations.md)
 
 -   :material-chart-line: **Analyze Results**
     
@@ -667,7 +667,7 @@ Use this checklist to ensure you've completed all steps:
     Visualize VECTRI outputs  
     Compare with observations  
     
-    → [VECTRI Output Analysis](../day3/01-vectri-output-analysis.md)
+    → [VECTRI Output Analysis](../day4/02-vectri-output-analysis.md)
 
 -   :material-cog: **Parameter Sensitivity**
     
@@ -676,7 +676,7 @@ Use this checklist to ensure you've completed all steps:
     Test different parameters  
     Understand model behavior  
     
-    → [Parameter Sensitivity](../day3/05-vectri-parameter-sensitivity.md)
+    → [Parameter Sensitivity](../day5/06-vectri-parameter-sensitivity.md)
 
 </div>
 

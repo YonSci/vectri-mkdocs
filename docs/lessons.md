@@ -139,6 +139,6 @@ python docs/scripts/download_chirps.py \
 
 ## 📚 Related Documentation
 
-- [Climate Data Access](day2/09-climate_data_access_and_extraction.md) - Overview of all datasets
-- [VECTRI Model Components](day1/06-vectri_model_components_larvae_to_hydrology.md) - Model documentation
+- [Climate Data Access](day3/09-climate_data_access_and_extraction.md) - Overview of all datasets
+- [VECTRI Model Components](day1/vectri_model_components_larvae_to_hydrology.md) - Model documentation
 - [Setup Guide](setup.md) - Installation instructions
