@@ -8,10 +8,6 @@
 
 </div>
 
-## VECTRI Output Visualizations
-
-Explore the power of VECTRI model outputs through comprehensive spatial and temporal analysis. The workshop covers advanced visualization techniques for understanding malaria transmission dynamics, including vector populations, disease metrics, and hydrology patterns.
-
 <style>
 .vectri-carousel {
   position: relative;
@@ -277,7 +273,6 @@ carousel.addEventListener('mouseleave', resetAutoSlide);
 
 <p style="text-align: center; margin-top: 1.5rem;">
   <a href="day5/07-vectri-analyzing-outputs-visualizations/" style="color: #1565c0; text-decoration: none; font-weight: 500; font-size: 1.1rem;">
-    📊 Learn more about VECTRI Output Analysis & Visualizations →
   </a>
 </p>
 
