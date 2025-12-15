@@ -18,6 +18,7 @@ This training is designed to help participants understand how climate-driven mal
 - **EMI** - Ethiopian Meteorological Institute
 - **AAU** - Addis Ababa University
 - **SMHI** - Swedish Meteorological and Hydrological Institute
+- **EPHI** - Ethiopian Public Health Institute
 
 ### 💰 Funding
 
