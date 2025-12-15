@@ -58,17 +58,18 @@ By the end of this training, participants will be able to:
 3. Understand the biological basis of malaria transmission and how climate variables drive vector and parasite dynamics
 4. Create environmental input files (population, land cover) for VECTRI modeling
 5. Conduct spatial and temporal analysis of model outputs to identify malaria transmission hotspots and seasonal patterns
-6. Prototype a simple early-warning workflow for Amhara's Kiremt/Belg seasonality
 
 ---
 
 ## Daily Structure (Quick Glance)
 
-- **Day 1:** Foundations and Setup - Malaria-climate link, VECTRI overview, Linux basics & installation
-- **Day 2:** Climate Data Preparation - ERA5/CHIRPS data access, quality control, and NetCDF processing
-- **Day 3:** Environmental Factors - Population data, land cover, and creating VECTRI environmental data files
-- **Day 4:** Running and Evaluating VECTRI - Amhara case study simulation and model validation
-- **Day 5:** Toward Operations - Early warning system prototype and participant presentations
+| Day | Theme | Lessons | Focus |
+|-----|-------|---------|-------|
+| **Day 1** | Foundations | 6 lessons | Theory, VECTRI introduction, model components |
+| **Day 2** | Setup and Python Basics | 5 lessons | Environment setup, Linux, Python fundamentals, NumPy |
+| **Day 3** | Advanced Python and Climate Data | 6 lessons | Data processing libraries, climate data access |
+| **Day 4** | VECTRI Setup and Running | 5 lessons | VECTRI configuration, execution, output analysis |
+| **Day 5** | Advanced Analysis | 2 lessons | Advanced visualizations, parameter sensitivity |
 
 ---
 

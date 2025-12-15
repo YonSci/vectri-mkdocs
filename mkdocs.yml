@@ -181,50 +181,35 @@ nav:
   - Setup: setup.md
   - Schedule: schedule.md
   - Lessons:
-      # - Overview: lessons.md
-      - Malaria-Climate Link: day1/01-theory_lecture.md
-      - Use Case: day1/02-use-case.md
-      - Setup: day1/03-setup.md
-      - Basic Linux Commands: day1/04-basic-linux-commands.md
-      - VECTRI Introduction: day1/05-vectri-intro.md
-      - VECTRI Model Theory & Code: day1/06-vectri-model-theory-and-code.md
-      - Python Setup: day2/01-Python_Setup_for_Climate_and_Meteorology_Workshop.md
-      - Python Basics: day2/02-Python_Basics_for_Climate_and_Meteorology_Workshop.md
-      - Numpy: day2/03-Numpy_for_Climate_and_Meteorology_Workshop.md
-      - Pandas: day2/04-Pandas_for_Climate_and_Meteorology_Workshop.md
-      - Matplotlib: day2/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md
-      - Xarray: day2/06-Xarray_for_Climate_and_Meteorology_Workshop.md
-      - Geopandas: day2/07-Geopandas_for_Climate_and_Meteorology_Workshop.
-      - Cartopy: day2/08-Cartopy_for_Climate_and_Meteorology_Workshop.md
-      - Climate Data Downloading (Data acquisition) : day2/09-climate_data_access_and_extraction.md
-      - CHIRPS Data Download: day2/10-download_chirps.md
-      - ARC2 Data Download: day2/11-download_arc2.md
-      - TAMSAT Data Download: day2/12-download_tamsat.md
-      - GFS Precipitation Forecast: day2/13-download_gfs_precip_forecast.md
-      - GFS Temperature Forecast: day2/14-download_gfs_temp_forecast.md
-      - ECMWF HRES Precipitation: day2/15-download_ecmwf_hres_precip.md
-      - ECMWF HRES Temperature: day2/15-download_ecmwf_hres_temp.md
-      - ECMWF S2S Precipitation: day2/16-download_ecmwf_s2s_tp_daily.md
-      - ECMWF S2S Temperature: day2/17-download_ecmwf_s2s_t2m_daily.md
-      - ECMWF S2S Ensemble Precipitation: day2/18-download_ecmwf_s2s_tp_daily_ensemble.md
-      - ECMWF S2S Ensemble Temperature: day2/19-download_ecmwf_s2s_t2m_daily_ensemble.md
-      - C3S Seasonal ECMWF Precipitation: day2/28-download_c3s_seasonal_precip_ensmean_daily.md
-      - C3S Seasonal ECMWF Temperature: day2/29-download_c3s_seasonal_temp_ensmean_daily.md
-      - CHC-CMIP6 Precipitation: day2/20-download_chc_cmip6_precip_daily.md
-      - CHC-CMIP6 Temperature: day2/21-download_chc_cmip6_temp_daily.md
-      - CHIRTS Daily Temperature: day2/22-download_chirts_daily.md
-      - ERA5-Land Temperature: day2/23-download_era5_land_temp_daily.md
-      - ERA5 Temperature: day2/24-download_era5_temp_daily.md
-      - WorldPop Population: day2/25-download_worldpop_population.md
-      - WorldPop Projections: day2/26-download_worldpop_projections.md
-      - HWSD Soil Texture: day2/27-download_hwsd_soil_texture.md
-      - VECTRI Data Processing and Inspecting: day3/01-data-processing-and-inspecting.md
-      - VECTRI Output Analysis: day3/02-vectri-output-analysis.md
-      - VECTRI Command Line Tutorial: day3/03-vectri-command-line-tutorial.md
-      - VECTRI Hands-On Simulations: day3/04-vectri-hands-on-simulations.md
-      - VECTRI Configuring Parameters: day3/05-vectri-configuring-parameters.md
-      - VECTRI Parameter Sensitivity: day3/06-vectri-parameter-sensitivity.md
-      - VECTRI Analyzing Outputs & Visualizations: day3/07-vectri-analyzing-outputs-visualizations.md
+      - Day 1 - Foundations:
+          - Malaria-Climate Link: day1/01-theory_lecture.md
+          - Use Case: day1/02-use-case.md
+          - VECTRI Introduction: day1/05-vectri-intro.md
+          - VECTRI Model Theory & Code: day1/06-vectri-model-theory-and-code.md
+          - VECTRI Model Components: day1/vectri_model_components_larvae_to_hydrology.md
+          - VECTRI Equations: day1/vectri_single_location_explicit_equations_physical_plots.md
+      - Day 2 - Setup and Python Basics:
+          - Setup: day2/03-setup.md
+          - Basic Linux Commands: day2/04-basic-linux-commands.md
+          - Python Setup: day2/05-Python_Setup_for_Climate_and_Meteorology_Workshop.md
+          - Python Basics: day2/06-Python_Basics_for_Climate_and_Meteorology_Workshop.md
+          - Numpy: day2/07-Numpy_for_Climate_and_Meteorology_Workshop.md
+      - Day 3 - Advanced Python and Climate Data:
+          - Pandas: day3/04-Pandas_for_Climate_and_Meteorology_Workshop.md
+          - Matplotlib: day3/05-Matplotlib_for_Climate_and_Meteorology_Workshop.md
+          - Xarray: day3/06-Xarray_for_Climate_and_Meteorology_Workshop.md
+          - Geopandas: day3/07-Geopandas_for_Climate_and_Meteorology_Workshop.md
+          - Cartopy: day3/08-Cartopy_for_Climate_and_Meteorology_Workshop.md
+          - Climate Data Downloading (Data acquisition): day3/09-climate_data_access_and_extraction.md
+      - Day 4 - VECTRI Setup and Running:
+          - VECTRI Data Processing and Inspecting: day4/01-data-processing-and-inspecting.md
+          - VECTRI Command Line Tutorial: day4/03-vectri-command-line-tutorial.md
+          - VECTRI Configuring Parameters: day4/05-vectri-configuring-parameters.md
+          - VECTRI Hands-On Simulations: day4/04-vectri-hands-on-simulations.md
+          - VECTRI Output Analysis: day4/02-vectri-output-analysis.md
+      - Day 5 - Advanced Analysis:
+          - VECTRI Analyzing Outputs & Visualizations: day5/07-vectri-analyzing-outputs-visualizations.md
+          - VECTRI Parameter Sensitivity: day5/06-vectri-parameter-sensitivity.md
   - Assessments:
       - Overview: assessments.md
       - VECTRI Introduction Quiz: quizzes/vectri-intro-quiz.md
@@ -239,5 +224,28 @@ nav:
       - Cartopy Quiz: quizzes/cartopy-quiz.md
       - Xarray Quiz: quizzes/xarray-interactive.md
   - Collaboration: collaboration.md
-  - Resources: resources.md
+  - Resources:
+      - Overview: resources.md
+      - Data Sources Reference:
+          - CHIRPS Data Download: resources/data-sources/10-download_chirps.md
+          - ERA5 Temperature: resources/data-sources/24-download_era5_temp_daily.md
+          - ERA5-Land Temperature: resources/data-sources/23-download_era5_land_temp_daily.md
+          - WorldPop Population: resources/data-sources/25-download_worldpop_population.md
+          - WorldPop Projections: resources/data-sources/26-download_worldpop_projections.md
+          - HWSD Soil Texture: resources/data-sources/27-download_hwsd_soil_texture.md
+          - ARC2 Data Download: resources/data-sources/11-download_arc2.md
+          - TAMSAT Data Download: resources/data-sources/12-download_tamsat.md
+          - GFS Precipitation Forecast: resources/data-sources/13-download_gfs_precip_forecast.md
+          - GFS Temperature Forecast: resources/data-sources/14-download_gfs_temp_forecast.md
+          - ECMWF HRES Precipitation: resources/data-sources/15-download_ecmwf_hres_precip.md
+          - ECMWF HRES Temperature: resources/data-sources/15-download_ecmwf_hres_temp.md
+          - ECMWF S2S Precipitation: resources/data-sources/16-download_ecmwf_s2s_tp_daily.md
+          - ECMWF S2S Temperature: resources/data-sources/17-download_ecmwf_s2s_t2m_daily.md
+          - ECMWF S2S Ensemble Precipitation: resources/data-sources/18-download_ecmwf_s2s_tp_daily_ensemble.md
+          - ECMWF S2S Ensemble Temperature: resources/data-sources/19-download_ecmwf_s2s_t2m_daily_ensemble.md
+          - CHC-CMIP6 Precipitation: resources/data-sources/20-download_chc_cmip6_precip_daily.md
+          - CHC-CMIP6 Temperature: resources/data-sources/21-download_chc_cmip6_temp_daily.md
+          - CHIRTS Daily Temperature: resources/data-sources/22-download_chirts_daily.md
+          - C3S Seasonal ECMWF Precipitation: resources/data-sources/28-download_c3s_seasonal_precip_ensmean_daily.md
+          - C3S Seasonal ECMWF Temperature: resources/data-sources/29-download_c3s_seasonal_temp_ensmean_daily.md
   - Notebooks & Scripts: lessons.md

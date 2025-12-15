@@ -43,7 +43,7 @@ Historical datasets provide validated, quality-controlled rainfall records for m
     - **Best for**: High-resolution rainfall analysis
     - **Update**: 2-week lag
     
-    [:octicons-download-24: Download Script](10-download_chirps.md){ .md-button .md-button--primary }
+    [:octicons-download-24: Download Tutorial](../resources/data-sources/10-download_chirps.md){ .md-button .md-button--primary }
 
 -   :material-chart-line:{ .lg .middle } __ARC2__
 
@@ -57,7 +57,7 @@ Historical datasets provide validated, quality-controlled rainfall records for m
     - **Best for**: Continental-scale African studies
     - **Update**: 2-day lag
     
-    [:octicons-download-24: Coming Soon](#){ .md-button }
+    [:octicons-download-24: Download Tutorial](../resources/data-sources/11-download_arc2.md){ .md-button }
 
 -   :material-satellite-variant:{ .lg .middle } __TAMSAT__
 
@@ -71,7 +71,7 @@ Historical datasets provide validated, quality-controlled rainfall records for m
     - **Best for**: African tropical regions
     - **Update**: 2-day lag
     
-    [:octicons-download-24: Coming Soon](#){ .md-button }
+    [:octicons-download-24: Download Tutorial](../resources/data-sources/11-download_arc2.md){ .md-button }
 
 </div>
 
@@ -396,11 +396,9 @@ Temperature data drives vector and parasite development rates in VECTRI.
     - Model validation and calibration
     - Climate analysis and trends
     
-    **Download Script:**
+    **Download Tutorial:**
     
-    ```python
-    # Coming soon - ERA5 download script
-    ```
+    [:octicons-download-24: View Tutorial](../resources/data-sources/24-download_era5_temp_daily.md){ .md-button .md-button--primary }
 
 === "ERA5-Land"
 
@@ -419,11 +417,9 @@ Temperature data drives vector and parasite development rates in VECTRI.
     - Better topography representation
     - Improved for land applications
     
-    **Download Script:**
+    **Download Tutorial:**
     
-    ```python
-    # Coming soon - ERA5-Land download script
-    ```
+    [:octicons-download-24: View Tutorial](../resources/data-sources/23-download_era5_land_temp_daily.md){ .md-button .md-button--primary }
 
 ---
 
@@ -604,43 +600,51 @@ pip install cdsapi requests xarray pandas numpy rioxarray geopandas netCDF4
 
 ## 📚 Data Access Tutorials
 
-Detailed tutorials for downloading each dataset:
+Detailed step-by-step tutorials are available for downloading each dataset. All tutorials can be found in the [Data Sources Reference](../resources/data-sources/) section.
 
-<div class="grid cards" markdown>
+### 🌧️ Precipitation Data Tutorials
 
--   :material-book-open-variant:{ .lg .middle } __CHIRPS Download__
+| Dataset | Description | Tutorial Link |
+|---------|-------------|---------------|
+| **CHIRPS** | High-resolution rainfall (0.05°, daily, 1981-present) | [Download Tutorial](../resources/data-sources/10-download_chirps.md) |
+| **ARC2** | Africa Rainfall Climatology (0.1°, daily, 1983-present) | [Download Tutorial](../resources/data-sources/11-download_arc2.md) |
+| **TAMSAT** | Tropical Applications of Meteorology using SATellite (0.0375°, daily, 1983-present) | [Download Tutorial](../resources/data-sources/12-download_tamsat.md) |
+| **GFS Precipitation** | NOAA Global Forecast System precipitation forecasts | [Download Tutorial](../resources/data-sources/13-download_gfs_precip_forecast.md) |
+| **ECMWF HRES Precipitation** | ECMWF High-Resolution precipitation forecasts | [Download Tutorial](../resources/data-sources/15-download_ecmwf_hres_precip.md) |
+| **ECMWF S2S Precipitation** | ECMWF Sub-Seasonal to Seasonal precipitation forecasts | [Download Tutorial](../resources/data-sources/16-download_ecmwf_s2s_tp_daily.md) |
+| **ECMWF S2S Ensemble Precipitation** | ECMWF S2S ensemble precipitation forecasts | [Download Tutorial](../resources/data-sources/18-download_ecmwf_s2s_tp_daily_ensemble.md) |
+| **CHC-CMIP6 Precipitation** | Climate Hazards Center CMIP6 downscaled rainfall projections | [Download Tutorial](../resources/data-sources/20-download_chc_cmip6_precip_daily.md) |
+| **C3S Seasonal ECMWF Precipitation** | Copernicus Climate Change Service seasonal precipitation forecasts | [Download Tutorial](../resources/data-sources/28-download_c3s_seasonal_precip_ensmean_daily.md) |
 
-    ---
+### 🌡️ Temperature Data Tutorials
 
-    Step-by-step guide for downloading CHIRPS rainfall data
-    
-    [:octicons-arrow-right-24: View Tutorial](10-download_chirps.md)
+| Dataset | Description | Tutorial Link |
+|---------|-------------|---------------|
+| **ERA5 Temperature** | ECMWF Reanalysis v5 temperature (0.25°, hourly, 1940-present) | [Download Tutorial](../resources/data-sources/24-download_era5_temp_daily.md) |
+| **ERA5-Land Temperature** | ECMWF Reanalysis v5 Land temperature (0.1°, hourly, 1950-present) | [Download Tutorial](../resources/data-sources/23-download_era5_land_temp_daily.md) |
+| **GFS Temperature** | NOAA Global Forecast System temperature forecasts | [Download Tutorial](../resources/data-sources/14-download_gfs_temp_forecast.md) |
+| **ECMWF HRES Temperature** | ECMWF High-Resolution temperature forecasts | [Download Tutorial](../resources/data-sources/15-download_ecmwf_hres_temp.md) |
+| **ECMWF S2S Temperature** | ECMWF Sub-Seasonal to Seasonal temperature forecasts | [Download Tutorial](../resources/data-sources/17-download_ecmwf_s2s_t2m_daily.md) |
+| **ECMWF S2S Ensemble Temperature** | ECMWF S2S ensemble temperature forecasts | [Download Tutorial](../resources/data-sources/19-download_ecmwf_s2s_t2m_daily_ensemble.md) |
+| **CHC-CMIP6 Temperature** | Climate Hazards Center CMIP6 downscaled temperature projections | [Download Tutorial](../resources/data-sources/21-download_chc_cmip6_temp_daily.md) |
+| **CHIRTS Daily Temperature** | Climate Hazards Center InfraRed Temperature with Stations | [Download Tutorial](../resources/data-sources/22-download_chirts_daily.md) |
+| **C3S Seasonal ECMWF Temperature** | Copernicus Climate Change Service seasonal temperature forecasts | [Download Tutorial](../resources/data-sources/29-download_c3s_seasonal_temp_ensmean_daily.md) |
 
--   :material-book-open-variant:{ .lg .middle } __ERA5 Download__
+### 🌍 Environmental Data Tutorials
 
-    ---
+| Dataset | Description | Tutorial Link |
+|---------|-------------|---------------|
+| **WorldPop Population** | High-resolution population density data | [Download Tutorial](../resources/data-sources/25-download_worldpop_population.md) |
+| **WorldPop Projections** | Future population projections | [Download Tutorial](../resources/data-sources/26-download_worldpop_projections.md) |
+| **HWSD Soil Texture** | Harmonized World Soil Database soil texture data | [Download Tutorial](../resources/data-sources/27-download_hwsd_soil_texture.md) |
 
-    Complete guide for accessing ERA5 reanalysis data
-    
-    [:octicons-arrow-right-24: Coming Soon](#)
-
--   :material-book-open-variant:{ .lg .middle } __Seasonal Forecasts__
-
-    ---
-
-    Accessing ECMWF SEAS5 and other seasonal predictions
-    
-    [:octicons-arrow-right-24: Coming Soon](#)
-
--   :material-book-open-variant:{ .lg .middle } __Climate Projections__
-
-    ---
-
-    Downloading CMIP6 and ISIMIP3b for future scenarios
-    
-    [:octicons-arrow-right-24: Coming Soon](#)
-
-</div>
+!!! tip "Quick Access"
+    All data download tutorials are organized in the [Data Sources Reference](../resources/data-sources/) section under Resources. Each tutorial includes:
+    - Step-by-step download instructions
+    - Python code examples
+    - Parameter configuration
+    - Quality control checks
+    - Data processing tips
 
 ---
 
@@ -732,5 +736,5 @@ Ready to start downloading climate data?
 4. **Quality check** the downloaded data
 5. **Proceed to data processing** and VECTRI modeling
 
-[Start with CHIRPS →](10-download_chirps.md){ .md-button .md-button--primary }
+[Start with CHIRPS →](../resources/data-sources/10-download_chirps.md){ .md-button .md-button--primary }
 [View All Tutorials →](#){ .md-button }
