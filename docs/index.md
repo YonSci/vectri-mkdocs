@@ -496,3 +496,51 @@ For more collaboration options, visit our [full collaboration guide](collaborati
     Access on mobile device
   </p>
 </div>
+
+---
+
+## Contact
+
+<div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-left: 4px solid #1a237e; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <p style="margin: 0 0 1rem 0; color: #555; font-size: 0.95rem;">
+    For inquiries about this workshop, please contact:
+  </p>
+  <div style="display: flex; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap;">
+    <div style="flex-shrink: 0;">
+      <img src="assets/img/profile-photo.jpeg" alt="Yonas Mersha" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid #1a237e; box-shadow: 0 2px 8px rgba(0,0,0,0.15);" />
+    </div>
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="margin: 0 0 0.5rem 0; color: #1a237e; font-size: 1.25rem; font-weight: 600;">
+        Yonas Mersha
+      </h3>
+      <p style="margin: 0 0 0.75rem 0; color: #666; font-size: 0.9rem; line-height: 1.5;">
+        <strong>Hydro-Climate Modelling and ML/AI Expert</strong><br>
+        International Livestock Research Institute (ILRI)
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem;">
+        <p style="margin: 0; font-size: 0.95rem;">
+          <a href="mailto:yonas.mersha14@gmail.com" style="color: #1565c0; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <span>📧</span>
+            <span>yonas.mersha14@gmail.com</span>
+          </a>
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem;">
+          <a href="https://www.linkedin.com/in/yonas-mersha-baab561b5/" target="_blank" rel="noopener" style="color: #0077b5; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem;">
+            <span>💼</span>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/YonSci" target="_blank" rel="noopener" style="color: #333; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem;">
+            <span>💻</span>
+            <span>GitHub</span>
+          </a>
+          <a href="https://medium.com/@yonas.mersha14" target="_blank" rel="noopener" style="color: #00ab6c; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem;">
+            <span>✍️</span>
+            <span>Medium</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+---
