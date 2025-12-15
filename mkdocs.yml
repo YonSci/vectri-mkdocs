@@ -2,6 +2,8 @@ site_name: Climate-Driven Malaria Modeling with VECTRI
 site_description: One-week intensive training workshop on climate-driven malaria modeling using VECTRI (Dec 8–12, 2025) for East African practitioners
 site_author: Yonas Mersha
 site_url: https://vectri-emi-smhi.netlify.app
+enable_parallel_processing: False
+
 
 # Repository
 repo_name: vectri-mkdocs
