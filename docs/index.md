@@ -276,21 +276,6 @@ carousel.addEventListener('mouseleave', resetAutoSlide);
   </a>
 </p>
 
----
-
-<div class="qr-code-section" style="text-align: center; margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%); border-radius: 12px;">
-  <h3 style="margin-bottom: 1rem; color: #1a237e;">📱 Scan to Access Workshop Materials</h3>
-  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://vectri-emi-smhi.netlify.app/&bgcolor=ffffff&color=1a237e&margin=10" alt="QR Code - VECTRI Workshop" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
-  <p style="margin-top: 1rem; font-size: 0.9rem; color: #555;">
-    <a href="https://vectri-emi-smhi.netlify.app/" target="_blank" style="color: #1565c0; text-decoration: none; font-weight: 500;">
-      https://vectri-emi-smhi.netlify.app/
-    </a>
-  </p>
-  <p style="font-size: 0.85rem; color: #777; margin-top: 0.5rem;">
-    Access all lessons, quizzes, and resources on your mobile device
-  </p>
-</div>
-
 ## Overview
 
 This training is designed to help participants understand how climate-driven malaria modeling using VECTRI can be used to enhance malaria early warning systems and support evidence-based public health interventions in Ethiopia. In particular, this training is prepared in collaboration between the **Swedish Meteorological and Hydrological Institute (SMHI)** and **Addis Ababa University (AAU)** to support participants from the **Ethiopian Meteorological Institute (EMI)**. 
@@ -498,3 +483,16 @@ For more collaboration options, visit our [full collaboration guide](collaborati
 | 11  | Rahele Yirdaw     | MFEW            | rahelyirdaw21@gmail.com     |
 
 ---
+
+<div class="qr-code-section" style="text-align: center; margin: 1.5rem 0; padding: 1rem; background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%); border-radius: 8px; max-width: 400px; margin-left: auto; margin-right: auto;">
+  <h4 style="margin-bottom: 0.75rem; color: #1a237e; font-size: 1rem;">📱 Scan to Access Workshop Materials</h4>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://vectri-emi-smhi.netlify.app/&bgcolor=ffffff&color=1a237e&margin=8" alt="QR Code - VECTRI Workshop" style="border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+  <p style="margin-top: 0.75rem; font-size: 0.8rem; color: #555; margin-bottom: 0.25rem;">
+    <a href="https://vectri-emi-smhi.netlify.app/" target="_blank" style="color: #1565c0; text-decoration: none; font-weight: 500;">
+      vectri-emi-smhi.netlify.app
+    </a>
+  </p>
+  <p style="font-size: 0.75rem; color: #777; margin: 0;">
+    Access on mobile device
+  </p>
+</div>
