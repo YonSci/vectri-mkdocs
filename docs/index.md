@@ -46,6 +46,7 @@ It will cover both foundational concepts and hands-on practical applications usi
 
 - **EMI health, hydrology and meteorology team**
 - **Masters and PhD students from AAU**
+- **Experts from Ethiopian Public Health Institute (EPHI)**
 
 ---
 
