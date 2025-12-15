@@ -397,22 +397,7 @@ By the end of this training, participants will be able to:
     <h3>Dr. Alemayehu Mengesha</h3>
     <p class="affiliation">Addis Ababa University (AAU)</p>
   </div>
-  
-  <div class="facilitator-card">
-    <h3>Dr. Natei Ermias</h3>
-    <p class="affiliation">Addis Ababa University (AAU)</p>
-  </div>
 
-  <div class="facilitator-card">
-    <h3>Hailu Fentaw</h3>
-    <p class="affiliation">Addis Ababa University (AAU)</p>
-  </div>
-
-  <div class="facilitator-card">
-    <h3>Fitsum Bekele</h3>
-    <p class="affiliation">Addis Ababa University (AAU)</p>
-  </div>
-  
   <div class="facilitator-card">
     <h3>Samson Warkaye</h3>
     <p class="affiliation">Addis Ababa University (AAU)</p>
