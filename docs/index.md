@@ -8,6 +8,281 @@
 
 </div>
 
+## VECTRI Output Visualizations
+
+Explore the power of VECTRI model outputs through comprehensive spatial and temporal analysis. The workshop covers advanced visualization techniques for understanding malaria transmission dynamics, including vector populations, disease metrics, and hydrology patterns.
+
+<style>
+.vectri-carousel {
+  position: relative;
+  max-width: 100%;
+  margin: 2rem 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.carousel-slide.active {
+  display: block;
+  opacity: 1;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #f8f9fa;
+}
+
+.carousel-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.carousel-content h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.carousel-content p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  color: #1a237e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.carousel-nav:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.carousel-nav.prev {
+  left: 20px;
+}
+
+.carousel-nav.next {
+  right: 20px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 400px;
+  }
+  
+  .carousel-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .carousel-nav.prev {
+    left: 10px;
+  }
+  
+  .carousel-nav.next {
+    right: 10px;
+  }
+  
+  .carousel-content {
+    padding: 1.5rem;
+  }
+  
+  .carousel-content h4 {
+    font-size: 1.2rem;
+  }
+  
+  .carousel-content p {
+    font-size: 0.9rem;
+  }
+}
+</style>
+
+<div class="vectri-carousel">
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="assets/img/spatial_map_vector.png" alt="Mosquito Density Spatial Map" />
+      <div class="carousel-content">
+        <h4>Spatial Patterns</h4>
+        <p>Time-averaged mosquito density showing transmission hotspots</p>
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <img src="assets/img/temporal_series_vector.png" alt="Vector Density Time Series" />
+      <div class="carousel-content">
+        <h4>Temporal Dynamics</h4>
+        <p>Seasonal cycles in vector populations over time</p>
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <img src="assets/img/spatial_map_eir.png" alt="EIR Spatial Map" />
+      <div class="carousel-content">
+        <h4>Disease Metrics</h4>
+        <p>Entomological Inoculation Rate (EIR) distribution</p>
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <img src="assets/img/monthly_clim_vector_density.png" alt="Monthly Climatology" />
+      <div class="carousel-content">
+        <h4>Seasonal Analysis</h4>
+        <p>Average seasonal cycle of vector density</p>
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <img src="assets/img/seasonal_map_vector_density.png" alt="Seasonal Spatial Maps" />
+      <div class="carousel-content">
+        <h4>Seasonal Maps</h4>
+        <p>Transmission patterns across different seasons</p>
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <img src="assets/img/correlation_matrix.png" alt="Correlation Matrix" />
+      <div class="carousel-content">
+        <h4>Variable Relationships</h4>
+        <p>Correlations between key VECTRI variables</p>
+      </div>
+    </div>
+    
+    <button class="carousel-nav prev" onclick="changeSlide(-1)">‹</button>
+    <button class="carousel-nav next" onclick="changeSlide(1)">›</button>
+    
+    <div class="carousel-indicators" id="indicators"></div>
+  </div>
+</div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const totalSlides = slides.length;
+let autoSlideInterval;
+
+// Create indicators
+const indicatorsContainer = document.getElementById('indicators');
+for (let i = 0; i < totalSlides; i++) {
+  const indicator = document.createElement('div');
+  indicator.className = 'carousel-indicator' + (i === 0 ? ' active' : '');
+  indicator.onclick = () => goToSlide(i);
+  indicatorsContainer.appendChild(indicator);
+}
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+  
+  const indicators = document.querySelectorAll('.carousel-indicator');
+  indicators.forEach((indicator, i) => {
+    indicator.classList.toggle('active', i === index);
+  });
+}
+
+function changeSlide(direction) {
+  currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+  showSlide(currentSlide);
+  resetAutoSlide();
+}
+
+function goToSlide(index) {
+  currentSlide = index;
+  showSlide(currentSlide);
+  resetAutoSlide();
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  showSlide(currentSlide);
+}
+
+function resetAutoSlide() {
+  clearInterval(autoSlideInterval);
+  autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+}
+
+// Initialize auto-slide
+resetAutoSlide();
+
+// Pause on hover
+const carousel = document.querySelector('.vectri-carousel');
+carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+carousel.addEventListener('mouseleave', resetAutoSlide);
+</script>
+
+<p style="text-align: center; margin-top: 1.5rem;">
+  <a href="day5/07-vectri-analyzing-outputs-visualizations/" style="color: #1565c0; text-decoration: none; font-weight: 500; font-size: 1.1rem;">
+    📊 Learn more about VECTRI Output Analysis & Visualizations →
+  </a>
+</p>
+
+---
+
 <div class="qr-code-section" style="text-align: center; margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%); border-radius: 12px;">
   <h3 style="margin-bottom: 1rem; color: #1a237e;">📱 Scan to Access Workshop Materials</h3>
   <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://vectri-emi-smhi.netlify.app/&bgcolor=ffffff&color=1a237e&margin=10" alt="QR Code - VECTRI Workshop" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
