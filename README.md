@@ -4,22 +4,20 @@
 [![Documentation](https://img.shields.io/badge/docs-mkdocs-blue.svg)](https://your-site.netlify.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Welcome to the **Climate-Driven Malaria Modeling with VECTRI** workshop website! This comprehensive 5-day training program (December 15-19, 2025) teaches participants how to use the VECTRI model to enhance malaria early warning systems and support evidence-based public health interventions in Ethiopia.
+Welcome to the **Climate-Driven Malaria Modeling with VECTRI** workshop website! This comprehensive 5-day training program (April 20-24, 2026) teaches participants how to use the VECTRI model to enhance malaria early warning systems and support evidence-based public health interventions in Ethiopia.
 
 ## 🎯 Overview  
 This training is designed to help participants understand how climate-driven malaria modeling using VECTRI can be used to enhance malaria early warning systems. Prepared in collaboration between the **Swedish Meteorological and Hydrological Institute (SMHI)** and **Addis Ababa University (AAU)**, this workshop supports participants from the **Ethiopian Meteorological Institute (EMI)**.
 
-**Training Period:** December 15-19, 2025  
+**Training Period:** April 20-24, 2026
 **Mode:** In-person (mix of lectures, practical exercises, and discussions)  
 **Participants:** Up to 15 participants
 
 ### 🤝 Partners
 
 - **EMI** - Ethiopian Meteorological Institute
-- **AAU** - Addis Ababa University
 - **SMHI** - Swedish Meteorological and Hydrological Institute
-- **EPHI** - Ethiopian Public Health Institute
-
+- **ILRI** - 
 ### 💰 Funding
 
 This training is financed by the **Swedish International Development Cooperation Agency (Sida)** as part of the **Water and Climate Change Services for Africa, Ethiopia (WACCA-E), phase 2** project.
@@ -47,13 +45,6 @@ By the end of this training, participants will be able to:
 - **Binder** - Interactive online environment
 - **Netlify** - Hosting and deployment
 
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Python 3.8 or higher
-- Git
-- Text editor or IDE
 
 
 ## 📖 Documentation Structure
@@ -128,7 +119,7 @@ vectri-mkdocs/
 ## 📧 Contact
 
 **Yonas Mersha** - Training Coordinator  
-📧 Email: [yonas.mersha14@gmail.com](mailto:yonas.mersha14@gmail.com)
+📧 Email: [Y.Mersha@cgiar.org](mailto:Y.Mersha@cgiar.org)
 
 ## 📝 License
 
@@ -138,9 +129,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Sida** - Swedish International Development Cooperation Agency for funding
 - **SMHI** - Swedish Meteorological and Hydrological Institute
-- **AAU** - Addis Ababa University
 - **EMI** - Ethiopian Meteorological Institute
-- **EPHI** - Ethiopian Public Health Institute for malaria surveillance data
+
 - All workshop participants and contributors
 
 ## 📚 Additional Resources
@@ -159,6 +149,6 @@ If you find this project helpful, please consider giving it a star ⭐!
 
 <div align="center">
   <p>Built with ❤️ for climate-informed malaria control in Ethiopia</p>
-  <p>© 2025 VECTRI Workshop AAU-EMI-SMHI. All rights reserved.</p>
+  <p>© 2025 VECTRI Workshop ILRI-EMI-SMHI. All rights reserved.</p>
 </div>
 

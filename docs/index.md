@@ -1,10 +1,12 @@
 <div class="hero-banner" markdown>
 
-# Climate-Driven Malaria Modeling with VECTRI
+# Climate-Driven Malaria Modeling with VECTRI (Part II) 
+
+## Advanced Modeling, Operationalization, Automation, and Deployment for Seasonal and Beyond Time Scales
 
 **One-Week Training Workshop**
 
-<span class="workshop-date">📅 December 8–12, 2025</span>
+<span class="workshop-date">📅 April 20–24, 2026</span>
 
 </div>
 
@@ -278,7 +280,7 @@ carousel.addEventListener('mouseleave', resetAutoSlide);
 
 ## Overview
 
-This training is designed to help participants understand how climate-driven malaria modeling using VECTRI can be used to enhance malaria early warning systems and support evidence-based public health interventions in Ethiopia. In particular, this training is prepared in collaboration between the **Swedish Meteorological and Hydrological Institute (SMHI)** and **Addis Ababa University (AAU)** to support participants from the **Ethiopian Meteorological Institute (EMI)**. 
+This training is designed to help participants understand how climate-driven malaria modeling using VECTRI can be used to enhance malaria early warning systems and support evidence-based public health interventions in Ethiopia. In particular, this training is prepared in collaboration between the **Swedish Meteorological and Hydrological Institute (SMHI)** and **International Livestock Research Institute (ILRI)** to support participants from the **Ethiopian Meteorological Institute (EMI)**. 
 
 It will cover both foundational concepts and hands-on practical applications using real-world data from the Amhara region. This training is financed by the **Swedish International Development Cooperation Agency (Sida)** as part of the **Water and Climate Change Services for Africa, Ethiopia (WACCA-E), phase 2** project.
 
@@ -288,7 +290,7 @@ It will cover both foundational concepts and hands-on practical applications usi
 
 | | |
 |---|---|
-| **Dates** | Monday–Friday, December 8–12, 2025 |
+| **Dates** | Monday–Friday, April 20–24, 2026 |
 | **Time** | 09:00–17:00 daily (UTC+03:00, Addis Ababa) |
 | **Duration** | 5 Days |
 | **Format** | In-person (mix of lectures, practical exercises, and discussions) |
@@ -300,8 +302,6 @@ It will cover both foundational concepts and hands-on practical applications usi
 ## Target Audience
 
 - **EMI health, hydrology and meteorology team**
-- **Masters and PhD students from AAU**
-- **Experts from Ethiopian Public Health Institute (EPHI)**
 
 ---
 
@@ -370,7 +370,7 @@ By the end of this training, participants will be able to:
 - **Geographic:** 
     - Administrative boundaries (shapefiles) GADM/FAO GAUL
 
-- **Malaria:** EPHI confirmed case data
+- **Malaria:** EPHI Confirmed Case Data
 
 --- 
 
@@ -379,30 +379,24 @@ By the end of this training, participants will be able to:
 
 <div class="facilitators-grid">
   <div class="facilitator-card">
-    <h3><a href="https://youtu.be/yCuJHWiX3jo?si=K3ds-ZhjMYkHkZpm&t=2" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">Dr. Addisu Gezahegn</a></h3>
-    <p class="affiliation">NSF Science and Technology Center, Columbia University</p>
+    <h3>Yonas Mersha</h3>
+    <p class="affiliation">International Livestock Research Institute (ILRI)</p>
   </div>
-
+  
   <div class="facilitator-card">
     <h3>Dr. Bode Gbobaniyi</h3>
     <p class="affiliation">Swedish Meteorological and Hydrological Institute (SMHI)</p>
   </div>
 
   <div class="facilitator-card">
-    <h3>Yonas Mersha</h3>
+    <h3>Dr. Teferi Demissie</h3>
     <p class="affiliation">International Livestock Research Institute (ILRI)</p>
-  </div>
+   </div>
   
-  <div class="facilitator-card">
+  <!-- <div class="facilitator-card">
     <h3>Dr. Alemayehu Mengesha</h3>
     <p class="affiliation">Addis Ababa University (AAU)</p>
-  </div>
-
-  <div class="facilitator-card">
-    <h3>Samson Warkaye</h3>
-    <p class="affiliation">Addis Ababa University (AAU)</p>
-  </div>
-  
+  </div>   -->
 </div>
 
 ---
@@ -499,14 +493,14 @@ For more collaboration options, visit our [full collaboration guide](collaborati
         Yonas Mersha
       </h3>
       <p style="margin: 0 0 0.75rem 0; color: #666; font-size: 0.9rem; line-height: 1.5;">
-        <strong>Hydro-Climate Modelling and ML/AI Expert</strong><br>
+        <strong>Hydro-Climate Modelling and AI Expert</strong><br>
         International Livestock Research Institute (ILRI)
       </p>
       <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem;">
         <p style="margin: 0; font-size: 0.95rem;">
-          <a href="mailto:yonas.mersha14@gmail.com" style="color: #1565c0; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem;">
+          <a href="mailto:Y.Mersha@cgiar.org" style="color: #1565c0; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem;">
             <span>📧</span>
-            <span>yonas.mersha14@gmail.com</span>
+            <span>Y.Mersha@cgiar.org</span> 
           </a>
         </p>
         <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem;">
