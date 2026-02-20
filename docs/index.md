@@ -379,11 +379,6 @@ By the end of this training, participants will be able to:
 
 <div class="facilitators-grid">
   <div class="facilitator-card">
-    <h3>Yonas Mersha</h3>
-    <p class="affiliation">International Livestock Research Institute (ILRI)</p>
-  </div>
-  
-  <div class="facilitator-card">
     <h3>Dr. Bode Gbobaniyi</h3>
     <p class="affiliation">Swedish Meteorological and Hydrological Institute (SMHI)</p>
   </div>
@@ -392,6 +387,10 @@ By the end of this training, participants will be able to:
     <h3>Dr. Teferi Demissie</h3>
     <p class="affiliation">International Livestock Research Institute (ILRI)</p>
    </div>
+  <div class="facilitator-card">
+    <h3>Yonas Mersha</h3>
+    <p class="affiliation">International Livestock Research Institute (ILRI)</p>
+  </div>
   
   <!-- <div class="facilitator-card">
     <h3>Dr. Alemayehu Mengesha</h3>
