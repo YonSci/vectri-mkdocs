@@ -7,6 +7,7 @@
 Welcome to the **Climate-Driven Malaria Modeling with VECTRI** workshop website! This comprehensive 5-day training program (December 15-19, 2025) teaches participants how to use the VECTRI model to enhance malaria early warning systems and support evidence-based public health interventions in Ethiopia.
 
 🌐 **Website:** [https://vectri-emi-smhi.netlify.app/](https://vectri-emi-smhi.netlify.app/)
+🌐 **Seasonal Site:** [https://vectri-seasonal.netlify.app/](https://vectri-seasonal.netlify.app/)
 
 ## 🎯 Overview  
 This training is designed to help participants understand how climate-driven malaria modeling using VECTRI can be used to enhance malaria early warning systems. Prepared in collaboration between the **Swedish Meteorological and Hydrological Institute (SMHI)** and **Addis Ababa University (AAU)**, this workshop supports participants from the **Ethiopian Meteorological Institute (EMI)**.
